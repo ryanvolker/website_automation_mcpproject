@@ -15,9 +15,19 @@ This does what the home page "Find a cruise" box does (Cruising to / Departing f
   - `searchForm`: the form's fields, selectors and every option, including the months available (MMYY codes)
   - `navigation.menus.Destinations`: sub-regions such as Eastern Caribbean, Greece and Norway, with their pages
   - `featured.ports`: "Find cruises near you" cards
+- `data/sites/princess.com/destinations.json`: a crawl of 39 destination pages (regions, sub-regions such as Greece, Norway and Eastern Caribbean, departure ports, and the all-ports index). Each entry in `pages[]` has:
+  - `h1`, `title`, `metaDescription`, `sections` (the page's in-page menu)
+  - `headings` (the page outline: must-sees, highlights, ports)
+  - `portCodes` (port codes used in its search links, usable as `itinPort=`/`startPort=`), `portPages`, `excursionPages`
+  - `featuredCruises`: voyage code, cruise or cruisetour, card text and lowest price at crawl time
+  - `faqs`: question text only
+  - `relatedDestinationPages`, `blogPosts`, `redirectsTo` (several old URLs redirect, e.g. `.../mediterranean-and-greek-isles` → `/mediterranean-cruises`)
+  - The `ports` page lists about 320 port pages, and `notCrawledYet` holds about 445 destination and port URLs that haven't been crawled.
 - Live script, run from the repo root: `node packages/princess/princess.mjs`
 
 ## Steps
+
+0. **Questions about a place** ("what is there to do in Greece?", "which ports in Norway?"): answer from the matching page in `destinations.json` (match on `slug`, `h1` or `title`). Quote its `headings`, `portPages`, `faqs` and `featuredCruises`, and link the page. Prices there are from the crawl date (`crawledAt`); run a live search if current prices matter.
 
 1. **Work out the filters.** Map what the user said to a destination, a port and a month.
    - Places that aren't search destinations belong to a parent region, for example Mediterranean, Greece or Norway → **Europe**, Bahamas → **Caribbean**. The sub-region pages are in `navigation.menus.Destinations`.

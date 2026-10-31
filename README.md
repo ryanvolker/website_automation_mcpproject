@@ -43,6 +43,10 @@ node packages/princess/princess.mjs search --destination alaska --port seattle -
 node packages/princess/princess.mjs search --ship "sun princess" --days 7
 node packages/princess/princess.mjs deals
 node packages/princess/princess.mjs codes
+
+# Crawl the 39 destination pages (~8 min), then report changes since the last crawl
+npm run crawl:destinations -w @wa/princess
+npm run report:destinations -w @wa/princess --silent
 ```
 
 ## Getting started

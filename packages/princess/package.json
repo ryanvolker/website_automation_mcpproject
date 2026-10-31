@@ -5,6 +5,8 @@
   "description": "Princess Cruises site map and lookup scripts (search, deals, ships, destinations)",
   "scripts": {
     "map:home": "node ../site-mapper/map-page.mjs https://www.princess.com/ ../../data/sites/princess.com home && node build-home-map.mjs",
-    "build:home": "node build-home-map.mjs"
+    "build:home": "node build-home-map.mjs",
+    "crawl:destinations": "node crawl-destinations.mjs",
+    "report:destinations": "node compare-destinations.mjs"
   }
 }
