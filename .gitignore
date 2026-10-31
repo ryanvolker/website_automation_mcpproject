@@ -1,0 +1,19 @@
+node_modules/
+dist/
+
+# Playwright output
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.auth/
+
+# Playwright MCP output (screenshots, traces)
+.playwright-mcp/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+.DS_Store

@@ -1,0 +1,23 @@
+{
+  "name": "website-automation-mcpproject",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo for website automation with Playwright and the Playwright MCP server",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm run test -w @wa/e2e --",
+    "test:headed": "npm run test:headed -w @wa/e2e --",
+    "test:ui": "npm run test:ui -w @wa/e2e --",
+    "report": "npm run report -w @wa/e2e --",
+    "codegen": "npm run codegen -w @wa/e2e --",
+    "install:browsers": "npx playwright install --with-deps"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@playwright/mcp": "^0.0.83"
+  }
+}
