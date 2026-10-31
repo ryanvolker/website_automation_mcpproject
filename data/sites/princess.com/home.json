@@ -1,0 +1,1752 @@
+{
+  "site": "princess.com",
+  "page": "home",
+  "url": "https://www.princess.com/",
+  "title": "Princess Cruises Vacations for 2026, 2027 & 2028 - Princess Cruises",
+  "capturedAt": "2026-10-31T02:40:53.569Z",
+  "note": "Deals, prices and featured items change often. Run \"npm run map:home -w @wa/princess\" to refresh.",
+  "searchUrl": {
+    "base": "https://www.princess.com/cruise-search/results/",
+    "params": {
+      "trade": "Destination code, e.g. A=Alaska, C=Caribbean (see destinations). Comma-separate for several.",
+      "subTrade": "Sub-region code, e.g. EM (seen on a Mediterranean ship card)",
+      "startPort": "Departure port code, e.g. SEA, FLL (see ports)",
+      "port": "Port code used by some home page cards, e.g. LAX, MIA",
+      "date": "Departure month(s) as MMYY, comma-separated, e.g. 0627 = June 2027",
+      "ship": "Two-letter ship code, e.g. RP = Royal Princess (see ships)",
+      "duration": "Length in days as min_max, e.g. 7_7, 9_12",
+      "promos": "Promotion code, e.g. 2GD (flash sale), RG1 (last minute), KHS (2028 early booking)",
+      "voyages": "Comma-separated voyage codes (used by curated deal lists)",
+      "resType": "C = cruises only",
+      "mrch": "Merchandising flag added by home page cards (safe to omit)"
+    },
+    "detailsPage": "https://www.princess.com/cruise-search/details/?voyageCode=<code>"
+  },
+  "searchForm": {
+    "description": "The \"Find a cruise\" box under the hero banner. Choosing options updates the SEARCH CRUISES link href; clicking it opens the results page.",
+    "fields": [
+      {
+        "key": "destination",
+        "label": "Cruising to",
+        "selector": "#destination-select",
+        "urlParam": "trade",
+        "options": [
+          {
+            "code": "A",
+            "name": "Alaska"
+          },
+          {
+            "code": "O",
+            "name": "Asia"
+          },
+          {
+            "code": "Z",
+            "name": "Australia & New Zealand"
+          },
+          {
+            "code": "L",
+            "name": "California Coast"
+          },
+          {
+            "code": "N",
+            "name": "Canada & New England"
+          },
+          {
+            "code": "C",
+            "name": "Caribbean"
+          },
+          {
+            "code": "E",
+            "name": "Europe"
+          },
+          {
+            "code": "H",
+            "name": "Hawaii"
+          },
+          {
+            "code": "J",
+            "name": "Japan"
+          },
+          {
+            "code": "M",
+            "name": "Mexico"
+          },
+          {
+            "code": "T",
+            "name": "Panama Canal"
+          },
+          {
+            "code": "S",
+            "name": "South America & Antarctica"
+          },
+          {
+            "code": "P",
+            "name": "Tahiti & South Pacific"
+          },
+          {
+            "code": "F",
+            "name": "TransAtlantics"
+          },
+          {
+            "code": "W",
+            "name": "World Cruises"
+          }
+        ]
+      },
+      {
+        "key": "port",
+        "label": "Departing from",
+        "selector": "#port-select",
+        "urlParam": "startPort",
+        "options": [
+          {
+            "code": "ADL",
+            "name": "Adelaide, Australia"
+          },
+          {
+            "code": "WH1",
+            "name": "Anchorage (Whittier), Alaska"
+          },
+          {
+            "code": "ATH",
+            "name": "Athens (Piraeus), Greece"
+          },
+          {
+            "code": "AKL",
+            "name": "Auckland, New Zealand"
+          },
+          {
+            "code": "BGI",
+            "name": "Barbados"
+          },
+          {
+            "code": "BCN",
+            "name": "Barcelona, Spain"
+          },
+          {
+            "code": "BOS",
+            "name": "Boston, Massachusetts"
+          },
+          {
+            "code": "BNE",
+            "name": "Brisbane, Australia"
+          },
+          {
+            "code": "BUE",
+            "name": "Buenos Aires, Argentina"
+          },
+          {
+            "code": "CPT",
+            "name": "Cape Town, South Africa"
+          },
+          {
+            "code": "ROM",
+            "name": "Civitavecchia (for Rome), Italy"
+          },
+          {
+            "code": "CPH",
+            "name": "Copenhagen, Denmark"
+          },
+          {
+            "code": "FLL",
+            "name": "Ft. Lauderdale, Florida"
+          },
+          {
+            "code": "HEL",
+            "name": "Helsinki, Finland"
+          },
+          {
+            "code": "HKG",
+            "name": "Hong Kong"
+          },
+          {
+            "code": "HNL",
+            "name": "Honolulu, Hawaii"
+          },
+          {
+            "code": "IST",
+            "name": "Istanbul, Turkey"
+          },
+          {
+            "code": "LAX",
+            "name": "Los Angeles, California"
+          },
+          {
+            "code": "MEL",
+            "name": "Melbourne, Australia"
+          },
+          {
+            "code": "MIA",
+            "name": "Miami, Florida"
+          },
+          {
+            "code": "NAP",
+            "name": "Naples, Italy (for Capri & Pompeii)"
+          },
+          {
+            "code": "NYC",
+            "name": "New York City (Manhattan or Brooklyn), New York"
+          },
+          {
+            "code": "JFM",
+            "name": "Perth (Fremantle), Australia"
+          },
+          {
+            "code": "PCV",
+            "name": "Port Canaveral (Orlando), Florida"
+          },
+          {
+            "code": "YQB",
+            "name": "Quebec City, Canada"
+          },
+          {
+            "code": "RAN",
+            "name": "Ravenna, Italy"
+          },
+          {
+            "code": "REK",
+            "name": "Reykjavik, Iceland"
+          },
+          {
+            "code": "SA3",
+            "name": "San Antonio (for Santiago), Chile"
+          },
+          {
+            "code": "SAN",
+            "name": "San Diego, California"
+          },
+          {
+            "code": "SFO",
+            "name": "San Francisco, California"
+          },
+          {
+            "code": "SJU",
+            "name": "San Juan, Puerto Rico"
+          },
+          {
+            "code": "SEA",
+            "name": "Seattle, Washington"
+          },
+          {
+            "code": "SIN",
+            "name": "Singapore"
+          },
+          {
+            "code": "SOU",
+            "name": "Southampton (for London), England"
+          },
+          {
+            "code": "SYD",
+            "name": "Sydney, Australia"
+          },
+          {
+            "code": "YOK",
+            "name": "Tokyo (Yokohama), Japan"
+          },
+          {
+            "code": "TYO",
+            "name": "Tokyo, Japan"
+          },
+          {
+            "code": "TRS",
+            "name": "Trieste (for Venice), Italy"
+          },
+          {
+            "code": "YVR",
+            "name": "Vancouver, Canada"
+          }
+        ]
+      },
+      {
+        "key": "month",
+        "label": "Leaving",
+        "selector": "#date-select",
+        "urlParam": "date",
+        "format": "MMYY",
+        "options": [
+          {
+            "code": "1026",
+            "name": "October 2026"
+          },
+          {
+            "code": "1126",
+            "name": "November 2026"
+          },
+          {
+            "code": "1226",
+            "name": "December 2026"
+          },
+          {
+            "code": "0127",
+            "name": "January 2027"
+          },
+          {
+            "code": "0227",
+            "name": "February 2027"
+          },
+          {
+            "code": "0327",
+            "name": "March 2027"
+          },
+          {
+            "code": "0427",
+            "name": "April 2027"
+          },
+          {
+            "code": "0527",
+            "name": "May 2027"
+          },
+          {
+            "code": "0627",
+            "name": "June 2027"
+          },
+          {
+            "code": "0727",
+            "name": "July 2027"
+          },
+          {
+            "code": "0827",
+            "name": "August 2027"
+          },
+          {
+            "code": "0927",
+            "name": "September 2027"
+          },
+          {
+            "code": "1027",
+            "name": "October 2027"
+          },
+          {
+            "code": "1127",
+            "name": "November 2027"
+          },
+          {
+            "code": "1227",
+            "name": "December 2027"
+          },
+          {
+            "code": "0128",
+            "name": "January 2028"
+          },
+          {
+            "code": "0228",
+            "name": "February 2028"
+          },
+          {
+            "code": "0328",
+            "name": "March 2028"
+          },
+          {
+            "code": "0428",
+            "name": "April 2028"
+          },
+          {
+            "code": "0528",
+            "name": "May 2028"
+          },
+          {
+            "code": "0628",
+            "name": "June 2028"
+          },
+          {
+            "code": "0728",
+            "name": "July 2028"
+          },
+          {
+            "code": "0828",
+            "name": "August 2028"
+          },
+          {
+            "code": "0928",
+            "name": "September 2028"
+          },
+          {
+            "code": "1028",
+            "name": "October 2028"
+          },
+          {
+            "code": "1128",
+            "name": "November 2028"
+          },
+          {
+            "code": "1228",
+            "name": "December 2028"
+          },
+          {
+            "code": "0129",
+            "name": "January 2029"
+          },
+          {
+            "code": "0229",
+            "name": "February 2029"
+          },
+          {
+            "code": "0329",
+            "name": "March 2029"
+          },
+          {
+            "code": "0429",
+            "name": "April 2029"
+          }
+        ]
+      }
+    ],
+    "submit": {
+      "text": "SEARCH CRUISES",
+      "locator": "getByRole('link', { name: 'SEARCH CRUISES' })"
+    },
+    "example": {
+      "choose": {
+        "destination": "Alaska",
+        "port": "Seattle, Washington",
+        "month": "June 2027"
+      },
+      "resultUrl": "https://www.princess.com/cruise-search/results/?trade=A&date=0627&startPort=SEA"
+    }
+  },
+  "destinations": [
+    {
+      "name": "Alaska",
+      "code": "A",
+      "page": "https://www.princess.com/cruise-destinations/alaska-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=A"
+    },
+    {
+      "name": "Asia",
+      "code": "O",
+      "page": "https://www.princess.com/cruise-destinations/asia-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=O"
+    },
+    {
+      "name": "Australia & New Zealand",
+      "code": "Z",
+      "page": "https://www.princess.com/cruise-destinations/australia-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=Z"
+    },
+    {
+      "name": "California Coast",
+      "code": "L",
+      "page": "https://www.princess.com/cruise-destinations/california-coast-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=L"
+    },
+    {
+      "name": "Canada & New England",
+      "code": "N",
+      "page": "https://www.princess.com/cruise-destinations/canada-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=N"
+    },
+    {
+      "name": "Caribbean",
+      "code": "C",
+      "page": "https://www.princess.com/cruise-destinations/caribbean-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=C"
+    },
+    {
+      "name": "Europe",
+      "code": "E",
+      "page": "https://www.princess.com/cruise-destinations/european-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=E"
+    },
+    {
+      "name": "Hawaii",
+      "code": "H",
+      "page": "https://www.princess.com/cruise-destinations/hawaii-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=H"
+    },
+    {
+      "name": "Japan",
+      "code": "J",
+      "page": "https://www.princess.com/cruise-destinations/japan-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=J"
+    },
+    {
+      "name": "Mexico",
+      "code": "M",
+      "page": "https://www.princess.com/cruise-destinations/mexico-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=M"
+    },
+    {
+      "name": "Panama Canal",
+      "code": "T",
+      "page": "https://www.princess.com/cruise-destinations/panama-canal-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=T"
+    },
+    {
+      "name": "South America & Antarctica",
+      "code": "S",
+      "page": "https://www.princess.com/cruise-destinations/south-america-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=S"
+    },
+    {
+      "name": "Tahiti & South Pacific",
+      "code": "P",
+      "page": "https://www.princess.com/cruise-destinations/tahiti-south-pacific-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=P"
+    },
+    {
+      "name": "TransAtlantics",
+      "code": "F",
+      "page": "https://www.princess.com/cruise-destinations/european-cruises/transatlantic",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=F"
+    },
+    {
+      "name": "World Cruises",
+      "code": "W",
+      "page": "https://www.princess.com/cruise-destinations/world-cruises",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?trade=W"
+    }
+  ],
+  "ports": [
+    {
+      "code": "ADL",
+      "name": "Adelaide, Australia"
+    },
+    {
+      "code": "WH1",
+      "name": "Anchorage (Whittier), Alaska"
+    },
+    {
+      "code": "ATH",
+      "name": "Athens (Piraeus), Greece"
+    },
+    {
+      "code": "AKL",
+      "name": "Auckland, New Zealand"
+    },
+    {
+      "code": "BGI",
+      "name": "Barbados"
+    },
+    {
+      "code": "BCN",
+      "name": "Barcelona, Spain"
+    },
+    {
+      "code": "BOS",
+      "name": "Boston, Massachusetts"
+    },
+    {
+      "code": "BNE",
+      "name": "Brisbane, Australia"
+    },
+    {
+      "code": "BUE",
+      "name": "Buenos Aires, Argentina"
+    },
+    {
+      "code": "CPT",
+      "name": "Cape Town, South Africa"
+    },
+    {
+      "code": "ROM",
+      "name": "Civitavecchia (for Rome), Italy"
+    },
+    {
+      "code": "CPH",
+      "name": "Copenhagen, Denmark"
+    },
+    {
+      "code": "FLL",
+      "name": "Ft. Lauderdale, Florida"
+    },
+    {
+      "code": "HEL",
+      "name": "Helsinki, Finland"
+    },
+    {
+      "code": "HKG",
+      "name": "Hong Kong"
+    },
+    {
+      "code": "HNL",
+      "name": "Honolulu, Hawaii"
+    },
+    {
+      "code": "IST",
+      "name": "Istanbul, Turkey"
+    },
+    {
+      "code": "LAX",
+      "name": "Los Angeles, California"
+    },
+    {
+      "code": "MEL",
+      "name": "Melbourne, Australia"
+    },
+    {
+      "code": "MIA",
+      "name": "Miami, Florida"
+    },
+    {
+      "code": "NAP",
+      "name": "Naples, Italy (for Capri & Pompeii)"
+    },
+    {
+      "code": "NYC",
+      "name": "New York City (Manhattan or Brooklyn), New York"
+    },
+    {
+      "code": "JFM",
+      "name": "Perth (Fremantle), Australia"
+    },
+    {
+      "code": "PCV",
+      "name": "Port Canaveral (Orlando), Florida"
+    },
+    {
+      "code": "YQB",
+      "name": "Quebec City, Canada"
+    },
+    {
+      "code": "RAN",
+      "name": "Ravenna, Italy"
+    },
+    {
+      "code": "REK",
+      "name": "Reykjavik, Iceland"
+    },
+    {
+      "code": "SA3",
+      "name": "San Antonio (for Santiago), Chile"
+    },
+    {
+      "code": "SAN",
+      "name": "San Diego, California"
+    },
+    {
+      "code": "SFO",
+      "name": "San Francisco, California"
+    },
+    {
+      "code": "SJU",
+      "name": "San Juan, Puerto Rico"
+    },
+    {
+      "code": "SEA",
+      "name": "Seattle, Washington"
+    },
+    {
+      "code": "SIN",
+      "name": "Singapore"
+    },
+    {
+      "code": "SOU",
+      "name": "Southampton (for London), England"
+    },
+    {
+      "code": "SYD",
+      "name": "Sydney, Australia"
+    },
+    {
+      "code": "YOK",
+      "name": "Tokyo (Yokohama), Japan"
+    },
+    {
+      "code": "TYO",
+      "name": "Tokyo, Japan"
+    },
+    {
+      "code": "TRS",
+      "name": "Trieste (for Venice), Italy"
+    },
+    {
+      "code": "YVR",
+      "name": "Vancouver, Canada"
+    }
+  ],
+  "ships": [
+    {
+      "name": "Caribbean Princess",
+      "code": "CB",
+      "page": "https://www.princess.com/ships-and-experience/ships/cb-caribbean-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=CB"
+    },
+    {
+      "name": "Coral Princess",
+      "code": "CO",
+      "page": "https://www.princess.com/ships-and-experience/ships/co-coral-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=CO"
+    },
+    {
+      "name": "Crown Princess",
+      "code": "KP",
+      "page": "https://www.princess.com/ships-and-experience/ships/kp-crown-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=KP"
+    },
+    {
+      "name": "Diamond Princess",
+      "code": "DI",
+      "page": "https://www.princess.com/ships-and-experience/ships/di-diamond-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=DI"
+    },
+    {
+      "name": "Discovery Princess",
+      "code": "XP",
+      "page": "https://www.princess.com/ships-and-experience/ships/xp-discovery-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=XP"
+    },
+    {
+      "name": "Emerald Princess",
+      "code": "EP",
+      "page": "https://www.princess.com/ships-and-experience/ships/ep-emerald-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=EP"
+    },
+    {
+      "name": "Enchanted Princess",
+      "code": "EX",
+      "page": "https://www.princess.com/ships-and-experience/ships/ex-enchanted-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=EX"
+    },
+    {
+      "name": "Grand Princess",
+      "code": "AP",
+      "page": "https://www.princess.com/ships-and-experience/ships/ap-grand-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=AP"
+    },
+    {
+      "name": "Island Princess",
+      "code": "IP",
+      "page": "https://www.princess.com/ships-and-experience/ships/ip-island-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=IP"
+    },
+    {
+      "name": "Majestic Princess",
+      "code": "MJ",
+      "page": "https://www.princess.com/ships-and-experience/ships/mj-majestic-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=MJ"
+    },
+    {
+      "name": "Regal Princess",
+      "code": "GP",
+      "page": "https://www.princess.com/ships-and-experience/ships/gp-regal-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=GP"
+    },
+    {
+      "name": "Royal Princess",
+      "code": "RP",
+      "page": "https://www.princess.com/ships-and-experience/ships/rp-royal-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=RP"
+    },
+    {
+      "name": "Ruby Princess",
+      "code": "RU",
+      "page": "https://www.princess.com/ships-and-experience/ships/ru-ruby-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=RU"
+    },
+    {
+      "name": "Sapphire Princess",
+      "code": "SA",
+      "page": "https://www.princess.com/ships-and-experience/ships/sa-sapphire-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=SA"
+    },
+    {
+      "name": "Sky Princess",
+      "code": "YP",
+      "page": "https://www.princess.com/ships-and-experience/ships/yp-sky-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=YP"
+    },
+    {
+      "name": "Star Princess",
+      "code": "ST",
+      "page": "https://www.princess.com/ships-and-experience/ships/st-star-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=ST"
+    },
+    {
+      "name": "Sun Princess",
+      "code": "SU",
+      "page": "https://www.princess.com/ships-and-experience/ships/su-sun-princess",
+      "searchUrl": "https://www.princess.com/cruise-search/results/?ship=SU"
+    }
+  ],
+  "deals": {
+    "pages": [
+      {
+        "text": "All Deals & Offers",
+        "url": "https://www.princess.com/cruise-deals-promotions"
+      },
+      {
+        "text": "Flash Sale | Up to $800 Savings + 45% Off",
+        "url": "https://www.princess.com/cruise-deals-promotions/flash-sale"
+      },
+      {
+        "text": "Last Minute Deals",
+        "url": "https://www.princess.com/cruise-deals-promotions/last-minute-cruise-deals"
+      },
+      {
+        "text": "2028 Early Booking Bonus",
+        "url": "https://www.princess.com/cruise-deals-promotions/early-booking-bonus"
+      },
+      {
+        "text": "Caribbean Cruise Deals",
+        "url": "https://www.princess.com/cruise-deals-promotions/caribbean-sailing"
+      },
+      {
+        "text": "Free 3rd & 4th Guests",
+        "url": "https://www.princess.com/cruise-search/results/?voyages=4650,4703,4705,U649,4701,4649,4702,4704,U705,4706,U648,U703,N702,N703,N704,4719,4720,4721,4735,4736,4737,4738,3718,X720,E727,U715,U733,U736,U739,U717A"
+      },
+      {
+        "text": "European Cruise Deals",
+        "url": "https://www.princess.com/cruise-deals-promotions/europe-sailing"
+      },
+      {
+        "text": "Cruise Package Deals",
+        "url": "https://www.princess.com/cruise-deals-promotions/plus-premier-cruise-packages"
+      },
+      {
+        "text": "Casino Perks & Discounts",
+        "url": "https://www.princess.com/ships-and-experience/onboard-experience/activities/casino"
+      },
+      {
+        "text": "Standby Program",
+        "url": "https://www.princess.com/cruise-deals-promotions/standby-program"
+      }
+    ],
+    "onHomePage": [
+      {
+        "text": "SALE ENDS IN 53 HRS 18 MNS 09 SEC VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?promos=2GD&duration=4_115",
+        "searchParams": {
+          "promos": "2GD",
+          "duration": "4_115"
+        }
+      },
+      {
+        "text": "Up to $400 instant savings 6-8 day cruises View cruises",
+        "linkText": "View cruises",
+        "url": "https://www.princess.com/cruise-search/results/?promos=2GD&duration=6_8",
+        "searchParams": {
+          "promos": "2GD",
+          "duration": "6_8"
+        }
+      },
+      {
+        "text": "Up to $600 instant savings 9-12 day cruises View cruises",
+        "linkText": "View cruises",
+        "url": "https://www.princess.com/cruise-search/results/?promos=2GD&duration=9_12",
+        "searchParams": {
+          "promos": "2GD",
+          "duration": "9_12"
+        }
+      },
+      {
+        "text": "Up to $800 instant savings 13-17 day cruises View cruises",
+        "linkText": "View cruises",
+        "url": "https://www.princess.com/cruise-search/results/?promos=2GD&duration=13_17",
+        "searchParams": {
+          "promos": "2GD",
+          "duration": "13_17"
+        }
+      },
+      {
+        "text": "Last minute cruise deals Get the best deals on cruises that are sailing soon. VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?promos=RG1",
+        "searchParams": {
+          "promos": "RG1"
+        }
+      },
+      {
+        "text": "Free 3rd & 4th guests‎ If you're bringing the whole crew, we've got you covered — 3rd & 4th guests sail free on select voyages (taxes and fees apply). VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?voyages=2629N,3702B,G645,G647,G651,Y637,Y635,G649,Y702,Y704,G702,G706,G704,Y706,G708,Y708,B706,G710,Y710,G712,4645,4646,U644,4647,U645,4648,U646,4650,U649,4701,U647,6632N,3701,4649,U648,4651,U701,4703,4705,U706,U704,U702,3702,3703,3704,3705,3706,3705B,3702C,3703B,3704B,4702,4704,U705,4706,U703,3706B,4707,3707,U707,3707B,4708,U708,3708,3708B,4709,3709,U709,3709B,4710,U710,3710,3710B,4711,3711,U711,3711B,4712,U712,3712,3712B,4713,G712N,3713,U713,4714,G712P,3714,G713N,G714N,G646,G648,Y634,Y636,G701,Y701,3621,G650,G705,Y703,Y705,G703,G707,Y707,G709,Y709,G711,Y633,B708,3713A,6630N,6630P,N642,N701,N702,N703,N704,N705,N706,N707,N708,N709,N710,N711,6701N,8634,2630N,B709,B710,4645A,G645A,4646A,G646A,U644A,4647A,G647A,U645A,G648A,4648A,U646A,N641,G651A,G701A,U701A,4649A,U647A,4650A,U648A,U649A,4701A,4651A,3701A,G649A,G650A,G704A,G705A,U705A,4702A,U702A,4703A,U703A,4704A,U704A,4705A,4706A,U706A,3702A,3703A,3704A,3705A,3706A,G702A,G703A,G706A,4707A,G707A,U707A,3707A,4708A,G708A,U708A,3708A,G709A,4709A,U709A,3709A,4710A,U710A,3710A,G710A,4711A,G711A,U711A,3711A,4712A,U712A,3712A,4713A,G712A,%203717,R710,R712,R721,R722,R723,4719,4720,4721,4735,4736,4737,4738,3718,X720,E727,E728,6724,3737,6725,X739,1732,4739,4718,E711,1713,1714,R711,1715,E713,1716,E714,1729,1730,1731,E729,E731,3719,2710,X721,6708,3721,X723,6710,3723,2724,X735,6722,3735,2726,X737,3719A,2710A,X721A,6708A,3721A,X723A,6710A,3723A,2724A,X735A,6722A,3735A,2726A,X737A,3720,X722,6709,3722,6711,3724,6721,3734,2725,X736,6723,3736,2727,X738,8717,U717,U735,U716,Y712,U715,U733,U736,N729,N728,8718,8719,Y714,8732,Y713N,U715A,U733A,U736A,U716A,U734A,Y715,8715,8716,U717A,U735A,G716,G722C,N729C,G724A,U715B,U716B,U717B,N713C,U718B,U719B,N714B,U720B,N715A,U721B,U724A,U725A,U726A,U730B,U731B,N726C,U732B,N727C,U733B,U734B,N728C,U735B,U736B,G716F,G717D,G718D,G721B,G722B,G720B,G723A,G719C,Y719A,G716E,N728B,Y729,G717C,N713B,U725B,U726B,N727B,N714A,U724B,N726B,G720A,G718C,G722A,G721A,G719B,G716D,N727A,G717B,G718B,G719A,N713A,N729A,G716C,G717A,G718A,G716B,G716A",
+        "searchParams": {
+          "voyages": "2629N,3702B,G645,G647,G651,Y637,Y635,G649,Y702,Y704,G702,G706,G704,Y706,G708,Y708,B706,G710,Y710,G712,4645,4646,U644,4647,U645,4648,U646,4650,U649,4701,U647,6632N,3701,4649,U648,4651,U701,4703,4705,U706,U704,U702,3702,3703,3704,3705,3706,3705B,3702C,3703B,3704B,4702,4704,U705,4706,U703,3706B,4707,3707,U707,3707B,4708,U708,3708,3708B,4709,3709,U709,3709B,4710,U710,3710,3710B,4711,3711,U711,3711B,4712,U712,3712,3712B,4713,G712N,3713,U713,4714,G712P,3714,G713N,G714N,G646,G648,Y634,Y636,G701,Y701,3621,G650,G705,Y703,Y705,G703,G707,Y707,G709,Y709,G711,Y633,B708,3713A,6630N,6630P,N642,N701,N702,N703,N704,N705,N706,N707,N708,N709,N710,N711,6701N,8634,2630N,B709,B710,4645A,G645A,4646A,G646A,U644A,4647A,G647A,U645A,G648A,4648A,U646A,N641,G651A,G701A,U701A,4649A,U647A,4650A,U648A,U649A,4701A,4651A,3701A,G649A,G650A,G704A,G705A,U705A,4702A,U702A,4703A,U703A,4704A,U704A,4705A,4706A,U706A,3702A,3703A,3704A,3705A,3706A,G702A,G703A,G706A,4707A,G707A,U707A,3707A,4708A,G708A,U708A,3708A,G709A,4709A,U709A,3709A,4710A,U710A,3710A,G710A,4711A,G711A,U711A,3711A,4712A,U712A,3712A,4713A,G712A, 3717,R710,R712,R721,R722,R723,4719,4720,4721,4735,4736,4737,4738,3718,X720,E727,E728,6724,3737,6725,X739,1732,4739,4718,E711,1713,1714,R711,1715,E713,1716,E714,1729,1730,1731,E729,E731,3719,2710,X721,6708,3721,X723,6710,3723,2724,X735,6722,3735,2726,X737,3719A,2710A,X721A,6708A,3721A,X723A,6710A,3723A,2724A,X735A,6722A,3735A,2726A,X737A,3720,X722,6709,3722,6711,3724,6721,3734,2725,X736,6723,3736,2727,X738,8717,U717,U735,U716,Y712,U715,U733,U736,N729,N728,8718,8719,Y714,8732,Y713N,U715A,U733A,U736A,U716A,U734A,Y715,8715,8716,U717A,U735A,G716,G722C,N729C,G724A,U715B,U716B,U717B,N713C,U718B,U719B,N714B,U720B,N715A,U721B,U724A,U725A,U726A,U730B,U731B,N726C,U732B,N727C,U733B,U734B,N728C,U735B,U736B,G716F,G717D,G718D,G721B,G722B,G720B,G723A,G719C,Y719A,G716E,N728B,Y729,G717C,N713B,U725B,U726B,N727B,N714A,U724B,N726B,G720A,G718C,G722A,G721A,G719B,G716D,N727A,G717B,G718B,G719A,N713A,N729A,G716C,G717A,G718A,G716B,G716A"
+        }
+      },
+      {
+        "text": "Caribbean cruise deals Book now and enjoy up to $800 instant savings, 45% off, and $99 deposits. VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?trade=C&promos=2GD",
+        "searchParams": {
+          "trade": "C",
+          "promos": "2GD"
+        }
+      },
+      {
+        "text": "Secure your 2028 cruise & save more With 2028 itineraries now available to book, there's still time to take advantage of up to $300 instant savings, up to $300 onboard credit, and valuable perks including room location upgrades, priority dining and boarding access, reduced deposits, and more. Book n…",
+        "linkText": "LEARN MORE",
+        "url": "https://www.princess.com/cruise-deals-promotions/early-booking-bonus"
+      },
+      {
+        "text": "Secure your 2028 cruise & save more With 2028 itineraries now available to book, there's still time to take advantage of up to $300 instant savings, up to $300 onboard credit, and valuable perks including room location upgrades, priority dining and boarding access, reduced deposits, and more. Book n…",
+        "linkText": "View cruises",
+        "url": "https://www.princess.com/cruise-search/results/?promos=KHS",
+        "searchParams": {
+          "promos": "KHS"
+        }
+      },
+      {
+        "text": "Princess Plus® and Princess Premier® Save on things you love most like drinks, dining and Wi-Fi. Compare the benefits of both packages. VIEW PACKAGES",
+        "linkText": "VIEW PACKAGES",
+        "url": "https://www.princess.com/cruise-deals-promotions/plus-premier-cruise-packages"
+      }
+    ]
+  },
+  "featured": {
+    "ports": [
+      {
+        "text": "Sail from Ft. Lauderdale VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?startPort=FLL&mrch=1",
+        "searchParams": {
+          "startPort": "FLL",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from Los Angeles VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?port=LAX&mrch=1",
+        "searchParams": {
+          "port": "LAX",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from Miami VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?port=MIA&mrch=1",
+        "searchParams": {
+          "port": "MIA",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from Seattle VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?startPort=SEA&mrch=1",
+        "searchParams": {
+          "startPort": "SEA",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from Port Canaveral VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?startPort=PCV&mrch=1",
+        "searchParams": {
+          "startPort": "PCV",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from San Francisco VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?startPort=SFO&mrch=1",
+        "searchParams": {
+          "startPort": "SFO",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from Vancouver VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?startPort=YVR&mrch=1",
+        "searchParams": {
+          "startPort": "YVR",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from New York City VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?startPort=NYC&mrch=1",
+        "searchParams": {
+          "startPort": "NYC",
+          "mrch": "1"
+        }
+      },
+      {
+        "text": "Sail from San Juan, PR VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?startPort=SJU&mrch=1",
+        "searchParams": {
+          "startPort": "SJU",
+          "mrch": "1"
+        }
+      }
+    ],
+    "shipSailings": [
+      {
+        "text": "From $975 $625 per person VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?trade=A&ship=RP&date=0127,0227,0327,0427,0527,0627,0727,0827,0927,1027,1127,1227,0128,0228,0328,0428,0528,0628,0728,0828,0928,1028,1128,1228",
+        "searchParams": {
+          "trade": "A",
+          "ship": "RP",
+          "date": "0127,0227,0327,0427,0527,0627,0727,0827,0927,1027,1127,1227,0128,0228,0328,0428,0528,0628,0728,0828,0928,1028,1128,1228"
+        }
+      },
+      {
+        "text": "From $769 $289 per person VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?trade=L&ship=RP&date=0127,0227,0327,0427,0527,0627,0727,0827,0927,1027,1127,1227,0128,0228,0328,0428,0528,0628,0728,0828,0928,1028,1128,1228",
+        "searchParams": {
+          "trade": "L",
+          "ship": "RP",
+          "date": "0127,0227,0327,0427,0527,0627,0727,0827,0927,1027,1127,1227,0128,0228,0328,0428,0528,0628,0728,0828,0928,1028,1128,1228"
+        }
+      },
+      {
+        "text": "From $559 $383 per person VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?trade=Z&ship=RP&date=0127,0227,0327,0427,0527,0627,0727,0827,0927,1027,1127,1227,0128,0228,0328,0428,0528,0628,0728,0828,0928,1028,1128,1228",
+        "searchParams": {
+          "trade": "Z",
+          "ship": "RP",
+          "date": "0127,0227,0327,0427,0527,0627,0727,0827,0927,1027,1127,1227,0128,0228,0328,0428,0528,0628,0728,0828,0928,1028,1128,1228"
+        }
+      },
+      {
+        "text": "From $514 per person VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?ship=GP&trade=C&duration=7_7",
+        "searchParams": {
+          "ship": "GP",
+          "trade": "C",
+          "duration": "7_7"
+        }
+      },
+      {
+        "text": "From $724 per person VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?ship=ST&trade=A&duration=7_7",
+        "searchParams": {
+          "ship": "ST",
+          "trade": "A",
+          "duration": "7_7"
+        }
+      },
+      {
+        "text": "From $1,108 per person VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?ship=SU&subTrade=EM&duration=7_7",
+        "searchParams": {
+          "ship": "SU",
+          "subTrade": "EM",
+          "duration": "7_7"
+        }
+      },
+      {
+        "text": "From $499 per person VIEW CRUISES",
+        "linkText": "VIEW CRUISES",
+        "url": "https://www.princess.com/cruise-search/results/?ship=XP&trade=M&duration=7_7",
+        "searchParams": {
+          "ship": "XP",
+          "trade": "M",
+          "duration": "7_7"
+        }
+      }
+    ]
+  },
+  "navigation": {
+    "menus": {
+      "Destinations": [
+        {
+          "name": "Cruise Destinations",
+          "links": [
+            {
+              "text": "Alaska",
+              "url": "https://www.princess.com/cruise-destinations/alaska-cruises"
+            },
+            {
+              "text": "Alaska Cruisetours",
+              "url": "https://www.princess.com/cruise-destinations/alaska-cruises/cruisetour-options"
+            },
+            {
+              "text": "Caribbean",
+              "url": "https://www.princess.com/cruise-destinations/caribbean-cruises"
+            },
+            {
+              "text": "Mediterranean",
+              "url": "https://www.princess.com/cruise-destinations/european-cruises/mediterranean-and-greek-isles"
+            },
+            {
+              "text": "Japan",
+              "url": "https://www.princess.com/cruise-destinations/japan-cruises"
+            },
+            {
+              "text": "Asia (sub-menu)",
+              "url": null
+            },
+            {
+              "text": "All Asia",
+              "url": "https://www.princess.com/cruise-destinations/asia-cruises"
+            },
+            {
+              "text": "Thailand",
+              "url": "https://www.princess.com/cruise-destinations/thailand-cruises"
+            },
+            {
+              "text": "Japan",
+              "url": "https://www.princess.com/cruise-destinations/japan-cruises"
+            },
+            {
+              "text": "Australia (sub-menu)",
+              "url": null
+            },
+            {
+              "text": "Australia",
+              "url": "https://www.princess.com/cruise-destinations/australia-cruises"
+            },
+            {
+              "text": "New Zealand",
+              "url": "https://www.princess.com/cruise-destinations/australia-cruises/new-zealand"
+            },
+            {
+              "text": "California Pacific Coast",
+              "url": "https://www.princess.com/cruise-destinations/california-coast-cruises"
+            },
+            {
+              "text": "Canada & New England",
+              "url": "https://www.princess.com/cruise-destinations/canada-cruises"
+            },
+            {
+              "text": "Caribbean (sub-menu)",
+              "url": null
+            },
+            {
+              "text": "All Caribbean",
+              "url": "https://www.princess.com/cruise-destinations/caribbean-cruises"
+            },
+            {
+              "text": "Eastern Caribbean",
+              "url": "https://www.princess.com/cruise-destinations/caribbean-cruises/eastern-caribbean"
+            },
+            {
+              "text": "Western Caribbean",
+              "url": "https://www.princess.com/cruise-destinations/western-caribbean-cruises"
+            },
+            {
+              "text": "Southern Caribbean",
+              "url": "https://www.princess.com/cruise-destinations/caribbean-cruises/southern-caribbean"
+            },
+            {
+              "text": "Bahamas",
+              "url": "https://www.princess.com/cruise-destinations/caribbean-cruises/bahamas-cruises"
+            },
+            {
+              "text": "Caribbean & Bahamas Getaways",
+              "url": "https://www.princess.com/cruise-destinations/caribbean-cruises/caribbean-getaways"
+            },
+            {
+              "text": "Europe (sub-menu)",
+              "url": null
+            },
+            {
+              "text": "All Europe",
+              "url": "https://www.princess.com/cruise-destinations/european-cruises"
+            },
+            {
+              "text": "British Isles",
+              "url": "https://www.princess.com/cruise-destinations/british-isles-cruises"
+            },
+            {
+              "text": "Greece",
+              "url": "https://www.princess.com/cruise-destinations/greek-isles-cruises"
+            },
+            {
+              "text": "Iceland",
+              "url": "https://www.princess.com/cruise-destinations/cruises-to-iceland"
+            },
+            {
+              "text": "Italy",
+              "url": "https://www.princess.com/cruise-destinations/italy-cruises"
+            },
+            {
+              "text": "Mediterranean",
+              "url": "https://www.princess.com/cruise-destinations/mediterranean-cruises"
+            },
+            {
+              "text": "Norway",
+              "url": "https://www.princess.com/cruise-destinations/norway-cruises"
+            },
+            {
+              "text": "Scandinavia & Baltics",
+              "url": "https://www.princess.com/cruise-destinations/european-cruises/scandinavia-baltics"
+            },
+            {
+              "text": "Transatlantic",
+              "url": "https://www.princess.com/cruise-destinations/european-cruises/transatlantic"
+            },
+            {
+              "text": "Hawaii",
+              "url": "https://www.princess.com/cruise-destinations/hawaii-cruises"
+            },
+            {
+              "text": "Mexico",
+              "url": "https://www.princess.com/cruise-destinations/mexico-cruises"
+            },
+            {
+              "text": "Panama Canal",
+              "url": "https://www.princess.com/cruise-destinations/panama-canal-cruises"
+            },
+            {
+              "text": "South America & Antarctica",
+              "url": "https://www.princess.com/cruise-destinations/south-america-cruises"
+            },
+            {
+              "text": "Tahiti & South Pacific",
+              "url": "https://www.princess.com/cruise-destinations/tahiti-south-pacific-cruises"
+            },
+            {
+              "text": "Departure Ports",
+              "url": "https://www.princess.com/cruise-destinations/departure-ports"
+            },
+            {
+              "text": "All Ports",
+              "url": "https://www.princess.com/cruise-destinations/ports"
+            },
+            {
+              "text": "All Destinations",
+              "url": "https://www.princess.com/cruise-destinations"
+            }
+          ]
+        },
+        {
+          "name": "Cruise Types",
+          "links": [
+            {
+              "text": "New Cruises",
+              "url": "https://www.princess.com/cruise-destinations/new-cruise-itineraries"
+            },
+            {
+              "text": "Cruisetours",
+              "url": "https://www.princess.com/cruise-destinations/alaska-cruises/cruisetour-options"
+            },
+            {
+              "text": "Celebration Cruises",
+              "url": "https://www.princess.com/ships-and-experience/celebrations"
+            },
+            {
+              "text": "Holiday Cruises",
+              "url": "https://www.princess.com/ships-and-experience/celebrations/holidays"
+            },
+            {
+              "text": "World Cruise",
+              "url": "https://www.princess.com/cruise-destinations/world-cruises"
+            }
+          ]
+        },
+        {
+          "name": "Shore Excursions",
+          "links": [
+            {
+              "text": "Overview",
+              "url": "https://www.princess.com/shore-excursions-overview"
+            },
+            {
+              "text": "Alaska Shore Excursions",
+              "url": "https://www.princess.com/cruise-destinations/alaska-cruises/shore-excursions"
+            },
+            {
+              "text": "Local Connections",
+              "url": "https://www.princess.com/cruise-destinations/local-connections"
+            },
+            {
+              "text": "Find Shore Excursions",
+              "url": "https://www.princess.com/ports-excursions"
+            },
+            {
+              "text": "Learn More",
+              "url": "https://www.princess.com/cruise-destinations/alaska-cruises"
+            }
+          ]
+        }
+      ],
+      "Explore Ships": [
+        {
+          "name": "Ships",
+          "links": [
+            {
+              "text": "Royal Princess now with Sanctuary Collection℠",
+              "url": "https://www.princess.com/ships-and-experience/ships/rp-royal-princess"
+            },
+            {
+              "text": "Star Princess - Sailing in Alaska",
+              "url": "https://www.princess.com/ships-and-experience/ships/st-star-princess"
+            },
+            {
+              "text": "Sun Princess - Sailing in the Caribbean & Mediterranean",
+              "url": "https://www.princess.com/ships-and-experience/ships/su-sun-princess"
+            },
+            {
+              "text": "Caribbean Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/cb-caribbean-princess"
+            },
+            {
+              "text": "Coral Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/co-coral-princess"
+            },
+            {
+              "text": "Crown Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/kp-crown-princess"
+            },
+            {
+              "text": "Diamond Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/di-diamond-princess"
+            },
+            {
+              "text": "Discovery Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/xp-discovery-princess"
+            },
+            {
+              "text": "Emerald Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/ep-emerald-princess"
+            },
+            {
+              "text": "Enchanted Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/ex-enchanted-princess"
+            },
+            {
+              "text": "Grand Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/ap-grand-princess"
+            },
+            {
+              "text": "Island Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/ip-island-princess"
+            },
+            {
+              "text": "Majestic Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/mj-majestic-princess"
+            },
+            {
+              "text": "Regal Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/gp-regal-princess"
+            },
+            {
+              "text": "Ruby Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/ru-ruby-princess"
+            },
+            {
+              "text": "Sapphire Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/sa-sapphire-princess"
+            },
+            {
+              "text": "Sky Princess",
+              "url": "https://www.princess.com/ships-and-experience/ships/yp-sky-princess"
+            },
+            {
+              "text": "View All",
+              "url": "https://www.princess.com/ships-and-experience/ships"
+            }
+          ]
+        },
+        {
+          "name": "Staterooms",
+          "links": [
+            {
+              "text": "Overview",
+              "url": "https://www.princess.com/staterooms"
+            },
+            {
+              "text": "Reserve Collection",
+              "url": "https://www.princess.com/staterooms/reserve-collection"
+            },
+            {
+              "text": "Sanctuary Collection",
+              "url": "https://www.princess.com/staterooms/sanctuary-collection"
+            },
+            {
+              "text": "Suites",
+              "url": "https://www.princess.com/staterooms/suites"
+            },
+            {
+              "text": "Mini-Suites",
+              "url": "https://www.princess.com/staterooms/mini-suites"
+            },
+            {
+              "text": "Balcony",
+              "url": "https://www.princess.com/staterooms/balcony"
+            },
+            {
+              "text": "Oceanview",
+              "url": "https://www.princess.com/staterooms/oceanview"
+            },
+            {
+              "text": "Interior",
+              "url": "https://www.princess.com/staterooms/interior"
+            }
+          ]
+        },
+        {
+          "name": "Onboard Experience",
+          "links": [
+            {
+              "text": "Activities",
+              "url": "https://www.princess.com/ships-and-experience/onboard-experience"
+            },
+            {
+              "text": "Casino",
+              "url": "https://www.princess.com/ships-and-experience/onboard-experience/activities/casino"
+            },
+            {
+              "text": "Cruise Dining",
+              "url": "https://www.princess.com/cruise-dining"
+            },
+            {
+              "text": "Entertainment",
+              "url": "https://www.princess.com/ships-and-experience/onboard-experience/entertainment"
+            },
+            {
+              "text": "Kids, Teens & Families",
+              "url": "https://www.princess.com/ships-and-experience/onboard-experience/kids-and-teens"
+            },
+            {
+              "text": "Onboard Packages",
+              "url": "https://www.princess.com/cruise-dining/beverages"
+            },
+            {
+              "text": "Wellness",
+              "url": "https://www.princess.com/ships-and-experience/onboard-experience/wellness"
+            },
+            {
+              "text": "MedallionNet® at Sea",
+              "url": "https://www.princess.com/ships-and-experience/princess-medallionclass/medallionnet"
+            },
+            {
+              "text": "Learn More",
+              "url": "https://www.princess.com/ships-and-experience/ships/st-star-princess"
+            }
+          ]
+        }
+      ],
+      "Discover Princess": [
+        {
+          "name": "About Cruising",
+          "links": [
+            {
+              "text": "Princess Blog",
+              "url": "https://www.princess.com/blog"
+            },
+            {
+              "text": "Compare Cruise Packages",
+              "url": "https://www.princess.com/cruise-deals-promotions/compare-cruise-packages"
+            },
+            {
+              "text": "New to Cruising",
+              "url": "https://www.princess.com/why-princess/new-to-cruising"
+            },
+            {
+              "text": "Frequently Asked Questions",
+              "url": "https://www.princess.com/faq"
+            }
+          ]
+        },
+        {
+          "name": "Cruise Essentials",
+          "links": [
+            {
+              "text": "Manage Booking",
+              "url": "https://book.princess.com/manage-booking/index.page?cpfy=summary"
+            },
+            {
+              "text": "Find Shore Excursions",
+              "url": "https://www.princess.com/ports-excursions"
+            },
+            {
+              "text": "Vacation Protection",
+              "url": "https://www.princess.com/plan/princess-vacation-protection"
+            },
+            {
+              "text": "Hotels",
+              "url": "https://www.princess.com/cruise-destinations/departure-ports/cruise-ports-and-hotels"
+            },
+            {
+              "text": "Accessibility Services",
+              "url": "https://www.princess.com/accessibility-at-sea"
+            },
+            {
+              "text": "Brochures",
+              "url": "https://www.princess.com/brochures"
+            }
+          ]
+        },
+        {
+          "name": "Why Princess",
+          "links": [
+            {
+              "text": "Overview",
+              "url": "https://www.princess.com/why-princess"
+            },
+            {
+              "text": "About Us",
+              "url": "https://www.princess.com/about-princess"
+            },
+            {
+              "text": "Princess Blog",
+              "url": "https://www.princess.com/blog"
+            },
+            {
+              "text": "Loyalty Program",
+              "url": "https://book.princess.com/captaincircle/membershipBenefits.page"
+            },
+            {
+              "text": "Awards & Accolades",
+              "url": "https://www.princess.com/why-princess/awards-and-accolades"
+            },
+            {
+              "text": "Personalized Experience",
+              "url": "https://www.princess.com/ships-and-experience/princess-medallionclass"
+            },
+            {
+              "text": "Environmental Responsibility",
+              "url": "https://www.princess.com/company-information/environmental-responsibility"
+            },
+            {
+              "text": "Explore articles",
+              "url": "https://www.princess.com/blog"
+            }
+          ]
+        }
+      ],
+      "Deals": [
+        {
+          "name": "Cruise Deals",
+          "links": [
+            {
+              "text": "All Deals & Offers",
+              "url": "https://www.princess.com/cruise-deals-promotions"
+            },
+            {
+              "text": "Flash Sale | Up to $800 Savings + 45% Off",
+              "url": "https://www.princess.com/cruise-deals-promotions/flash-sale"
+            },
+            {
+              "text": "Last Minute Deals",
+              "url": "https://www.princess.com/cruise-deals-promotions/last-minute-cruise-deals"
+            },
+            {
+              "text": "2028 Early Booking Bonus",
+              "url": "https://www.princess.com/cruise-deals-promotions/early-booking-bonus"
+            },
+            {
+              "text": "Caribbean Cruise Deals",
+              "url": "https://www.princess.com/cruise-deals-promotions/caribbean-sailing"
+            },
+            {
+              "text": "Free 3rd & 4th Guests",
+              "url": "https://www.princess.com/cruise-search/results/?voyages=4650,4703,4705,U649,4701,4649,4702,4704,U705,4706,U648,U703,N702,N703,N704,4719,4720,4721,4735,4736,4737,4738,3718,X720,E727,U715,U733,U736,U739,U717A"
+            },
+            {
+              "text": "European Cruise Deals",
+              "url": "https://www.princess.com/cruise-deals-promotions/europe-sailing"
+            },
+            {
+              "text": "Cruise Package Deals",
+              "url": "https://www.princess.com/cruise-deals-promotions/plus-premier-cruise-packages"
+            },
+            {
+              "text": "Casino Perks & Discounts",
+              "url": "https://www.princess.com/ships-and-experience/onboard-experience/activities/casino"
+            },
+            {
+              "text": "Standby Program",
+              "url": "https://www.princess.com/cruise-deals-promotions/standby-program"
+            }
+          ]
+        },
+        {
+          "name": "Packages",
+          "links": [
+            {
+              "text": "Plus & Premier Packages",
+              "url": "https://www.princess.com/cruise-deals-promotions/plus-premier-cruise-packages"
+            },
+            {
+              "text": "Beverage Packages",
+              "url": "https://www.princess.com/cruise-dining/beverages"
+            },
+            {
+              "text": "Cruise & Flight Packages",
+              "url": "https://www.princess.com/plan/ezair"
+            },
+            {
+              "text": "Celebration Packages",
+              "url": "https://www.princess.com/ships-and-experience/celebrations/cruise-gifts-services/celebration-packages"
+            },
+            {
+              "text": "Internet Packages",
+              "url": "https://www.princess.com/ships-and-experience/princess-medallionclass/medallionnet"
+            },
+            {
+              "text": "Romance Package",
+              "url": "https://www.princess.com/ships-and-experience/celebrations/cruise-gifts-services/romance-packages"
+            }
+          ]
+        },
+        {
+          "name": "Loyalty",
+          "links": [
+            {
+              "text": "Casino",
+              "url": "https://www.princess.com/ships-and-experience/onboard-experience/activities/casino"
+            },
+            {
+              "text": "Captain's Circle",
+              "url": "https://book.princess.com/captaincircle/membershipBenefits.page"
+            },
+            {
+              "text": "Create an Account",
+              "url": "https://www.princess.com/my-princess/register/"
+            },
+            {
+              "text": "Military",
+              "url": "https://www.princess.com/cruise-deals-promotions/military-benefit-program"
+            },
+            {
+              "text": "Princess® Rewards Visa® Card",
+              "url": "https://cards.barclaycardus.com/banking/credit-card/princess/visa-signature/co-brand-partner-site/fa2c9fe2-570f-4194-83e3-8db3ed2700b7?referrerid=PCLLoyalty"
+            },
+            {
+              "text": "Learn More",
+              "url": "https://www.princess.com/cruise-deals-promotions/limited-time-offer"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "interactions": [
+    {
+      "name": "Find a cruise (search form)",
+      "how": "Pick destination/port/month in the three dropdowns, click SEARCH CRUISES",
+      "see": "searchForm"
+    },
+    {
+      "name": "FIND A CRUISE button (header)",
+      "how": "Opens a search for all cruises",
+      "url": "https://www.princess.com/cruise-search/results/?trade=E,C,A,M,T,N&duration=1,2,3&mrch=1"
+    },
+    {
+      "name": "Main menus",
+      "how": "Click a menu button, e.g. getByRole('button', { name: 'Deals' }), to open its mega-menu",
+      "see": "navigation.menus"
+    },
+    {
+      "name": "Site search",
+      "how": "Click getByRole('button', { name: 'Search' }), then type in #st-overlay-search-input"
+    },
+    {
+      "name": "Manage booking",
+      "how": "Click getByRole('button', { name: 'Manage booking' }) for check-in, payments, excursions",
+      "url": "https://book.princess.com/manage-booking/index.page"
+    },
+    {
+      "name": "Log in",
+      "url": "https://www.princess.com/my-princess/login/"
+    },
+    {
+      "name": "Create account",
+      "url": "https://www.princess.com/my-princess/register/"
+    },
+    {
+      "name": "Email sign-up form",
+      "how": "Fields #sign-up-form-email, #sign-up-firstName, #sign-up-lastName, then SIGN UP",
+      "note": "Submits real data. Do not submit in automation without permission."
+    },
+    {
+      "name": "Phone",
+      "value": "1-800-774-6237"
+    },
+    {
+      "name": "Cookie banner",
+      "how": "Close with getByRole('button', { name: 'Close Cookie Banner' })"
+    }
+  ],
+  "headings": [
+    {
+      "level": 3,
+      "text": "Privacy Notice"
+    },
+    {
+      "level": 2,
+      "text": "Find a cruise"
+    },
+    {
+      "level": 2,
+      "text": "Escape to the extraordinary with up to $800 instant savings"
+    },
+    {
+      "level": 2,
+      "text": "Exclusive offers you can’t miss"
+    },
+    {
+      "level": 2,
+      "text": "Last minute cruise deals"
+    },
+    {
+      "level": 2,
+      "text": "Free 3rd & 4th guests‎"
+    },
+    {
+      "level": 2,
+      "text": "Caribbean cruise deals"
+    },
+    {
+      "level": 3,
+      "text": "Secure your 2028 cruise & save more"
+    },
+    {
+      "level": 2,
+      "text": "Find cruises near you"
+    },
+    {
+      "level": 2,
+      "text": "Sail from Port Canaveral"
+    },
+    {
+      "level": 3,
+      "text": "Sign up and get $50 of onboard credit on your next cruise"
+    },
+    {
+      "level": 3,
+      "text": "Princess Plus® and Princess Premier®"
+    },
+    {
+      "level": 2,
+      "text": "Your perfect cruise ship awaits"
+    },
+    {
+      "level": 2,
+      "text": "Sail away to 330+ destinations"
+    },
+    {
+      "level": 2,
+      "text": "The Princess difference"
+    },
+    {
+      "level": 3,
+      "text": "Elevated dining & entertainment"
+    },
+    {
+      "level": 3,
+      "text": "Memorable experiences ashore"
+    },
+    {
+      "level": 3,
+      "text": "Discover Princess casino perks & discounts‎"
+    },
+    {
+      "level": 3,
+      "text": "Effortless, personalized cruising"
+    },
+    {
+      "level": 3,
+      "text": "Book now, pay later"
+    },
+    {
+      "level": 3,
+      "text": "Get the new Princess® App"
+    },
+    {
+      "level": 3,
+      "text": "Princess Vacation Protection"
+    },
+    {
+      "level": 3,
+      "text": "The Princess® Rewards Visa® Card Earn 20,000 Bonus Points = $200 Onboard Credit"
+    }
+  ]
+}

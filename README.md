@@ -10,6 +10,13 @@ the [Playwright MCP server](https://github.com/microsoft/playwright-mcp).
 ├── .mcp.json                 # Playwright MCP server config for Claude Code
 ├── package.json              # npm workspaces root
 ├── tsconfig.base.json        # shared TypeScript settings
+├── .claude/skills/           # Claude skills (princess-deals, -ships, -destinations)
+├── data/sites/               # page maps captured from websites
+│   └── princess.com/
+│       ├── home.json         # clean map: search form, destinations, ports, ships, deals, menus
+│       ├── home.raw.json     # everything captured (all links, buttons, fields)
+│       ├── home.aria.yml     # accessibility tree snapshot
+│       └── home.png          # screenshot
 ├── docs/
 │   └── using-playwright-mcp.md
 └── packages/
@@ -19,8 +26,23 @@ the [Playwright MCP server](https://github.com/microsoft/playwright-mcp).
     │   ├── pages/            # page objects
     │   ├── fixtures/         # custom test fixtures
     │   └── test-data/        # JSON test data
+    ├── princess/             # Princess Cruises lookups (search, deals, codes)
+    ├── site-mapper/          # maps any page into JSON
     └── shared/               # helpers shared across packages
         └── src/
+```
+
+## Princess Cruises
+
+```bash
+# Refresh the home page map
+npm run map:home -w @wa/princess
+
+# Live lookups (print JSON)
+node packages/princess/princess.mjs search --destination alaska --port seattle --month 2027-06
+node packages/princess/princess.mjs search --ship "sun princess" --days 7
+node packages/princess/princess.mjs deals
+node packages/princess/princess.mjs codes
 ```
 
 ## Getting started

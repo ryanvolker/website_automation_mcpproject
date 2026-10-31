@@ -1,0 +1,781 @@
+- img
+- navigation "Main navigation":
+  - link "Skip to main content":
+    - /url: "#main-content"
+  - button "Subscribe"
+  - img
+  - link "1-800-774-6237":
+    - /url: tel:1-800-774-6237
+  - button "Search":
+    - img
+    - text: Search
+  - status
+  - status
+  - button "Manage booking"
+  - link "Log In":
+    - /url: https://www.princess.com/my-princess/login//?src=idetails
+  - text: "|"
+  - link "Create account":
+    - /url: https://www.princess.com/my-princess/register/
+  - link "Princess.com":
+    - /url: /
+    - img "Princess.com"
+  - button "Destinations":
+    - link "Destinations":
+      - /url: "#"
+  - button "Explore Ships":
+    - link "Explore Ships":
+      - /url: "#"
+  - button "Discover Princess":
+    - link "Discover Princess":
+      - /url: "#"
+  - button "Deals":
+    - link "Deals":
+      - /url: "#"
+  - link "Find a Cruise":
+    - /url: https://www.princess.com/cruise-search/results/?trade=E,C,A,M,T,N&duration=1,2,3&mrch=1
+- main:
+  - group "Sale Ends in"
+  - text: 53 HRS 18 MNS 08 SEC
+  - 'img "Flash sale: up to $800 instant savings, plus up up to 45% off, plus free 3rd and 4th guests"'
+  - button "View cruises"
+  - group "Find a cruise":
+    - heading "Find a cruise" [level=2]
+    - text: Cruising to
+    - combobox "Cruising to":
+      - option "Any destination" [selected]
+      - option "Alaska"
+      - option "Asia"
+      - option "Australia & New Zealand"
+      - option "California Coast"
+      - option "Canada & New England"
+      - option "Caribbean"
+      - option "Europe"
+      - option "Hawaii"
+      - option "Japan"
+      - option "Mexico"
+      - option "Panama Canal"
+      - option "South America & Antarctica"
+      - option "Tahiti & South Pacific"
+      - option "TransAtlantics"
+      - option "World Cruises"
+    - text: Departing from
+    - combobox "Departing from":
+      - option "Any port" [selected]
+      - option "Adelaide, Australia"
+      - option "Anchorage (Whittier), Alaska"
+      - option "Athens (Piraeus), Greece"
+      - option "Auckland, New Zealand"
+      - option "Barbados"
+      - option "Barcelona, Spain"
+      - option "Boston, Massachusetts"
+      - option "Brisbane, Australia"
+      - option "Buenos Aires, Argentina"
+      - option "Cape Town, South Africa"
+      - option "Civitavecchia (for Rome), Italy"
+      - option "Copenhagen, Denmark"
+      - option "Ft. Lauderdale, Florida"
+      - option "Helsinki, Finland"
+      - option "Hong Kong"
+      - option "Honolulu, Hawaii"
+      - option "Istanbul, Turkey"
+      - option "Los Angeles, California"
+      - option "Melbourne, Australia"
+      - option "Miami, Florida"
+      - option "Naples, Italy (for Capri & Pompeii)"
+      - option "New York City (Manhattan or Brooklyn), New York"
+      - option "Perth (Fremantle), Australia"
+      - option "Port Canaveral (Orlando), Florida"
+      - option "Quebec City, Canada"
+      - option "Ravenna, Italy"
+      - option "Reykjavik, Iceland"
+      - option "San Antonio (for Santiago), Chile"
+      - option "San Diego, California"
+      - option "San Francisco, California"
+      - option "San Juan, Puerto Rico"
+      - option "Seattle, Washington"
+      - option "Singapore"
+      - option "Southampton (for London), England"
+      - option "Sydney, Australia"
+      - option "Tokyo (Yokohama), Japan"
+      - option "Tokyo, Japan"
+      - option "Trieste (for Venice), Italy"
+      - option "Vancouver, Canada"
+    - text: Leaving
+    - combobox "Leaving":
+      - option "Any date" [selected]
+      - option "October 2026"
+      - option "November 2026"
+      - option "December 2026"
+      - option "January 2027"
+      - option "February 2027"
+      - option "March 2027"
+      - option "April 2027"
+      - option "May 2027"
+      - option "June 2027"
+      - option "July 2027"
+      - option "August 2027"
+      - option "September 2027"
+      - option "October 2027"
+      - option "November 2027"
+      - option "December 2027"
+      - option "January 2028"
+      - option "February 2028"
+      - option "March 2028"
+      - option "April 2028"
+      - option "May 2028"
+      - option "June 2028"
+      - option "July 2028"
+      - option "August 2028"
+      - option "September 2028"
+      - option "October 2028"
+      - option "November 2028"
+      - option "December 2028"
+      - option "January 2029"
+      - option "February 2029"
+      - option "March 2029"
+      - option "April 2029"
+    - link "SEARCH CRUISES":
+      - /url: https://www.princess.com/cruise-search/results/?resType=C
+  - heading "Escape to the extraordinary with up to $800 instant savings" [level=2]
+  - img
+  - paragraph: Up to $400 instant savings
+  - paragraph:
+    - strong: 6-8 day cruises
+  - link "View cruises":
+    - /url: https://www.princess.com/cruise-search/results/?promos=2GD&duration=6_8
+  - img
+  - paragraph: Up to $600
+  - paragraph: instant savings
+  - paragraph:
+    - strong: 9-12 day cruises
+  - link "View cruises":
+    - /url: https://www.princess.com/cruise-search/results/?promos=2GD&duration=9_12
+  - img
+  - paragraph: Up to $800 instant savings
+  - paragraph:
+    - strong: 13-17 day cruises
+  - link "View cruises":
+    - /url: https://www.princess.com/cruise-search/results/?promos=2GD&duration=13_17
+  - paragraph: NEW AT PRINCESS CRUISES
+  - paragraph: Royal Princess now with Sanctuary Collection℠
+  - paragraph: The exclusive Sanctuary Collection, featured on Sun Princess and Star Princess, is expanding to Royal Princess and debuting on January 4, 2027.
+  - link "EXPLORE ROYAL PRINCESS":
+    - /url: https://www.princess.com/ships-and-experience/ships/rp-royal-princess
+  - img
+  - img
+  - img
+  - paragraph: Alaska
+  - paragraph:
+    - paragraph: From $975 $625 per person
+  - button "VIEW CRUISES Alaska From $625 per person , was $975": View cruises
+  - img
+  - paragraph: California Coast
+  - paragraph:
+    - paragraph: From $769 $289 per person
+  - button "VIEW CRUISES California Coast From $289 per person , was $769": View cruises
+  - img
+  - paragraph: Australia & New Zealand
+  - paragraph:
+    - paragraph: From $559 $383 per person
+  - button "VIEW CRUISES Australia & New Zealand From $383 per person , was $559": View cruises
+  - heading "Exclusive offers you can’t miss" [level=2]
+  - img "Beach Chairs in the Caribbean on Tropical Beach"
+  - heading "Last minute cruise deals" [level=2]
+  - paragraph: Get the best deals on cruises that are sailing soon.
+  - button "View last minute cruise deals": View cruises
+  - img "Guests of Enchanted Princess with Medallion drinks by the pool."
+  - heading "Free 3rd & 4th guests‎" [level=2]
+  - paragraph: If you're bringing the whole crew, we've got you covered — 3rd & 4th guests sail free on select voyages (taxes and fees apply).
+  - button "View free 3rd and 4th guests cruises": View cruises
+  - img "Beach image"
+  - heading "Caribbean cruise deals" [level=2]
+  - paragraph: Book now and enjoy up to $800 instant savings, 45% off, and $99 deposits.
+  - button "View Early Booking Bonus Cruises": View Cruises
+  - heading "Secure your 2028 cruise & save more" [level=3]
+  - paragraph: With 2028 itineraries now available to book, there's still time to take advantage of up to $300 instant savings, up to $300 onboard credit, and valuable perks including room location upgrades, priority dining and boarding access, reduced deposits, and more. Book now before this limited-time Early Booking Bonus ends.
+  - button "Learn More"
+  - button "View cruises":
+    - text: View cruises
+    - img
+  - img "Tulum, Mexico"
+  - heading "Find cruises near you" [level=2]
+  - text: Slide 1 of 9. Sail from Ft. Lauderdale 01 / 09
+  - group "Slide controls":
+    - button "Previous item"
+    - button "Next item"
+  - img
+  - paragraph: Sail from Ft. Lauderdale
+  - paragraph:
+    - paragraph: From $1,709 $399 per person
+  - button "VIEW CRUISES Sail from Ft. Lauderdale From $399 per person , was $1,709": View cruises
+  - img
+  - paragraph: Sail from Los Angeles
+  - paragraph:
+    - paragraph: From $660 $309 per person
+  - button "VIEW CRUISES Sail from Los Angeles From $309 per person , was $660": View cruises
+  - img
+  - paragraph: Sail from Miami
+  - paragraph:
+    - paragraph: From $1,505 $514 per person
+  - button "VIEW CRUISES Sail from Miami From $514 per person , was $1,505": View cruises
+  - img
+  - paragraph: Sail from Seattle
+  - paragraph:
+    - paragraph: From $2,045 $724 per person
+  - button "VIEW CRUISES Sail from Seattle From $724 per person , was $2,045": View cruises
+  - img
+  - heading "Sail from Port Canaveral" [level=2]
+  - paragraph
+  - button "View cruises that sail from Port Canaveral": View cruises
+  - img
+  - paragraph: Sail from San Francisco
+  - paragraph
+  - button "View cruises that sail from San Francisco": View cruises
+  - img
+  - paragraph: Sail from Vancouver
+  - paragraph
+  - button "View cruises that sail from Vancouver": View cruises
+  - img
+  - paragraph: Sail from New York City
+  - paragraph
+  - button "View cruises that sail from New York City": View cruises
+  - img
+  - paragraph: Sail from San Juan, PR
+  - paragraph
+  - button "View cruises that sail from San Juan, Puero Rico": View cruises
+  - img
+  - paragraph: Sail from Ft. Lauderdale
+  - paragraph
+  - button "View cruises that sail from Fort Lauderdale": View cruises
+  - img
+  - paragraph: Sail from Los Angeles
+  - paragraph
+  - button "View cruises that sail from Los Angeles": View cruises
+  - img
+  - paragraph: Sail from Miami
+  - paragraph
+  - button "View cruises that sail from Miami": View cruises
+  - img
+  - paragraph: Sail from Seattle
+  - paragraph
+  - button "View cruises that sail from Seattle": View cruises
+  - img
+  - heading "Sail from Port Canaveral" [level=2]
+  - paragraph
+  - button "View cruises that sail from Port Canaveral": View cruises
+  - img
+  - paragraph: Sail from San Francisco
+  - paragraph
+  - button "View cruises that sail from San Francisco": View cruises
+  - img
+  - paragraph: Sail from Vancouver
+  - paragraph
+  - button "View cruises that sail from Vancouver": View cruises
+  - img
+  - paragraph: Sail from New York City
+  - paragraph
+  - button "View cruises that sail from New York City": View cruises
+  - img
+  - paragraph: Sail from San Juan, PR
+  - paragraph
+  - button "View cruises that sail from San Juan, Puero Rico": View cruises
+  - button "Close Sign Up Modal":
+    - img
+  - heading "Sign up and get $50 of onboard credit on your next cruise" [level=3]
+  - text: Email*
+  - textbox "Sign up and get $50 of onboard credit on your next cruise, Email"
+  - text: First name*
+  - textbox "First name"
+  - text: Last name*
+  - textbox "Last name"
+  - paragraph:
+    - text: I would like to receive promotional emails from Princess Cruise Lines. By clicking "Sign up" I agree to the
+    - link "Website Terms":
+      - /url: https://www.princess.com/legal/legal-information
+    - strong
+    - text: and understand that my information will be used as set forth in the
+    - link "Privacy Policy":
+      - /url: https://www.princess.com/legal/legal-privacy
+    - strong: .
+    - text: Onboard credit offers available only to new Princess guests who book a 2026-2028 cruise within 90 days of email sign-up.
+    - link "Additional terms":
+      - /url: https://www.princess.com/legal/additional-terms
+    - text: apply.
+  - button "SIGN UP"
+  - heading "Princess Plus® and Princess Premier®" [level=3]
+  - paragraph: Save on things you love most like drinks, dining and Wi-Fi. Compare the benefits of both packages.
+  - button "View Princess Plus® and Princess Premier® packages": View packages
+  - heading "Your perfect cruise ship awaits" [level=2]
+  - img "Miami"
+  - paragraph: 7-day Caribbean on Regal Princess®
+  - paragraph
+  - paragraph:
+    - paragraph: From $514 per person
+  - button "VIEW CRUISES 7-day Caribbean on Regal Princess® From $514 per person": VIEW CRUISES
+  - img
+  - paragraph: 7-day Alaska on Star Princess®
+  - paragraph
+  - paragraph:
+    - paragraph: From $724 per person
+  - button "VIEW CRUISES 7-day Alaska on Star Princess® From $724 per person": VIEW CRUISES
+  - img "Fort Lauderdale"
+  - paragraph: 7-day Mediterranean on Sun Princess®
+  - paragraph:
+    - paragraph: From $1,108 per person
+  - button "VIEW CRUISES 7-day Mediterranean on Sun Princess® From $1,108 per person": VIEW CRUISES
+  - img "Miami"
+  - paragraph: 7-day Mexico on Discovery Princess®
+  - paragraph:
+    - paragraph: From $499 per person
+  - button "VIEW CRUISES 7-day Mexico on Discovery Princess® From $499 per person": VIEW CRUISES
+  - heading "Sail away to 330+ destinations" [level=2]
+  - link "Alaska":
+    - /url: https://www.princess.com/cruise-destinations/alaska-cruises
+    - img
+    - paragraph: Alaska
+  - link "Caribbean":
+    - /url: https://www.princess.com/cruise-destinations/caribbean-cruises
+    - img
+    - paragraph: Caribbean
+  - link "Europe":
+    - /url: https://www.princess.com/cruise-destinations/european-cruises
+    - img
+    - paragraph: Europe
+  - button "View All Destinations button": View All Destinations
+  - heading "The Princess difference" [level=2]
+  - paragraph: No one helps you truly discover the world’s greatest destinations like Princess. Unpack once and explore a new port every day, experience elevated dining, personalized service and enjoy world-class entertainment – all on the original Love Boat.
+  - text: 01 / 04
+  - button "Previous item"
+  - button "Next item"
+  - listbox "Content carousel":
+    - option "Couple at a stateroom on the bed laughing and having breakfast Elevated dining & entertainment Whatever you love, you’ll find it on Princess. From award-winning dining to engaging entertainment to unwinding on your balcony, there’s something for everyone. Learn more":
+      - img "Couple at a stateroom on the bed laughing and having breakfast"
+      - heading "Elevated dining & entertainment" [level=3]
+      - paragraph: Whatever you love, you’ll find it on Princess. From award-winning dining to engaging entertainment to unwinding on your balcony, there’s something for everyone.
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/cruise-dining
+    - option "Fisherman grabbing crabs with both hands in the air at Alaska Memorable experiences ashore Take in local culture, flavors, activities, and entertainment. Learn more":
+      - img "Fisherman grabbing crabs with both hands in the air at Alaska"
+      - heading "Memorable experiences ashore" [level=3]
+      - paragraph: Take in local culture, flavors, activities, and entertainment.
+      - paragraph
+      - paragraph
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/cruise-destinations/local-connections
+    - option "Casino roulette chips stacked Discover Princess casino perks & discounts‎ Earn points as you play and you could earn special perks like future discounts or comp cruises, VIP invitiations to special events and tournaments and more. Learn more":
+      - img "Casino roulette chips stacked"
+      - heading "Discover Princess casino perks & discounts‎" [level=3]
+      - paragraph: Earn points as you play and you could earn special perks like future discounts or comp cruises, VIP invitiations to special events and tournaments and more.
+      - link "Learn more":
+        - /url: https://www.princess.com/ships-and-experience/onboard-experience/activities/casino
+    - option "Guests of Enchanted Princess with Medallion drinks by the pool. Effortless, personalized cruising With the MedallionClass® experience, you’ll enjoy personalized service and food & drinks delivered to you, keyless room entry, finding travel companions anywhere on board, the best Wi-Fi at sea and so much more. Learn more":
+      - img "Guests of Enchanted Princess with Medallion drinks by the pool."
+      - heading "Effortless, personalized cruising" [level=3]
+      - paragraph: With the MedallionClass® experience, you’ll enjoy personalized service and food & drinks delivered to you, keyless room entry, finding travel companions anywhere on board, the best Wi-Fi at sea and so much more.
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/ships-and-experience/princess-medallionclass
+    - option "Couple at a stateroom on the bed laughing and having breakfast Elevated dining & entertainment Whatever you love, you’ll find it on Princess. From award-winning dining to engaging entertainment to unwinding on your balcony, there’s something for everyone. Learn more":
+      - img "Couple at a stateroom on the bed laughing and having breakfast"
+      - heading "Elevated dining & entertainment" [level=3]
+      - paragraph: Whatever you love, you’ll find it on Princess. From award-winning dining to engaging entertainment to unwinding on your balcony, there’s something for everyone.
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/cruise-dining
+    - option "Fisherman grabbing crabs with both hands in the air at Alaska Memorable experiences ashore Take in local culture, flavors, activities, and entertainment. Learn more":
+      - img "Fisherman grabbing crabs with both hands in the air at Alaska"
+      - heading "Memorable experiences ashore" [level=3]
+      - paragraph: Take in local culture, flavors, activities, and entertainment.
+      - paragraph
+      - paragraph
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/cruise-destinations/local-connections
+    - option "Casino roulette chips stacked Discover Princess casino perks & discounts‎ Earn points as you play and you could earn special perks like future discounts or comp cruises, VIP invitiations to special events and tournaments and more. Learn more":
+      - img "Casino roulette chips stacked"
+      - heading "Discover Princess casino perks & discounts‎" [level=3]
+      - paragraph: Earn points as you play and you could earn special perks like future discounts or comp cruises, VIP invitiations to special events and tournaments and more.
+      - link "Learn more":
+        - /url: https://www.princess.com/ships-and-experience/onboard-experience/activities/casino
+    - option "Guests of Enchanted Princess with Medallion drinks by the pool. Effortless, personalized cruising With the MedallionClass® experience, you’ll enjoy personalized service and food & drinks delivered to you, keyless room entry, finding travel companions anywhere on board, the best Wi-Fi at sea and so much more. Learn more":
+      - img "Guests of Enchanted Princess with Medallion drinks by the pool."
+      - heading "Effortless, personalized cruising" [level=3]
+      - paragraph: With the MedallionClass® experience, you’ll enjoy personalized service and food & drinks delivered to you, keyless room entry, finding travel companions anywhere on board, the best Wi-Fi at sea and so much more.
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/ships-and-experience/princess-medallionclass
+  - img "Princess Cruises accolade awarded for Conde Nast Traveler Readers' Choice Awards 2026"
+  - img "Princess Cruises accolade awarded for Best Cruise Line in Alaska from Travel Weekly"
+  - img "Princess Cruises accolade awarded for Best Shipboard Tech from Travel Weekly"
+  - img "Princess Cruises accolade awarded for Best Cruise Line Itineraries from Recommend Magazine"
+  - img "Princess Cruises accolade awarded Award of Excellence from Wine Spectator"
+  - text: 01 / 03
+  - button "Previous item"
+  - button "Next item"
+  - listbox "Content carousel":
+    - option "Ez Air Book now, pay later Book flexible flights now with no money down, and the freedom to change or cancel your flights with no fees until cruise final payment. Learn more":
+      - img "Ez Air"
+      - heading "Book now, pay later" [level=3]
+      - paragraph: Book flexible flights now with no money down, and the freedom to change or cancel your flights with no fees until cruise final payment.
+      - link "Learn more":
+        - /url: https://www.princess.com/plan/ezair
+    - option "woman poolside Get the new Princess® App Download the new app and take your upcoming cruise to the next level. Download now":
+      - img "woman poolside"
+      - heading "Get the new Princess® App" [level=3]
+      - paragraph: Download the new app and take your upcoming cruise to the next level.
+      - link "Download now":
+        - /url: https://www.princess.com/plan/oceanready
+    - option "couple-with-wine-glasses Princess Vacation Protection Enjoy even more peace of mind and added benefits. Learn more":
+      - img "couple-with-wine-glasses"
+      - heading "Princess Vacation Protection" [level=3]
+      - paragraph: Enjoy even more peace of mind and added benefits.
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/plan/princess-vacation-protection
+    - option "Ez Air Book now, pay later Book flexible flights now with no money down, and the freedom to change or cancel your flights with no fees until cruise final payment. Learn more":
+      - img "Ez Air"
+      - heading "Book now, pay later" [level=3]
+      - paragraph: Book flexible flights now with no money down, and the freedom to change or cancel your flights with no fees until cruise final payment.
+      - link "Learn more":
+        - /url: https://www.princess.com/plan/ezair
+    - option "woman poolside Get the new Princess® App Download the new app and take your upcoming cruise to the next level. Download now":
+      - img "woman poolside"
+      - heading "Get the new Princess® App" [level=3]
+      - paragraph: Download the new app and take your upcoming cruise to the next level.
+      - link "Download now":
+        - /url: https://www.princess.com/plan/oceanready
+    - option "couple-with-wine-glasses Princess Vacation Protection Enjoy even more peace of mind and added benefits. Learn more":
+      - img "couple-with-wine-glasses"
+      - heading "Princess Vacation Protection" [level=3]
+      - paragraph: Enjoy even more peace of mind and added benefits.
+      - paragraph
+      - link "Learn more":
+        - /url: https://www.princess.com/plan/princess-vacation-protection
+    - option "Ez Air Book now, pay later Book flexible flights now with no money down, and the freedom to change or cancel your flights with no fees until cruise final payment. Learn more":
+      - img "Ez Air"
+      - heading "Book now, pay later" [level=3]
+      - paragraph: Book flexible flights now with no money down, and the freedom to change or cancel your flights with no fees until cruise final payment.
+      - link "Learn more":
+        - /url: https://www.princess.com/plan/ezair
+  - img "Princess Visa Signature credit card"
+  - heading "The Princess® Rewards Visa® Card Earn 20,000 Bonus Points = $200 Onboard Credit" [level=3]
+  - paragraph: Earn 20,000 bonus points after spending $1000 in the first 90 days. That’s worth $200 in onboard credit. Plus, enjoy 2X points per $1 spent on all Princess purchases including onboard purchases. Terms apply.
+  - button "Learn more and apply for the Princess® Rewards Visa® Card. You are now leaving the Princess website and navigating to a 3rd party website that is not owned, operated, or controlled by Princess or any of its affiliates. Opens in new tab.":
+    - text: Apply now
+    - img
+  - paragraph:
+    - strong:
+      - text: "*Please see all applicable terms & conditions for promotions"
+      - button "here"
+    - text: .
+- paragraph: Sign up and get $50 of onboard credit on your next cruise
+- text: Email*
+- textbox "Sign up and get $50 of onboard credit on your next cruise, Email"
+- text: First Name*
+- textbox "First Name"
+- text: Last Name*
+- textbox "Last Name"
+- paragraph:
+  - text: I would like to receive promotional emails from Princess Cruise Lines. By clicking "Sign up" I agree to the
+  - link "Website Terms":
+    - /url: https://www.princess.com/legal/legal-information
+  - text: and understand that my information will be used as set forth in the
+  - link "Privacy Policy":
+    - /url: https://www.princess.com/legal/legal-privacy
+  - text: . Onboard credit offers available only to new Princess guests who book a 2026-2028 cruise within 90 days of email sign-up.
+  - link "Additional terms":
+    - /url: https://www.princess.com/legal/additional-terms
+  - text: apply.
+- button "Sign up"
+- 'region "Country: footer country selector"':
+  - text: "Country:"
+  - combobox "country-selector": United States
+- group "Follow Us:":
+  - text: "Follow Us:"
+  - link "Share post to Facebook opens in a new tab":
+    - /url: https://www.facebook.com/PrincessCruises
+  - link "Share post to X opens in a new tab":
+    - /url: https://twitter.com/PrincessCruises
+  - link "Share post to Youtube opens in a new tab":
+    - /url: https://www.youtube.com/princesscruises
+  - link "Share post to Instagram opens in a new tab":
+    - /url: https://www.instagram.com/princesscruises/
+- contentinfo:
+  - navigation:
+    - list:
+      - listitem:
+        - list:
+          - listitem:
+            - text: Plan a Cruise
+            - list "Plan a Cruise":
+              - listitem:
+                - link "Find Cruises & Cruisetours":
+                  - /url: https://www.princess.com/cruise-search/cruises/
+              - listitem:
+                - link "Princess EZair® Flights":
+                  - /url: https://www.princess.com/plan/ezair
+              - listitem:
+                - link "Princess Vacation Protection":
+                  - /url: https://www.princess.com/plan/princess-vacation-protection
+              - listitem:
+                - link "Plan a Group or Celebration":
+                  - /url: https://www.princess.com/ships-and-experience/celebrations/celebration-group-program
+              - listitem:
+                - link "Find a Travel Agency":
+                  - /url: https://www.princess.com/find-travel-agents/
+          - listitem:
+            - text: Cruise Deals
+            - list "Cruise Deals":
+              - listitem:
+                - link "Cruise Deals & Promotions":
+                  - /url: https://www.princess.com/cruise-deals-promotions
+              - listitem:
+                - link "Cruise Deals Terms & Conditions":
+                  - /url: https://www.princess.com/cruise-deals-promotions/terms-and-conditions
+              - listitem:
+                - link "Sign Up for Special Offers":
+                  - /url: https://book.princess.com/captaincircle/specialOfferRegistration.page?track=footer&trackId=special-offers
+              - listitem:
+                - link "Military Benefit Program":
+                  - /url: https://www.princess.com/cruise-deals-promotions/military-benefit-program
+              - listitem:
+                - link "Refer-a-Friend":
+                  - /url: "#"
+              - listitem:
+                - link "Standby Program":
+                  - /url: https://www.princess.com/cruise-deals-promotions/standby-program
+          - listitem:
+            - text: Learn About Cruising
+            - list "Learn About Cruising":
+              - listitem:
+                - link "New to Cruising":
+                  - /url: https://www.princess.com/why-princess/new-to-cruising
+              - listitem:
+                - link "Why Princess?":
+                  - /url: https://www.princess.com/why-princess
+              - listitem:
+                - link "Captain's Circle Loyalty Tiers":
+                  - /url: https://book.princess.com/captaincircle/membershipBenefits.page
+              - listitem:
+                - link "Our Cruise Blog":
+                  - /url: https://www.princess.com/blog
+              - listitem:
+                - link "Top 10 New Cruiser FAQ":
+                  - /url: https://www.princess.com/why-princess/top-ten-faq
+              - listitem:
+                - link "Help & Contact":
+                  - /url: https://book.princess.com/captaincircle/customerCare.page
+              - listitem:
+                - link "Better Than Best Price Guarantee":
+                  - /url: https://www.princess.com/plan/best-price-guarantee
+      - listitem:
+        - list:
+          - listitem:
+            - text: Cruise Destinations
+            - list "Cruise Destinations":
+              - listitem:
+                - link "Destination Overview":
+                  - /url: https://www.princess.com/cruise-destinations
+              - listitem:
+                - link "Alaska":
+                  - /url: https://www.princess.com/cruise-destinations/alaska-cruises
+              - listitem:
+                - link "Asia":
+                  - /url: https://www.princess.com/cruise-destinations/asia-cruises
+              - listitem:
+                - link "Australia & New Zealand":
+                  - /url: https://www.princess.com/cruise-destinations/australia-cruises
+              - listitem:
+                - link "California & Pacific Coast":
+                  - /url: https://www.princess.com/cruise-destinations/california-coast-cruises
+              - listitem:
+                - link "Canada & New England":
+                  - /url: https://www.princess.com/cruise-destinations/canada-cruises
+              - listitem:
+                - link "Caribbean":
+                  - /url: https://www.princess.com/cruise-destinations/caribbean-cruises
+              - listitem:
+                - link "Europe":
+                  - /url: https://www.princess.com/cruise-destinations/european-cruises
+              - listitem:
+                - link "Getaways (3-6 Days)":
+                  - /url: https://www.princess.com/cruise-destinations/getaway-cruises
+              - listitem:
+                - link "Hawaii":
+                  - /url: https://www.princess.com/cruise-destinations/hawaii-cruises
+              - listitem:
+                - link "Japan":
+                  - /url: https://www.princess.com/cruise-destinations/japan-cruises
+              - listitem:
+                - link "Mexico":
+                  - /url: https://www.princess.com/cruise-destinations/mexico-cruises
+              - listitem:
+                - link "Panama Canal":
+                  - /url: https://www.princess.com/cruise-destinations/panama-canal-cruises
+              - listitem:
+                - link "South America & Antarctica":
+                  - /url: https://www.princess.com/cruise-destinations/south-america-cruises
+              - listitem:
+                - link "Tahiti & South Pacific":
+                  - /url: https://www.princess.com/cruise-destinations/tahiti-south-pacific-cruises
+              - listitem:
+                - link "World Cruises":
+                  - /url: https://www.princess.com/cruise-destinations/world-cruises
+              - listitem:
+                - link "Shore Excursions":
+                  - /url: https://www.princess.com/ports-excursions/
+              - listitem:
+                - link "Departure, Ports & Hotels":
+                  - /url: https://www.princess.com/cruise-destinations/departure-ports/flexible-cruise-hotel-packages
+              - listitem:
+                - link "Free Brochures":
+                  - /url: https://www.princess.com/brochures
+      - listitem:
+        - list:
+          - listitem:
+            - text: Ships & Experience
+            - list "Ships & Experience":
+              - listitem:
+                - link "Ships":
+                  - /url: https://www.princess.com/ships-and-experience/ships
+              - listitem:
+                - link "Deck Plans":
+                  - /url: https://www.princess.com/ships-and-experience/ships
+              - listitem:
+                - link "Bridge Cams":
+                  - /url: https://www.princess.com/ships-and-experience/ships/bridgecams
+              - listitem:
+                - link "Onboard Experience Overview":
+                  - /url: https://www.princess.com/ships-and-experience/onboard-experience
+              - listitem:
+                - link "Food & Dining":
+                  - /url: https://www.princess.com/cruise-dining
+              - listitem:
+                - link "Beverage Packages & Drinks":
+                  - /url: https://www.princess.com/cruise-dining/beverages
+              - listitem:
+                - link "Activities":
+                  - /url: https://www.princess.com/ships-and-experience/onboard-experience/activities
+              - listitem:
+                - link "Entertainment":
+                  - /url: https://www.princess.com/ships-and-experience/onboard-experience/entertainment
+              - listitem:
+                - link "Kids, Teens & Families":
+                  - /url: https://www.princess.com/ships-and-experience/onboard-experience/kids-and-teens
+          - listitem:
+            - list "Celebrate with Princess":
+              - listitem:
+                - link "Birthdays, Holidays & More":
+                  - /url: https://www.princess.com/ships-and-experience/celebrations
+              - listitem:
+                - link "Cruise Gifts & Services":
+                  - /url: https://www.princess.com/ships-and-experience/celebrations/cruise-gifts-services
+              - listitem:
+                - link "Give a Guest a Gift":
+                  - /url: https://book.princess.com/manage-booking/thirdPartyGifting/searchLanding.page
+              - listitem:
+                - link "Gift Cards":
+                  - /url: https://www.princess.com/ships-and-experience/celebrations/gift-cards
+              - listitem:
+                - link "Princess® Rewards Visa® Card":
+                  - /url: https://www.princess.com/faq/additional-faq/princess-visa-card
+      - listitem:
+        - list:
+          - listitem:
+            - text: Booked Guests
+            - list "Booked Guests":
+              - listitem:
+                - link "Manage Booking":
+                  - /url: https://book.princess.com/manage-booking/index.page
+              - listitem:
+                - link "How to Get Ready":
+                  - /url: https://www.princess.com/plan/oceanready
+              - listitem:
+                - link "Princess Upgrade":
+                  - /url: https://www.princess.com/plan/princess-cruise-room-upgrade
+              - listitem:
+                - link "Reserve Shore Excursions":
+                  - /url: https://book.princess.com/manage-booking/index.page?cpfy=shoreex
+              - listitem:
+                - link "Departure, Ports & Hotels":
+                  - /url: https://www.princess.com/cruise-destinations/departure-ports/flexible-cruise-hotel-packages
+              - listitem:
+                - link "Book Gifts & Services":
+                  - /url: https://book.princess.com/manage-booking/index.page?cpfy=ssv
+              - listitem:
+                - 'link "FAQ: Know Before You Go"':
+                  - /url: https://www.princess.com/faq
+              - listitem:
+                - link "Princess EZair® Flights":
+                  - /url: https://www.princess.com/plan/ezair
+              - listitem:
+                - link "Cruise & Hotel Packages":
+                  - /url: https://www.princess.com/cruise-destinations/departure-ports/flexible-cruise-hotel-packages
+              - listitem:
+                - link "Prohibited Items":
+                  - /url: https://www.princess.com/faq/pre-cruise#prohibited-items
+          - listitem:
+            - text: Princess Medallion Class®
+            - list "Princess Medallion Class®":
+              - listitem:
+                - link "MedallionClass® Overview":
+                  - /url: https://www.princess.com/ships-and-experience/princess-medallionclass
+              - listitem:
+                - link "MedallionNet® at Sea":
+                  - /url: https://www.princess.com/ships-and-experience/princess-medallionclass/medallionnet
+          - listitem:
+            - text: Princess® Cruises App
+            - list "Princess® Cruises App":
+              - listitem:
+                - link "Princess Cruises App, download on the Apple App Store. Opens in new tab.":
+                  - /url: https://apps.apple.com/us/app/princess-cruises/id6469049279
+                  - img "Princess Cruises App, download on the Apple App Store. Opens in new tab."
+              - listitem:
+                - link "Princess Cruises App, get it on Google Play. Opens in new tab.":
+                  - /url: https://play.google.com/store/apps/details?id=com.carnival.gxi.princesscruises&pcampaignid=web_share
+                  - img "Princess Cruises App, get it on Google Play. Opens in new tab."
+  - list:
+    - listitem:
+      - link "About Us":
+        - /url: https://www.princess.com/company-information
+    - listitem:
+      - link "Careers":
+        - /url: https://www.princess.com/careers
+    - listitem:
+      - link "News Center":
+        - /url: https://www.princess.com/news
+    - listitem:
+      - link "Passage Contract":
+        - /url: https://www.princess.com/legal/passage-contract
+    - listitem:
+      - link "Legal, Privacy & Cookies":
+        - /url: https://www.princess.com/legal
+    - listitem:
+      - link "World's Leading Cruise Lines Opens in a new tab.":
+        - /url: https://www.carnivalcorp.com/
+        - text: World's Leading Cruise Lines
+    - listitem:
+      - link "Accessible Cruising":
+        - /url: https://www.princess.com/faq/pre-cruise
+    - listitem:
+      - link "Consumer Health Data Privacy Notice":
+        - /url: /content/dam/pdf/Princess%20Consumer%20Health%20Data%20Privacy%20Notice.pdf
+    - listitem:
+      - link "Download Adobe Reader Opens in a new tab.":
+        - /url: https://get.adobe.com/reader/
+        - text: Download Adobe Reader
+    - listitem:
+      - link "Settings":
+        - /url: "#"
+        - text: Your Privacy Choices
+  - button "Corporate Affiliates Login"
+  - link "One Source Opens in new tab":
+    - /url: https://www.onesourcecruises.com/onesource/login
+    - img "One Source"
+  - link "Apply for the Princess® Rewards Visa® Card":
+    - /url: https://cards.barclaycardus.com/banking/credit-card/princess/visa-signature/co-brand-partner-site/fa2c9fe2-570f-4194-83e3-8db3ed2700b7/?referrerid=PCLFooterBanner
+  - text: © 2026, Princess Cruise Lines, Ltd. All Rights Reserved. Site content may not be reproduced without express written permission.
+  - paragraph: .

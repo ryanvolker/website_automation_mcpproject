@@ -1,0 +1,9 @@
+{
+  "name": "@wa/site-mapper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Maps a web page's navigation, forms, buttons and links into a JSON file",
+  "scripts": {
+    "map": "node map-page.mjs"
+  }
+}
