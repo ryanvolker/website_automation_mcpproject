@@ -2,11 +2,17 @@
   "name": "@wa/princess",
   "version": "0.1.0",
   "private": true,
-  "description": "Princess Cruises site map and lookup scripts (search, deals, ships, destinations)",
+  "description": "Princess Cruises site maps, crawlers, change reports and live lookups",
   "scripts": {
     "map:home": "node ../site-mapper/map-page.mjs https://www.princess.com/ ../../data/sites/princess.com home && node build-home-map.mjs",
     "build:home": "node build-home-map.mjs",
-    "crawl:destinations": "node crawl-destinations.mjs",
-    "report:destinations": "node compare-destinations.mjs"
+    "sitemap": "node fetch-sitemap.mjs && node build-content-index.mjs",
+    "crawl:destinations": "node crawl.mjs destinations",
+    "crawl:ships": "node crawl.mjs ships",
+    "crawl:dining": "node crawl.mjs dining",
+    "crawl:deals": "node crawl.mjs deals",
+    "crawl:help": "node crawl.mjs help",
+    "crawl:excursions": "node crawl-excursions.mjs",
+    "report": "node compare.mjs"
   }
 }

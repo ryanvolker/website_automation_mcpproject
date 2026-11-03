@@ -17,3 +17,7 @@ playwright/.cache/
 !.env.example
 
 .DS_Store
+
+# Princess crawl data kept locally only
+data/sites/princess.com/text/
+data/sites/princess.com/samples/

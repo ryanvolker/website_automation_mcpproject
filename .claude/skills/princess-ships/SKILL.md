@@ -1,31 +1,35 @@
 ---
 name: princess-ships
-description: Look up Princess Cruises ships, their ship codes and pages, and find cruises sailing on a specific ship (optionally filtered by destination, month or length). Use when the user asks about Princess ships, what a ship is doing, or cruises on a named ship like Sun Princess or Royal Princess.
+description: Look up Princess Cruises ships - facts (guests, crew, decks, year), dining venues, bars, entertainment, kids clubs, Sanctuary Collection, stateroom types, deck plans, onboard activities, casino, celebrations and MedallionClass - and find cruises sailing on a specific ship. Use when the user asks about a Princess ship, compares ships, asks what's on board, or wants cruises on a named ship.
 ---
 
-# Princess Cruises ships
+# Princess ships and onboard experience
 
-## Data and tools
+## Data
 
-- `data/sites/princess.com/home.json` → `ships`: 17 ships, each with `name`, two-letter `code` (for example `RP` for Royal Princess), info `page` and `searchUrl`.
-- `navigation.menus["Explore Ships"]` has the Ships, Staterooms and Onboard Experience links.
-- `featured.shipSailings` has the ship cards from the home page, with their "from" prices at capture time.
-- Live script, run from the repo root: `node packages/princess/princess.mjs`
+- `data/sites/princess.com/home.json` → `ships`: 17 ships with `name`, two-letter `code` (e.g. `RP` for Royal Princess), `page` and `searchUrl`.
+- `data/sites/princess.com/ships.json`: a crawl of `/ships-and-experience/` and `/staterooms/` (96 pages):
+  - **Ship pages** `/ships-and-experience/ships/<code>-<name>`. `sections` is the in-page menu (Staterooms, Dining options, Ship highlights, Wellness, Family, FAQs). `blocks` hold every venue and highlight with its description. The "<Ship> by numbers" block gives guests, crew, inaugural cruise, decks and christener. `faqs` are the ship's FAQs.
+  - **Staterooms** `/staterooms/…`: interior, oceanview, balcony, mini-suites, suites, Sanctuary Collection, Reserve Collection.
+  - **Onboard experience** (activities, entertainment, production shows, casino), **celebrations** (birthdays, weddings, group program), **MedallionClass** and MedallionNet Wi-Fi, and special events.
+- `data/sites/princess.com/content-index.json` → `deckPlans`: deck plan URL per ship code.
 
-## Steps
+## Look it up
 
-1. **List ships or find one.** Read `ships` from `home.json`. You don't need a browser for this. Names match loosely: "sun", "SU" and "Sun Princess" all work in the script.
+- Ship facts and features (no browser): `node packages/princess/princess.mjs find royal princess by numbers --section ships`, or read that ship's page in `ships.json`.
+- Which ships have a feature: `node packages/princess/princess.mjs find sanctuary collection --section ships`
+- Cruises on a ship (live): `node packages/princess/princess.mjs search --ship "Sun Princess" --limit 10`
+  Add `--destination`, `--month 2027-06`, `--days 7` or `--days 10-14`, `--port`, `--visits`.
+- Full details and stateroom prices for one sailing: `princess-cruise-details`.
 
-2. **Find cruises on a ship (live).**
-   `node packages/princess/princess.mjs search --ship "Sun Princess" --limit 10`
-   Add any filters: `--destination europe`, `--month 2027-06`, `--days 7` or `--days 10-14`, `--port "fort lauderdale"`.
-   Output: `totalResults` plus `cruises[]` with title, departure, ports, dates and ship, `price` and `wasPrice`, and a details `url`.
+## Answering
 
-3. **Answer the user.** Give the total count and the cheapest few sailings: title, date, departure port and price. Link to the ship's `page` for more about the ship itself.
+- For a ship profile: give the facts (by numbers), 4–6 highlights, dining and bars (`princess-dining` has more on each venue), family facilities, and stateroom types. Link the ship page.
+- For comparisons, use a table: guests, decks, inaugural year, notable venues, Sanctuary Collection yes or no.
+- For sailings: give the total count, then the cheapest few (title, date, port, price).
 
 ## Notes
 
-- Results are sorted by lowest price, and the script returns the first `--limit` cruises (default 10).
-- Ship facts such as size, decks and venues aren't in the home page map. To get them, open the ship's `page` with the Playwright MCP if it's connected, or map it with `node packages/site-mapper/map-page.mjs <page> data/sites/princess.com ship-<code>`.
-- The `codes` command prints every ship code: `node packages/princess/princess.mjs codes`.
-- Read-only. Never book or log in.
+- Venues and features differ by ship; always check that ship's page.
+- Crawled content is a snapshot (`crawledAt`); use live search for prices.
+- Read-only.

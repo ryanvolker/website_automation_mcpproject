@@ -41,13 +41,26 @@ npm run map:home -w @wa/princess
 # Live lookups (print JSON)
 node packages/princess/princess.mjs search --destination alaska --port seattle --month 2027-06
 node packages/princess/princess.mjs search --ship "sun princess" --days 7
+node packages/princess/princess.mjs search --visits santorini --month 2027-06
+node packages/princess/princess.mjs details 4726          # stateroom prices + itinerary
 node packages/princess/princess.mjs deals
 node packages/princess/princess.mjs codes
 
-# Crawl the 39 destination pages (~8 min), then report changes since the last crawl
-npm run crawl:destinations -w @wa/princess
-npm run report:destinations -w @wa/princess --silent
+# Offline lookups over crawled data
+node packages/princess/princess.mjs find glacier bay --section destinations
+node packages/princess/princess.mjs excursions juneau --max-price 100 --sort rating
+
+# Refresh data (crawls are polite and slow; run in the background)
+npm run sitemap -w @wa/princess              # all ~8,000 URLs, seconds
+npm run crawl:destinations -w @wa/princess   # 537 pages, ~2.5 h
+npm run crawl:ships -w @wa/princess          # also: crawl:dining, crawl:deals, crawl:help
+npm run crawl:excursions -w @wa/princess     # 471 ports, ~2.5 h
+
+# Change report: compares the two newest snapshots of a section
+npm run report -w @wa/princess --silent -- destinations
 ```
+
+See [docs/princess-site-map.md](docs/princess-site-map.md) for the site's sections, what each one does, and which skill covers it.
 
 ## Getting started
 

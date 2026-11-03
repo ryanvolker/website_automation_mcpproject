@@ -1,33 +1,30 @@
 ---
 name: princess-deals
-description: Look up current Princess Cruises deals and promotions (flash sales, last-minute deals, free 3rd & 4th guests, early booking, destination deals) and list the cruises a deal applies to. Use when the user asks about Princess deals, sales, discounts, promotions or cheap cruises.
+description: Look up current Princess Cruises deals and promotions (flash sales, last-minute deals, free 3rd & 4th guests, early booking, destination deals, military/teacher/resident rates, standby) and Princess Plus/Premier packages, list the cruises a deal applies to, and explain deal programs and payment options. Use when the user asks about Princess deals, sales, discounts, promotions, packages or cheap cruises.
 ---
 
 # Princess Cruises deals
 
-Finds what's on sale at princess.com right now and which cruises each deal covers.
-
 ## Data and tools
 
-- Home page map: `data/sites/princess.com/home.json`. Deal info lives in `deals.pages` (the Deals menu) and `deals.onHomePage` (deal cards, with the search parameters each one uses). This is a snapshot; check `capturedAt`.
-- Live script, run from the repo root: `node packages/princess/princess.mjs <command>`
+- **Live deals on the home page:** `node packages/princess/princess.mjs deals`. Each deal card comes with its text and `searchParams` (e.g. `{ promos: "2GD", duration: "6_8" }`).
+- **Deal and program pages (crawled):** `data/sites/princess.com/deals.json` covers `/cruise-deals-promotions/` (flash sale, last minute, early booking bonus, Europe, Alaska and Caribbean sailings, world cruise, standby program, military, teachers, resident rates, Plus and Premier packages, compare packages, payment plans) and `/plan/` (EZpay, pay monthly, best price guarantee, EZair, vacation protection, cancellation policy). Each page's `blocks` explain the offer, `searchLinks` hold the promo codes it uses, and `prices` lists the dollar amounts mentioned.
+- **Deal fine print** lives on `/cruise-deals-promotions/disclaimers/`, which `robots.txt` disallows. Don't crawl it; link the deal page instead.
 
 ## Steps
 
-1. **Get the current deals (live).**
-   `node packages/princess/princess.mjs deals`
-   Each item in `onHomePage` has the card text (offer, savings, length) and `searchParams`, for example `{ "promos": "2GD", "duration": "6_8" }`. `dealPages` lists the deal pages from the Deals menu.
-
-2. **Show cruises for a deal.** Pass the deal's search URL, or rebuild it from filters:
+1. **What's on now:** run `deals` (live), then read the matching program pages:
+   `node packages/princess/princess.mjs find flash sale --section deals`
+2. **Cruises under a deal:**
    - `node packages/princess/princess.mjs search --url "<deal url>" --limit 10`
-   - `node packages/princess/princess.mjs search --promo 2GD --days 6-8 --destination caribbean`
+   - or `node packages/princess/princess.mjs search --promo 2GD --days 6-8 --destination caribbean`
+   Known promo codes (they change): `2GD` flash sale, `RG1` last minute, `KHS` 2028 early booking. Other codes appear in `deals.json` → `searchLinks[].params.promos`.
+3. **Program questions** ("is there a military discount?", "what's in Princess Plus?"): use `find` in the deals section and answer from the blocks.
+4. **Compare stateroom prices** for a deal cruise: `princess-cruise-details`.
 
-   Known promo codes (they can change): `2GD` flash sale, `RG1` last minute, `KHS` 2028 early booking. Some deals, such as Free 3rd & 4th guests, use a `voyages=` list instead. Use their URL as-is.
+## Answering
 
-3. **Answer the user.** For each deal, give a one-line summary of the offer, then the cheapest few cruises: title, departure, dates and ship, then the price next to the was-price. Prices are USD, average per person, for 2 guests, including taxes and fees. Link to the cruise `url`.
-
-## Notes
-
-- Countdown timers and prices change constantly. Always run the live command rather than quoting `home.json`.
-- For a deal page that isn't a search (for example `.../plus-premier-cruise-packages`), open the page with the Playwright MCP if it's connected, or summarize from its title.
-- Read-only. Never book, sign up or log in.
+- One line per deal: what it is, the savings, any conditions, and when it ends if shown.
+- Then the cheapest few cruises: title, departure, date and ship, and price against the was-price, with links.
+- Prices are USD, average per person, for 2 guests, including taxes and fees, and change constantly. Run live lookups instead of quoting crawl data.
+- Read-only. Never book or sign up.
