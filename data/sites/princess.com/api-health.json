@@ -1,0 +1,4105 @@
+{
+  "checkedAt": "2026-11-04T03:11:25.480Z",
+  "summary": {
+    "pass": 24,
+    "warn": 4,
+    "fail": 0
+  },
+  "results": [
+    {
+      "group": "Site basics",
+      "name": "Home page",
+      "endpoint": "https://www.princess.com/",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 196,
+      "bytes": 1039643,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "196 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "196 ms"
+        },
+        {
+          "name": "page has a title",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Site basics",
+      "name": "robots.txt",
+      "endpoint": "https://www.princess.com/robots.txt",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 25,
+      "bytes": 1874,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "25 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "25 ms"
+        },
+        {
+          "name": "lists a sitemap",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Site basics",
+      "name": "XML sitemap",
+      "endpoint": "https://www.princess.com/sitemap.xml",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 811,
+      "bytes": 2577239,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "811 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "811 ms"
+        },
+        {
+          "name": "is an XML sitemap",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Global header (navigation)",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/globalheader;market=en-us",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 25,
+      "bytes": 62068,
+      "result": "warn",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "25 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "25 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "has header content",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "no placeholders or \"undefined\" in content",
+          "ok": false,
+          "level": "warn",
+          "note": "Lorem Ipsum"
+        }
+      ],
+      "note": "no placeholders or \"undefined\" in content (Lorem Ipsum)"
+    },
+    {
+      "group": "Content API",
+      "name": "Global footer",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/globalfooter;market=en-us",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 29,
+      "bytes": 17835,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "29 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "29 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "has footer content",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "no placeholders or \"undefined\" in content",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Master metadata",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/jsonbyid;id=master-meta-data",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 31,
+      "bytes": 5014,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "31 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "31 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "has metadata",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Special packages",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/masterdata-special-packages;market=en-us",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 26,
+      "bytes": 48160,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "26 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "26 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "lists packages",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Port data: JNU",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=JNU",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 30,
+      "bytes": 6190,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "30 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "30 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "returns the port",
+          "ok": true,
+          "level": "warn",
+          "note": "no port record"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Port data: KTN",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=KTN",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 34,
+      "bytes": 6169,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "34 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "34 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "returns the port",
+          "ok": true,
+          "level": "warn",
+          "note": "no port record"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Port data: SIT",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=SIT",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 26,
+      "bytes": 6157,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "26 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "26 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "returns the port",
+          "ok": true,
+          "level": "warn",
+          "note": "no port record"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Port data: FLL",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=FLL",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 332,
+      "bytes": 5483,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "332 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "332 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "returns the port",
+          "ok": true,
+          "level": "warn",
+          "note": "no port record"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Port data: BCN",
+      "endpoint": "https://www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=BCN",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 32,
+      "bytes": 5390,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "32 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "32 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "returns the port",
+          "ok": true,
+          "level": "warn",
+          "note": "no port record"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Sale names",
+      "endpoint": "https://www.princess.com/static/html/global/book/json/sale-names.json",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 53,
+      "bytes": 14893,
+      "result": "warn",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "53 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "53 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "lists sales",
+          "ok": true,
+          "level": "fail",
+          "note": "78 sales"
+        },
+        {
+          "name": "every sale has a code and name",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "no expired sales still listed",
+          "ok": false,
+          "level": "warn",
+          "note": "7 expired: Spooky Savings (BOO-PO, ended 2026-11-02); Fly for less with Princess (FL1-PO, ended 2026-11-02); Fly for less with Princess (FL2-PO, ended 2026-11-02); Free Onboard Spend (OB1-PO, ended 2026-11-02); Free Onboard Spend (OB2-PO, ended 2026-11-02); Free Onboard Spend (OB3-PO, ended 2026-11-02); Free Onboard Spend (OB4-PO, ended 2026-11-02)"
+        },
+        {
+          "name": "start dates before end dates",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": "no expired sales still listed (7 expired: Spooky Savings (BOO-PO, ended 2026-11-02); Fly for less with Princess (FL1-PO, ended 2026-11-02); Fly for less with Princess (FL2-PO, ended 2026-11-02); Free Onboard Spend (OB1-PO, ended 2026-11-02); Free Onboard Spend (OB2-PO, ended 2026-11-02); Free Onboard Spend (OB3-PO, ended 2026-11-02); Free Onboard Spend (OB4-PO, ended 2026-11-02))"
+    },
+    {
+      "group": "Content API",
+      "name": "Sale banners",
+      "endpoint": "https://www.princess.com/static/html/global/book/json/sale-banners.json",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 74,
+      "bytes": 1329,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "74 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "74 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "lists banners",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "every shown filter has a name",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Hero promotion",
+      "endpoint": "https://www.princess.com/bin/princess/hero-promotion.json?v=2026-11-04&market=en-us",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 55,
+      "bytes": 52,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "55 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "55 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "has the expected fields",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Content API",
+      "name": "Free 3rd & 4th guest voyages",
+      "endpoint": "https://www.princess.com/content/dam/princess/target/promo/free-3rd-4th-voyages.json?v=2026-11-04",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 63,
+      "bytes": 120590,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "63 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "63 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "lists voyages",
+          "ok": true,
+          "level": "fail",
+          "note": "1578 voyages"
+        },
+        {
+          "name": "every voyage has numeric category values",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Third-party config",
+      "name": "Swiftype site search config",
+      "endpoint": "https://s.swiftypecdn.com/install/v2/config/YUBJbxt5D9bRzdbcLiFr.json",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 320,
+      "bytes": 19810,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "320 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "320 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Third-party config",
+      "name": "Ada chat config",
+      "endpoint": "https://rollout.ada.support/princesscruises-gr/client.json",
+      "method": "GET",
+      "httpStatus": 200,
+      "ms": 105,
+      "bytes": 4559,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "responds with 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "responds in under 5s",
+          "ok": true,
+          "level": "fail",
+          "note": "105 ms"
+        },
+        {
+          "name": "responds in under 1s",
+          "ok": true,
+          "level": "warn",
+          "note": "105 ms"
+        },
+        {
+          "name": "returns valid JSON",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Home page",
+      "endpoint": "https://www.princess.com/",
+      "httpStatus": 200,
+      "ms": 1925,
+      "dclMs": 1503,
+      "requests": 391,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 1.9s, usable at 1.5s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Visitor locale: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Visitor locale: returns a country",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Deals: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Deals: returns products",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Ports list: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Ports list: lists 100+ ports",
+          "ok": true,
+          "level": "fail",
+          "note": "401 ports"
+        },
+        {
+          "name": "Cruise products: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Cruise products: lists 100+ cruises",
+          "ok": true,
+          "level": "fail",
+          "note": "1013 products"
+        },
+        {
+          "name": "Destinations (trades): responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Destinations (trades): lists 5+ destinations",
+          "ok": true,
+          "level": "fail",
+          "note": "15"
+        },
+        {
+          "name": "Coveo search: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Coveo search: search answers",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Cruise search results",
+      "endpoint": "https://www.princess.com/cruise-search/results/",
+      "httpStatus": 200,
+      "ms": 945,
+      "dclMs": 912,
+      "requests": 295,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 0.9s, usable at 0.9s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "shows prices",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Cruise products: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Cruise products: lists 100+ cruises",
+          "ok": true,
+          "level": "fail",
+          "note": "1013"
+        },
+        {
+          "name": "Ships list: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Ships list: lists 10+ ships",
+          "ok": true,
+          "level": "fail",
+          "note": "17 ships"
+        },
+        {
+          "name": "Cabin types (metas): responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Cabin types (metas): lists cabin types",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Home cities: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Home cities: lists cities",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Sub-destinations: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Sub-destinations: lists sub-destinations",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Sales (promos): responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Sales (promos): lists sales",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Live pricing: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Live pricing: returns cruises",
+          "ok": true,
+          "level": "fail",
+          "note": "1013 cruises"
+        },
+        {
+          "name": "Live pricing: every fare has a price above $0",
+          "ok": true,
+          "level": "fail",
+          "note": "0 of 3821 fares missing or zero"
+        },
+        {
+          "name": "Booking engine settings: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Booking engine settings: returns settings",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Cruise details",
+      "endpoint": "https://www.princess.com/itinerary-details/?voyageCode=A716A",
+      "httpStatus": 200,
+      "ms": 4770,
+      "dclMs": 2624,
+      "requests": 372,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 4.8s, usable at 2.6s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "shows prices",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Deals page",
+      "endpoint": "https://www.princess.com/cruise-deals-promotions",
+      "httpStatus": 200,
+      "ms": 1812,
+      "dclMs": 1390,
+      "requests": 315,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 1.8s, usable at 1.4s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Deals: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Deals: returns products",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Alaska destination",
+      "endpoint": "https://www.princess.com/cruise-destinations/alaska-cruises",
+      "httpStatus": 200,
+      "ms": 8569,
+      "dclMs": 2072,
+      "requests": 420,
+      "result": "warn",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": false,
+          "level": "warn",
+          "note": "loaded in 8.6s, usable at 2.1s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Live pricing: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Live pricing: returns cruises",
+          "ok": true,
+          "level": "fail",
+          "note": "6 cruises"
+        },
+        {
+          "name": "Live pricing: every fare has a price above $0",
+          "ok": true,
+          "level": "fail",
+          "note": "0 of 25 fares missing or zero"
+        },
+        {
+          "name": "Deals: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Deals: returns products",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": "page loads in under 8s (loaded in 8.6s, usable at 2.1s)"
+    },
+    {
+      "group": "Page journey",
+      "name": "Juneau shore excursions",
+      "endpoint": "https://www.princess.com/shore-excursions/juneau-alaska",
+      "httpStatus": 200,
+      "ms": 2071,
+      "dclMs": 893,
+      "requests": 236,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 2.1s, usable at 0.9s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "lists excursions",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "Port data (content API): responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Port data (content API): returns the port",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Ship: Sapphire Princess",
+      "endpoint": "https://www.princess.com/ships-and-experience/ships/sa-sapphire-princess",
+      "httpStatus": 200,
+      "ms": 1922,
+      "dclMs": 1624,
+      "requests": 329,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 1.9s, usable at 1.6s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Planning FAQ",
+      "endpoint": "https://www.princess.com/faq",
+      "httpStatus": 200,
+      "ms": 1428,
+      "dclMs": 1150,
+      "requests": 281,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 1.4s, usable at 1.1s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Ada chat: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "Blog",
+      "endpoint": "https://www.princess.com/blog",
+      "httpStatus": 200,
+      "ms": 5723,
+      "dclMs": 1137,
+      "requests": 383,
+      "result": "pass",
+      "checks": [
+        {
+          "name": "page returns 200",
+          "ok": true,
+          "level": "fail",
+          "note": "HTTP 200"
+        },
+        {
+          "name": "page loads in under 8s",
+          "ok": true,
+          "level": "warn",
+          "note": "loaded in 5.7s, usable at 1.1s"
+        },
+        {
+          "name": "no template placeholders on the page",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Coveo search: responds OK",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "Coveo search: returns articles",
+          "ok": true,
+          "level": "fail",
+          "note": "54 results"
+        },
+        {
+          "name": "all API gateway calls succeed",
+          "ok": true,
+          "level": "fail",
+          "note": ""
+        },
+        {
+          "name": "all Princess files and calls load",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        },
+        {
+          "name": "third-party services respond",
+          "ok": true,
+          "level": "warn",
+          "note": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "group": "Page journey",
+      "name": "JavaScript errors (all pages)",
+      "result": "warn",
+      "checks": [
+        {
+          "name": "JavaScript error on 9 of 9 pages",
+          "ok": false,
+          "level": "warn",
+          "note": "n.includes is not a function (in www.princess.com/gtmfp02/_/service_worker/6al0/sw_iframe.html)"
+        }
+      ],
+      "note": "JavaScript error on 9 of 9 pages: n.includes is not a function (in www.princess.com/gtmfp02/_/service_worker/6al0/sw_iframe.html)"
+    }
+  ],
+  "endpoints": [
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 1162,
+      "maxMs": 1162,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports/BNE/excursions",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 51,
+      "maxMs": 51,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports/SYD/excursions",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 47,
+      "maxMs": 47,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/guest/p1.0/locale",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 1142,
+      "maxMs": 1142,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/air-discount",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 167,
+      "maxMs": 167,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/cities",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 137,
+      "maxMs": 137,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/dbtoken",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 205,
+      "maxMs": 205,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/deals",
+      "vendor": "Princess API gateway",
+      "calls": 54,
+      "statuses": {
+        "200": 54
+      },
+      "journeys": [
+        "Home page",
+        "Deals page",
+        "Alaska destination",
+        "Blog"
+      ],
+      "medianMs": 350,
+      "maxMs": 1005,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/itineraries",
+      "vendor": "Princess API gateway",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 614,
+      "maxMs": 614,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/metas",
+      "vendor": "Princess API gateway",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 152,
+      "maxMs": 152,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/ports",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 159,
+      "maxMs": 159,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/products",
+      "vendor": "Princess API gateway",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 225,
+      "maxMs": 703,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/promos/sales",
+      "vendor": "Princess API gateway",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 859,
+      "maxMs": 859,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/ships",
+      "vendor": "Princess API gateway",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 206,
+      "maxMs": 206,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/subtrades",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 168,
+      "maxMs": 168,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/trades",
+      "vendor": "Princess API gateway",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results"
+      ],
+      "medianMs": 222,
+      "maxMs": 222,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/resmf/p1.0/agencies/DIRPB",
+      "vendor": "Princess API gateway",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results"
+      ],
+      "medianMs": 216,
+      "maxMs": 216,
+      "ok": true
+    },
+    {
+      "endpoint": "GET gw.api.princess.com/pcl-web/internal/ube/p1.0/ube",
+      "vendor": "Princess API gateway",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 772,
+      "maxMs": 804,
+      "ok": true
+    },
+    {
+      "endpoint": "POST gw.api.princess.com/pcl-web/internal/caps/pc/pricing/v1/cruises",
+      "vendor": "Princess API gateway",
+      "calls": 4,
+      "statuses": {
+        "200": 4
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details",
+        "Alaska destination"
+      ],
+      "medianMs": 184,
+      "maxMs": 965,
+      "ok": true
+    },
+    {
+      "endpoint": "POST gw.api.princess.com/pcl-web/internal/caps/pc/pricing/v1/cruises/A716A",
+      "vendor": "Princess API gateway",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 245,
+      "maxMs": 245,
+      "ok": true
+    },
+    {
+      "endpoint": "POST gw.api.princess.com/pcl-web/internal/resdb/p1.0/ui-logs",
+      "vendor": "Princess API gateway",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 217,
+      "maxMs": 228,
+      "ok": true
+    },
+    {
+      "endpoint": "GET 69-131-121-167_s-23-215-223-76_ts-1793761653-clienttons-s.akamaihd.net/eum/results.txt",
+      "vendor": "69-131-121-167_s-23-215-223-76_ts-1793761653-clienttons-s.akamaihd.net",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 54,
+      "maxMs": 54,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8swQ80DA6Y1BDvScWXv62pahKInqt1m-LuVN;dc_pre=CPCX0eGq7ZcDFTsNhAgdzXAgTQ;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=8304407810031;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=1;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=1;dc_random=1793761620_vnfO8ifl48U4u3PSsfO9_gkh03v4TfxfeA;~oref=https%3A%2F%2Fwww.princess.com%2F",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 239,
+      "maxMs": 239,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CIbQ8oer7ZcDFeoNhAgdWxo9og;src=5879493;type=princ0;cat=princ0;rcb=10;ord=1;num=3140244737401;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761700_Z7dno5UoUj5Qj9gQaEXJ_DNWOiuLmMOhdw;~oref=https%3A%2F%2Fwww.princess.com%2Fitinerary-details%2F%3FvoyageCode%3DA716A",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 205,
+      "maxMs": 205,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CIqD666r7ZcDFZENhAgdOe875g;src=5879493;type=princ00;cat=princ0;rcb=15;ord=1;num=9010412593682;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761781_Avw2PjREiP6AgTX2hqEu65kPTOKZOsgmQQ;~oref=https%3A%2F%2Fwww.princess.com%2Fshore-excursions%2Fjuneau-alaska",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 117,
+      "maxMs": 117,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CJ-IopOr7ZcDFd8QhAgdTPciSQ;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=7934116463377;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814184~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761724_nJaYUkDsazzAJbfd4QPeuM3hPTweW887PQ;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-deals-promotions",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Deals page"
+      ],
+      "medianMs": 205,
+      "maxMs": 205,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CL7OyLur7ZcDFSUNhAgdJrIVow;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=4932732801257;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761808_YfDfRcgK5_wfEoLuZQigS9nnQbuusAU6iQ;~oref=https%3A%2F%2Fwww.princess.com%2Fships-and-experience%2Fships%2Fsa-sapphire-princess",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Ship: Sapphire Princess"
+      ],
+      "medianMs": 109,
+      "maxMs": 109,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CMHN8oer7ZcDFRQMhAgdvNMHzA;src=5879493;type=princ00;cat=princ0;rcb=10;ord=1;num=247273811201;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761700_aR1W8UDdXPnZv1QfPmQH5AD3vIXh31q8kA;~oref=https%3A%2F%2Fwww.princess.com%2Fitinerary-details%2F%3FvoyageCode%3DA716A",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 197,
+      "maxMs": 197,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CNLCzKCr7ZcDFThXhwMdbl0ufQ;src=5879493;type=princ00;cat=princ0;rcb=18;ord=1;num=1906438235432;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761752_j-zUcArHvl3tGd5Ybf393udVlqe9PadNEQ;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-destinations%2Falaska-cruises",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Alaska destination"
+      ],
+      "medianMs": 248,
+      "maxMs": 248,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CNnxwfCq7ZcDFVVX4QYdM40oNg;src=5879493;type=princ00;cat=princ0;rcb=0;ord=1;num=5329059306369;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761651_JUNpu1t5Bqhyh_A7XgwSYM9n6665WlhrDg;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-search%2Fresults%2F",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 162,
+      "maxMs": 162,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=COGP9NOr7ZcDFRkMhAgdar4pTA;src=5879493;type=princ00;cat=princ0;rcb=2;ord=1;num=3016317266267;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814185~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761859_TJpE9sfJuGU6PIoeLJE-3WtPsMr_m6gWxg;~oref=https%3A%2F%2Fwww.princess.com%2Fblog",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Blog"
+      ],
+      "medianMs": 105,
+      "maxMs": 105,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ad.doubleclick.net/activity;dc_pre=CPWmx8er7ZcDFV0OhAgdud4Bzg;src=5879493;type=princ00;cat=princ0;rcb=16;ord=1;num=4511007280283;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761833_nBditNe6y8uhiBYi_sb5Ft3S4UFHN-Inrg;~oref=https%3A%2F%2Fwww.princess.com%2Ffaq",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Planning FAQ"
+      ],
+      "medianMs": 123,
+      "maxMs": 123,
+      "ok": true
+    },
+    {
+      "endpoint": "GET api.bazaarvoice.com/data/statistics.json",
+      "vendor": "api.bazaarvoice.com",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 255,
+      "maxMs": 255,
+      "ok": true
+    },
+    {
+      "endpoint": "GET c.amazon-adsystem.com/aat/allowlist/allowlist.json",
+      "vendor": "Amazon Ads",
+      "calls": 9,
+      "statuses": {
+        "200": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 2,
+      "maxMs": 36,
+      "ok": true
+    },
+    {
+      "endpoint": "GET c.amazon-adsystem.com/aat/amzn.js",
+      "vendor": "Amazon Ads",
+      "calls": 18,
+      "statuses": {
+        "200": 18
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 2,
+      "maxMs": 14,
+      "ok": true
+    },
+    {
+      "endpoint": "GET c.go-mpulse.net/api/config.json",
+      "vendor": "Akamai mPulse",
+      "calls": 17,
+      "statuses": {
+        "200": 17
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 1,
+      "maxMs": 106,
+      "ok": true
+    },
+    {
+      "endpoint": "GET cdn.optimizely.com/datafiles/NLn8w9S9s9mZSZiq9xXFV.json",
+      "vendor": "Optimizely",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 42,
+      "maxMs": 42,
+      "ok": true
+    },
+    {
+      "endpoint": "GET cmp.osano.com/RH1XVtCfqp/b8a1a4b6-2855-427e-8a24-741460abd02e/en.json",
+      "vendor": "Osano consent",
+      "calls": 9,
+      "statuses": {
+        "200": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 2,
+      "maxMs": 147,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ct.pinterest.com/user/",
+      "vendor": "Pinterest",
+      "calls": 22,
+      "statuses": {
+        "200": 22
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 55,
+      "maxMs": 66,
+      "ok": true
+    },
+    {
+      "endpoint": "GET ct.pinterest.com/v3/",
+      "vendor": "Pinterest",
+      "calls": 22,
+      "statuses": {
+        "200": 22
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 53,
+      "maxMs": 72,
+      "ok": true
+    },
+    {
+      "endpoint": "GET dpm.demdex.net/id",
+      "vendor": "Adobe Audience Manager",
+      "calls": 2,
+      "statuses": {
+        "200": 1,
+        "302": 1
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results"
+      ],
+      "medianMs": 124,
+      "maxMs": 124,
+      "ok": true
+    },
+    {
+      "endpoint": "GET dpm.demdex.net/id/rd",
+      "vendor": "Adobe Audience Manager",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 40,
+      "maxMs": 40,
+      "ok": true
+    },
+    {
+      "endpoint": "GET edge.fullstory.com/s/settings/o-20RRHV-na1/v1/web",
+      "vendor": "FullStory",
+      "calls": 9,
+      "statuses": {
+        "200": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 2,
+      "maxMs": 45,
+      "ok": true
+    },
+    {
+      "endpoint": "GET geo.privacymanager.io/",
+      "vendor": "LiveRamp ATS",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 14,
+      "maxMs": 58,
+      "ok": true
+    },
+    {
+      "endpoint": "GET iwbxtjyx27pra2xkuf2q-p1hhzj-dfe1dcbea-clientnsv4-s.akamaihd.net/eum/results.txt",
+      "vendor": "iwbxtjyx27pra2xkuf2q-p1hhzj-dfe1dcbea-clientnsv4-s.akamaihd.net",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 69,
+      "maxMs": 69,
+      "ok": true
+    },
+    {
+      "endpoint": "GET pixel-config.reddit.com/pixels/a2_hrx4qxb2u4rd/config",
+      "vendor": "Reddit",
+      "calls": 9,
+      "statuses": {
+        "200": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 1,
+      "maxMs": 50,
+      "ok": true
+    },
+    {
+      "endpoint": "GET princesscruise-us.attn.tv/d",
+      "vendor": "Attentive",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 117,
+      "maxMs": 117,
+      "ok": true
+    },
+    {
+      "endpoint": "GET rollout.ada.support/princesscruises-gr/client.json",
+      "vendor": "Ada chat",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Planning FAQ"
+      ],
+      "medianMs": 22,
+      "maxMs": 80,
+      "ok": true
+    },
+    {
+      "endpoint": "GET s.amazon-adsystem.com/iu3",
+      "vendor": "Amazon Ads",
+      "calls": 10,
+      "statuses": {
+        "200": 9,
+        "302": 1
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 61,
+      "maxMs": 618,
+      "ok": true
+    },
+    {
+      "endpoint": "GET s.swiftypecdn.com/install/v2/config/YUBJbxt5D9bRzdbcLiFr.json",
+      "vendor": "Swiftype search",
+      "calls": 7,
+      "statuses": {
+        "200": 7
+      },
+      "journeys": [
+        "Home page",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 7,
+      "maxMs": 69,
+      "ok": true
+    },
+    {
+      "endpoint": "GET s.yimg.com/wi/config/10204786.json",
+      "vendor": "Yahoo Ads",
+      "calls": 9,
+      "statuses": {
+        "200": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 2,
+      "maxMs": 34,
+      "ok": true
+    },
+    {
+      "endpoint": "GET smetrics.princess.com/id",
+      "vendor": "Adobe Analytics",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 124,
+      "maxMs": 124,
+      "ok": true
+    },
+    {
+      "endpoint": "GET static.ada.support/messaging/messaging-manifest.json",
+      "vendor": "Ada chat",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Planning FAQ"
+      ],
+      "medianMs": 279,
+      "maxMs": 279,
+      "ok": true
+    },
+    {
+      "endpoint": "GET static.cloud.coveo.com/atomic/commits/:id/lang/en.json",
+      "vendor": "Coveo search",
+      "calls": 24,
+      "statuses": {
+        "200": 24
+      },
+      "journeys": [
+        "Home page",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Ship: Sapphire Princess",
+        "Planning FAQ"
+      ],
+      "medianMs": 1,
+      "maxMs": 11,
+      "ok": true
+    },
+    {
+      "endpoint": "GET static.cloud.coveo.com/atomic/v3.21.1/lang/en.json",
+      "vendor": "Coveo search",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Blog"
+      ],
+      "medianMs": 305,
+      "maxMs": 309,
+      "ok": true
+    },
+    {
+      "endpoint": "GET trial-eum-clientnsv4-s.akamaihd.net/eum/getdns.txt",
+      "vendor": "trial-eum-clientnsv4-s.akamaihd.net",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 72,
+      "maxMs": 72,
+      "ok": true
+    },
+    {
+      "endpoint": "GET trial-eum-clienttons-s.akamaihd.net/eum/getdns.txt",
+      "vendor": "trial-eum-clienttons-s.akamaihd.net",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 48,
+      "maxMs": 48,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8gj9FMOvFpFWbgvFJDq24hXrucNssGtLUPiw;_dc_time=1793761860;cid=CAQS4QEAQM4h3B9bo-lHoCToFh4N8tNJTBlw0NYzP0n_ODEtEGHTZGaGMPn9_aVV9TIBgzYRuLnFnhb-pg2IsUlwxvYHQP_GLjjmnvxtO8DluYXLOcIUs9miSM9QK3-nlRk2I2m2Oq2egDy7yRXUoI--FSFvLTf8ijfOycP6hlDVetsniHUc0TlrwPIhrDktIX3x3sC18AXRXPjAETPoGOmh-24qv0iDKrr6PtiuFL1B0Cn9Mmied8C1zj1aof2EQEKY2KEO7ej6xbtEE_aRdP37OMmJ5hk4bVUvzJQPMrbrNzzjsKc;eps=AHas8cC4gt9L-tQxIAk2D6zx9MKZK1j1PmbmV30ZLWl_fcBNYeIV0VIUexN8LlLGLgFZ-cigJkVQXXq0AeujqH4woWSp7-lH3Ae6Nm7o6GeG-7fQmw;dc_pre=COGP9NOr7ZcDFRkMhAgdar4pTA;src=5879493;type=princ00;cat=princ0;rcb=2;ord=1;num=3016317266267;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814185~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761859_TJpE9sfJuGU6PIoeLJE-3WtPsMr_m6gWxg;~oref=https%3A%2F%2Fwww.princess.com%2Fblog",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Blog"
+      ],
+      "medianMs": 281,
+      "maxMs": 281,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8kw8Pp9yxdZfFQKWuku0BKMOstHDBxJarLuC;_dc_time=1793761700;cid=CAQS4QEAQM4h3EKo7MRJ69OptMy0Sxm7XHQ3in5wnJrrfYBz6j3pvZaxezMnW5bFVQh6H1peQGh0s-Rb35vPXXsk0Ezq0ofBUSZrpZGFJCyC8th7Zs1d3U_C-_plpw5iij5Gg4FCs3UmVc9NBOgy-PFGvYDsCkZwMq_Q7mOD68p3akfSL7zyoy2g_Gzrg_WTAQNZL-gqHbTNMJW9Inz_F6wzgV0YnRXsLhcwYMZqckaTA87L-94Aq6pMqXh2UqWO5TsR8ytgUC9hZ-LgiZTKX_whZWpzwH-hqwMnxnCrlQ0qN7W4z8w;eps=AHas8cA3KdtxKzMnqIWVpMw2SOPxiJlIu4yX2ySufKohiSWhN5i6fZEvEodYLWsY0WY4wnBDJqc7cZno6dmbHKZ_ev7J5o4IlXX-RIVXCNNYLPnjtg;dc_pre=CMHN8oer7ZcDFRQMhAgdvNMHzA;src=5879493;type=princ00;cat=princ0;rcb=10;ord=1;num=247273811201;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761700_aR1W8UDdXPnZv1QfPmQH5AD3vIXh31q8kA;~oref=https%3A%2F%2Fwww.princess.com%2Fitinerary-details%2F%3FvoyageCode%3DA716A",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 272,
+      "maxMs": 272,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8mnDoV9TdG9gExMy6gRvETOKU1N3qFSvwJnC;_dc_time=1793761809;cid=CAQS4QEAQM4h3GNkkDkoX1Ltcg_UFVkUTz4jkRTxgrvSwfOgKbemq8xDBCheg_wW6wNAqyvXJcvbom1nvvQ-oFDB81bUTdOX3gDzYUfhX-_ROuGkryU3GZFCiDsCvq589jkq5odQy6h58o3GdaOsxv6PGmvgcM_vmStrhdwqNK3fHJNtqaSCjefX6zGUWVfiFgvaGB_Bc8XlUo5hPEWFyB2K22jsOW7yWRvDd93KW-DIAIi93_Tv5fG2OHA9LHlADFt7fHtQAl_Q9Aej-e2W-612t5tEMYDFZTmMpECZOqgbTr3gSxE;eps=AHas8cCQwwOwDmFcE0v5IqhF7FO3XKIpwaZu731hDiKKR8sCerfOCBsOKiB3gdK99bb6XfDstGZHFZNd1S_9bTFV_pTXLf_ePgV3NLLGmvInl6uKpQ;dc_pre=CL7OyLur7ZcDFSUNhAgdJrIVow;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=4932732801257;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761808_YfDfRcgK5_wfEoLuZQigS9nnQbuusAU6iQ;~oref=https%3A%2F%2Fwww.princess.com%2Fships-and-experience%2Fships%2Fsa-sapphire-princess",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Ship: Sapphire Princess"
+      ],
+      "medianMs": 243,
+      "maxMs": 243,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8oRUWW8QceZMDFCQIuKq2U8x4PJx7gYGhMMx;_dc_time=1793761752;cid=CAQS4QEAQM4h3JRa63yt6acD0c6Wwk3lXp2KU8yOooVdV_kNLzBJNz-Eiu6Ve0wVLFhHvDN_-YPkbsC7aFV3nLuT7Id5jxJCf5E9q6GfbGniIOgJ9lz9SEynmtRMt2tbKIhsQa_i5ZSmfoGxRvs5JHYR2f7q4FlIkP6MZnMx_U2H4YbPAAQkaGPXwK24-OS2ee1Be_rvoOTlhc_XjryisPqm_mtQBnjUXiZQJ-QCloBUf-PvGkFGj5pq-3vnVIMjnkCTzan2ymCezI6C8Q9Fm1Q2Pxlh-IjjIQZ30_B-x3GPjAyAQjE;eps=AHas8cDjPRNBE5dkuaHsjPMXQqJeUJCZRgvIszKsixqtuu2ZeqqP0a38okR12CF3kKj0eWrp6xbJ_7po6MP3Xu9pHwB3ODo0kBYr3p2bprNTFlv4YQ;dc_pre=CNLCzKCr7ZcDFThXhwMdbl0ufQ;src=5879493;type=princ00;cat=princ0;rcb=18;ord=1;num=1906438235432;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761752_j-zUcArHvl3tGd5Ybf393udVlqe9PadNEQ;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-destinations%2Falaska-cruises",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Alaska destination"
+      ],
+      "medianMs": 267,
+      "maxMs": 267,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8oVfqnZfAhNh4k6NCWAi7cuKwj1562jBY3Df;_dc_time=1793761724;cid=CAQS4QEAQM4h3KeZXVX12o5bECwuI8RwfuM5FehsEtCS-mJlTUKQVV6k942tyrtL74NG1xIe1Iey3ShTg5dcqpNQfQGUoumejt0boEjIB2WNba4EJ1bsqI-sLo7HDjq_pW4KqaJt68cCWzlwfh_67zn7xY1NYN_1cirfA6WUVvdsbQbRlySs0RIAcix9Yf9Um-oeUJZA4ziyrD8fcvbzu_YDEbRqmbvZu16Le0x9fy7-oxTsXwofuEqXqe7BcGtRUfni17GY8nKTKRm877XOWPYJmXysU8yAzfRtd5b7lwMt0iqIg00;eps=AHas8cAie188a1V9Uz0rWv23h-pxVnKU4Q0-zuBmjOeuH0Rzc9igQTER0ruuXG5IGtsdGEM-GHB0khnOfQGBrcBFNDIN5JfEsjL0c0imd-cjxI2VBA;dc_pre=CJ-IopOr7ZcDFd8QhAgdTPciSQ;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=7934116463377;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814184~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761724_nJaYUkDsazzAJbfd4QPeuM3hPTweW887PQ;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-deals-promotions",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Deals page"
+      ],
+      "medianMs": 242,
+      "maxMs": 242,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8sj6a7GNHfg2oxyu87v8ylVmmSfqoXtsT3ll;_dc_time=1793761834;cid=CAQS4QEAQM4h3BskUGINUH0QW9BkCP6cLqg29wbgvnj_Z0AniL9prER62Z1srr10K-reQThs5jJHuEncBnJx_uNgXiu-uQs0YRfw5KM8kF9eW7aWvTyPtXjBkuxcdOtpUIh10odU1M5DpRffnGN10oQLams019WJPJ2VxnNOkWYmAsUSzwAVWqIGgmV8HqKhKKiCvveQSuFJa5fgV_k5vRST76GJMH4B_wIrgflLfU0OEgbwQilbau-kgeSnOpRTtdMJmJejwwJWcyphZapkUw9Tv9ftaMQiyN8fI5_dUqygV1p5P9I;eps=AHas8cA2L_LjJKCrXh8gdrOY-uplkmm0jApO6-hVUxXi37a8mErCjHY0suAUseAP-BqhRFRuiGsqtAb75eExjuBIzTjt8aMqZetD1EtBMhvbroCQfQ;dc_pre=CPWmx8er7ZcDFV0OhAgdud4Bzg;src=5879493;type=princ00;cat=princ0;rcb=16;ord=1;num=4511007280283;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761833_nBditNe6y8uhiBYi_sb5Ft3S4UFHN-Inrg;~oref=https%3A%2F%2Fwww.princess.com%2Ffaq",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Planning FAQ"
+      ],
+      "medianMs": 336,
+      "maxMs": 336,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=3049913193632358478;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8i8oOyYvEOz_-tY_CHhRz6xKw3wPIXDXdW4Z;_dc_time=1793761651;cid=CAQS4QEAQM4h3CgKwmTIFGOzvH5NFnPOWH4dUIP7ghKH-9ct8LEPhFnbo7AYN2hR5jn40oRicWfp0nnspI-UUFUhESi3PnnJlO8AxLrdzXNIWAjPqt7DxlaRToLqutnE4jE4LtsktyIRYeJczxBp9BWzkpgcvPXazYjJ__wQwTT2JPEAktt5NdCwgMLPaYWih-G3JJXIu8T4r6kZumY7YCsAgWIhRg00lYWymTMWQqSR1nBFa1lm7D5ne3oOs860v-VfZHk1v-Pfv74TvH-Y0QAyUm8pi1ZyH5yqdHOFkxCSmr2HuPM;eps=AHas8cD4dUv4OYlEqdcwjs7fIVoqYNiVERbAonBdVZ66w-wT0hjFNQqyATooYqsSONPg3MwcvxY0Si3sg2KHWVWzjBob8Z6YONq-wR_ZpRJd_PLEdQ;dc_pre=CNnxwfCq7ZcDFVVX4QYdM40oNg;src=5879493;type=princ00;cat=princ0;rcb=0;ord=1;num=5329059306369;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761651_JUNpu1t5Bqhyh_A7XgwSYM9n6665WlhrDg;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-search%2Fresults%2F",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 257,
+      "maxMs": 257,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=3355039837451806653;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8jmdWs2aGIC3Tduv4xfdsxfR2xmQbDZfkB_G;_dc_time=1793761700;cid=CAQS4QEAQM4h3DT53nEuxDYMCQOZo6JiUfdC0EM5TLpKW36q5dJhG2ZvNcgtNPkgz9ROaXvKTF65rVxBJnFZhqLgZm3--QcKbqBXSjU3dh8QYTH8xXkdsQiYqhvARgYVFXFTbHFu46z71iCbB_QFXLGKwYScnFp3Icg5xhiic3YhTK2HC_8ysUNn0cqEab8kBUT2zJVYGN-pyAUoORShU4NFbXpxoUcHHkvG55aOv2bwYtys5AHf5CeLS5zwJJPpcNEwOtVM3oYQrCCDK3KUr_ilwFH2oZydQih3HXAN67pAo7gOEOM;eps=AHas8cAIVZTXwk3NcZO1exnbWmkP92CN3kd8LdlhDkHEeHYB0sXHfyJRSNvhLB6t2TpF806O0tk5fzuLSnZxFuY7bENTxMXJJKquD8teHLngt650Zw;dc_pre=CIbQ8oer7ZcDFeoNhAgdWxo9og;src=5879493;type=princ0;cat=princ0;rcb=10;ord=1;num=3140244737401;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761700_Z7dno5UoUj5Qj9gQaEXJ_DNWOiuLmMOhdw;~oref=https%3A%2F%2Fwww.princess.com%2Fitinerary-details%2F%3FvoyageCode%3DA716A",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 272,
+      "maxMs": 272,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=6272818207572125145;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEiUA1kaD8lNtzmynSmZTkWIEK77era8pL-FUGW_a4wwL9h0aW0Es;_dc_time=1793761752;cid=CAQS4QEAQM4h3OfQ_zxRhmnUZjaeAbRd_TTIa0MXDlgTjnPqdUa8qTkqDlf27CDBifbjJnPA2Q6n16EB45yElHkxjeIyEbLUGRPT0WmAZwwKAARMGCnBUYEo4c7LYitSfLFPij011UR9b1st6o05WoT_c6F9XEwIvyDtFfDVXIL0VmNrFbvsrLnSThmM9EhZAhaNRPG91hmAAZkJ2ZolKGaQs9pP6ncpCrlQc15GEbH5lA6TaTOKPhtMvsJKReUTceecUjgXO893yI6mFv_Mvg4rrUJKh8Ix93BuShQVk70gasgJWnE;eps=AHas8cCDjASOIU4pWE9_qbFdwS5It_mY-SeIGb0RUwClSjMp6PNgBAHaiBCh66xoPx-AyP6iTV2Gk5QjrUqgtqL2IcNGVERDvI9ZXnG-tJ9MrNY-HQ;src=5879493;type=landi0;cat=alask001;rcb=18;ord=3551657481683;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JFA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761752_yowNElzHBHozI5wbd-k4Vo17Pti2xPvmRA;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-destinations%2Falaska-cruises",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Alaska destination"
+      ],
+      "medianMs": 238,
+      "maxMs": 238,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=749246767772055299;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEiUA1kaD8k2bL8oA2q5TR31Ge6qMsaEkrIEVqgbxs4GIRHKSAaMi;_dc_time=1793761620;dc_pre=CPCX0eGq7ZcDFTsNhAgdzXAgTQ;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=8304407810031;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=1;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=1;dc_random=1793761620_vnfO8ifl48U4u3PSsfO9_gkh03v4TfxfeA;~oref=https%3A%2F%2Fwww.princess.com%2F",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 219,
+      "maxMs": 219,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/gmp/conversion/_dc_unique_id=9318938313287997128;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8gXmHyvMIs4bUBF48DB6rmlpi-NRxhuAyf3L;_dc_time=1793761782;cid=CAQS4QEAQM4h3FWiZRdQLbvdWcMmrMTzMIxwMCIAtlGShuab6ARHC91UEIrMU0-NBgFKnRmj2gg6Vyp5ZGOZs8lLL02COyyOEyBB_aG3w7uaE1CDPVJTn3zCEdAyjqdXC_bNRGGgoggpIurU7-4ni9D7e-a5mRk8RGGk0priCtUMsH1kco8QTcsu5H5h2p7BkKxevP27_yGzhUV-czaaftLgShZUwRqnFOdLcjvCqBPl9RNQHlDt9jE1OiILSVbWDr4ko_A-0WfKsx2JmmKn6NHjwuOCd4QmNCx9mXUqsp_ZoFCv8u4;eps=AHas8cDllyF5zh8mPYLQQh8MWmEFLwKx8eqmBjQ-wN6bdJRnN3lLLDTWpQIKx0W_2jMW2h8bvWRsvf3SniSxeV2RCIu-J3THrRHwrk3_QpcyoBkAMQ;dc_pre=CIqD666r7ZcDFZENhAgdOe875g;src=5879493;type=princ00;cat=princ0;rcb=15;ord=1;num=9010412593682;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761781_Avw2PjREiP6AgTX2hqEu65kPTOKZOsgmQQ;~oref=https%3A%2F%2Fwww.princess.com%2Fshore-excursions%2Fjuneau-alaska",
+      "vendor": "Google",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 219,
+      "maxMs": 219,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.google.com/pagead/1p-conversion/:id/",
+      "vendor": "Google",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 126,
+      "maxMs": 159,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.googleadservices.com/pagead/conversion/:id/",
+      "vendor": "Google",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 122,
+      "maxMs": 133,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/assetroot/images/global/web-components/pcl-browse-footer/icons.svg",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 45,
+      "maxMs": 45,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/assetroot/images/global/web-components/pcl-browse-nav/icons.svg",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 37,
+      "maxMs": 37,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/bin/princess/experiencefragment/ship.html",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 81,
+      "maxMs": 81,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/bin/princess/hero-promotion.json",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 64,
+      "maxMs": 64,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/content/dam/princess/target/promo/5757-20261009-base-skinny-svg.json",
+      "vendor": "Princess",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Alaska destination",
+        "Ship: Sapphire Princess"
+      ],
+      "medianMs": 84,
+      "maxMs": 84,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/content/dam/princess/target/promo/free-3rd-4th-voyages.json",
+      "vendor": "Princess",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 59,
+      "maxMs": 59,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/globalfooter;market=en-us",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 27,
+      "maxMs": 27,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/globalheader;market=en-us",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 70,
+      "maxMs": 70,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/jsonbyid;id=master-meta-data",
+      "vendor": "Princess",
+      "calls": 2,
+      "statuses": {
+        "200": 2
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 30,
+      "maxMs": 30,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-at-sea;shipCode=AP;",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 125,
+      "maxMs": 125,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=BNE;",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 67,
+      "maxMs": 67,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=JNU",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 42,
+      "maxMs": 42,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=SYD;",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 62,
+      "maxMs": 62,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/graphql/execute.json/princess/masterdata-special-packages;market=en-us",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 33,
+      "maxMs": 33,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/images/global/svg-library.svg",
+      "vendor": "Princess",
+      "calls": 8,
+      "statuses": {
+        "200": 8
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 8,
+      "maxMs": 63,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/mobify/proxy/api/customer/shopper-customers/v1/organizations/f_ecom_blnk_prd/customers/abwuoWmugWlKsRkXAZlGYYlHgX/baskets",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 145,
+      "maxMs": 145,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/static/html/global/book/json/sale-banners.json",
+      "vendor": "Princess",
+      "calls": 3,
+      "statuses": {
+        "200": 3
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 3,
+      "maxMs": 73,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/static/html/global/book/json/sale-names.json",
+      "vendor": "Princess",
+      "calls": 4,
+      "statuses": {
+        "200": 4
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 2,
+      "maxMs": 55,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/static/html/global/promotions/PC_PC/FSC/offer_details_20261103.html",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 100,
+      "maxMs": 100,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/static/html/global/promotions/PC_PC/FSC/offer_terms_20261103.html",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 96,
+      "maxMs": 96,
+      "ok": true
+    },
+    {
+      "endpoint": "GET www.princess.com/util/getOutage.do",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 453,
+      "maxMs": 453,
+      "ok": true
+    },
+    {
+      "endpoint": "POST 2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws/events",
+      "vendor": "2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws",
+      "calls": 11,
+      "statuses": {
+        "200": 11
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 47,
+      "maxMs": 132,
+      "ok": true
+    },
+    {
+      "endpoint": "POST aceae2f7.akstat.io/",
+      "vendor": "Akamai mPulse",
+      "calls": 1,
+      "statuses": {
+        "204": 1
+      },
+      "journeys": [
+        "Alaska destination"
+      ],
+      "medianMs": 571,
+      "maxMs": 571,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=landi0;cat=alask001;rcb=18;ord=3551657481683;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JFA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761752_yowNElzHBHozI5wbd-k4Vo17Pti2xPvmRA;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-destinations%2Falaska-cruises",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Alaska destination"
+      ],
+      "medianMs": 499,
+      "maxMs": 499,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ0;cat=princ0;rcb=10;ord=1;num=3140244737401;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761700_Z7dno5UoUj5Qj9gQaEXJ_DNWOiuLmMOhdw;~oref=https%3A%2F%2Fwww.princess.com%2Fitinerary-details%2F%3FvoyageCode%3DA716A",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 684,
+      "maxMs": 684,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=0;ord=1;num=5329059306369;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761651_JUNpu1t5Bqhyh_A7XgwSYM9n6665WlhrDg;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-search%2Fresults%2F",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise search results"
+      ],
+      "medianMs": 493,
+      "maxMs": 493,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=10;ord=1;num=247273811201;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761700_aR1W8UDdXPnZv1QfPmQH5AD3vIXh31q8kA;~oref=https%3A%2F%2Fwww.princess.com%2Fitinerary-details%2F%3FvoyageCode%3DA716A",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 695,
+      "maxMs": 695,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=4932732801257;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761808_YfDfRcgK5_wfEoLuZQigS9nnQbuusAU6iQ;~oref=https%3A%2F%2Fwww.princess.com%2Fships-and-experience%2Fships%2Fsa-sapphire-princess",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Ship: Sapphire Princess"
+      ],
+      "medianMs": 460,
+      "maxMs": 460,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=7934116463377;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814184~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761724_nJaYUkDsazzAJbfd4QPeuM3hPTweW887PQ;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-deals-promotions",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Deals page"
+      ],
+      "medianMs": 426,
+      "maxMs": 426,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=15;ord=1;num=9010412593682;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616986~115938465~115938469~118012007~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761781_Avw2PjREiP6AgTX2hqEu65kPTOKZOsgmQQ;~oref=https%3A%2F%2Fwww.princess.com%2Fshore-excursions%2Fjuneau-alaska",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 424,
+      "maxMs": 424,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=16;ord=1;num=4511007280283;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120412528~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814946;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761833_nBditNe6y8uhiBYi_sb5Ft3S4UFHN-Inrg;~oref=https%3A%2F%2Fwww.princess.com%2Ffaq",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Planning FAQ"
+      ],
+      "medianMs": 519,
+      "maxMs": 519,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=18;ord=1;num=1906438235432;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761752_j-zUcArHvl3tGd5Ybf393udVlqe9PadNEQ;~oref=https%3A%2F%2Fwww.princess.com%2Fcruise-destinations%2Falaska-cruises",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Alaska destination"
+      ],
+      "medianMs": 794,
+      "maxMs": 794,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=2;ord=1;num=3016317266267;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=3;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115938466~115938469~118897920~118897930~120213116~120385422~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814185~123814944;epver=2;gap.gtb=3;gap.gtbd=2;dc_random=1793761859_TJpE9sfJuGU6PIoeLJE-3WtPsMr_m6gWxg;~oref=https%3A%2F%2Fwww.princess.com%2Fblog",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Blog"
+      ],
+      "medianMs": 520,
+      "maxMs": 520,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=8304407810031;npa=0;auiddc=263452694.1793761620;gdid=dYzZiYj.dNWVlNT;uaa=x86;uab=64;uafvl=Not%253AA-Brand%3B8.0.0.0%7CChromium%3B156.0.8078.4%7CHeadlessChrome%3B156.0.8078.4;uamb=0;uam=;uap=Windows;uapv=10.0;uaw=0;pscdl=noapi;frm=0;_ng=1;_tu=JJA;gtb=1;gtm=45c92e6b21v9190814883za204zd9190814883xecxf4;gcd=13l3l3l3l1l1;dma=0;dc_fmt=3;tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385422~120412526~120420414~120469145~120469153~121191155~121246026~121246034~123691370~123814944;epver=2;gap.gtb=1;dc_random=1793761620_vnfO8ifl48U4u3PSsfO9_gkh03v4TfxfeA;~oref=https%3A%2F%2Fwww.princess.com%2F",
+      "vendor": "Google Ads",
+      "calls": 1,
+      "statuses": {
+        "302": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 1244,
+      "maxMs": 1244,
+      "ok": true
+    },
+    {
+      "endpoint": "POST adobedc.demdex.net/ee/v1/interact",
+      "vendor": "Adobe Audience Manager",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 143,
+      "maxMs": 143,
+      "ok": true
+    },
+    {
+      "endpoint": "POST alb.reddit.com/rp",
+      "vendor": "Reddit",
+      "calls": 9,
+      "statuses": {
+        "200": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 58,
+      "maxMs": 91,
+      "ok": true
+    },
+    {
+      "endpoint": "POST api.cquotient.com/v3/activities/blnk-PCL-BROWSE/viewCategory",
+      "vendor": "Salesforce Einstein",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 169,
+      "maxMs": 169,
+      "ok": true
+    },
+    {
+      "endpoint": "POST bf07159iyr.bf.dynatrace.com/bf",
+      "vendor": "Dynatrace",
+      "calls": 25,
+      "statuses": {
+        "200": 25
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 58,
+      "maxMs": 213,
+      "ok": true
+    },
+    {
+      "endpoint": "POST consent.api.osano.com/record",
+      "vendor": "Osano consent",
+      "calls": 1,
+      "statuses": {
+        "204": 1
+      },
+      "journeys": [
+        "Home page"
+      ],
+      "medianMs": 270,
+      "maxMs": 270,
+      "ok": true
+    },
+    {
+      "endpoint": "POST ct.pinterest.com/stats/",
+      "vendor": "Pinterest",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Alaska destination"
+      ],
+      "medianMs": 119,
+      "maxMs": 119,
+      "ok": true
+    },
+    {
+      "endpoint": "POST d9.flashtalking.com/api",
+      "vendor": "Flashtalking",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 197,
+      "maxMs": 197,
+      "ok": true
+    },
+    {
+      "endpoint": "POST d9.flashtalking.com/lgc",
+      "vendor": "Flashtalking",
+      "calls": 5,
+      "statuses": {
+        "200": 5
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination"
+      ],
+      "medianMs": 53,
+      "maxMs": 76,
+      "ok": true
+    },
+    {
+      "endpoint": "POST di.rlcdn.com/api/segment",
+      "vendor": "LiveRamp",
+      "calls": 21,
+      "statuses": {
+        "200": 21
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 75,
+      "maxMs": 212,
+      "ok": true
+    },
+    {
+      "endpoint": "POST googleads.g.doubleclick.net/pagead/viewthroughconversion/:id/",
+      "vendor": "Google Ads",
+      "calls": 3,
+      "statuses": {
+        "302": 3
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details"
+      ],
+      "medianMs": 292,
+      "maxMs": 378,
+      "ok": true
+    },
+    {
+      "endpoint": "POST logx.optimizely.com/v1/events",
+      "vendor": "Optimizely",
+      "calls": 12,
+      "statuses": {
+        "204": 12
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 88,
+      "maxMs": 152,
+      "ok": true
+    },
+    {
+      "endpoint": "POST o38990.ingest.us.sentry.io/api/:id/envelope/",
+      "vendor": "Sentry",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Planning FAQ"
+      ],
+      "medianMs": 121,
+      "maxMs": 121,
+      "ok": true
+    },
+    {
+      "endpoint": "POST princesscruise-us.attn.tv/unrenderedCreative",
+      "vendor": "Attentive",
+      "calls": 9,
+      "statuses": {
+        "204": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 77,
+      "maxMs": 311,
+      "ok": true
+    },
+    {
+      "endpoint": "POST princesscruisesandtoursincproduction140nsebck.analytics.org.coveo.com/rest/v15/analytics/search",
+      "vendor": "Coveo search",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Blog"
+      ],
+      "medianMs": 304,
+      "maxMs": 304,
+      "ok": true
+    },
+    {
+      "endpoint": "POST princesscruisesandtoursincproduction140nsebck.org.coveo.com/rest/search/v2",
+      "vendor": "Coveo search",
+      "calls": 15,
+      "statuses": {
+        "200": 15
+      },
+      "journeys": [
+        "Home page",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 76,
+      "maxMs": 241,
+      "ok": true
+    },
+    {
+      "endpoint": "POST px.ads.linkedin.com/wa/",
+      "vendor": "LinkedIn",
+      "calls": 9,
+      "statuses": {
+        "204": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 76,
+      "maxMs": 86,
+      "ok": true
+    },
+    {
+      "endpoint": "POST refer.princess.com/zones/global_footer",
+      "vendor": "Princess",
+      "calls": 6,
+      "statuses": {
+        "200": 6
+      },
+      "journeys": [
+        "Home page",
+        "Deals page",
+        "Alaska destination",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 86,
+      "maxMs": 98,
+      "ok": true
+    },
+    {
+      "endpoint": "POST rs.fullstory.com/rec/bundle/v2",
+      "vendor": "FullStory",
+      "calls": 44,
+      "statuses": {
+        "200": 44
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 66,
+      "maxMs": 399,
+      "ok": true
+    },
+    {
+      "endpoint": "POST rs.fullstory.com/rec/page",
+      "vendor": "FullStory",
+      "calls": 9,
+      "statuses": {
+        "200": 9
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 48,
+      "maxMs": 153,
+      "ok": true
+    },
+    {
+      "endpoint": "POST smetrics.princess.com/ee/or2/v1/interact",
+      "vendor": "Adobe Analytics",
+      "calls": 11,
+      "statuses": {
+        "200": 11
+      },
+      "journeys": [
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 70,
+      "maxMs": 135,
+      "ok": true
+    },
+    {
+      "endpoint": "POST track.coherentpath.com/v1/batches",
+      "vendor": "Coherent Path",
+      "calls": 1,
+      "statuses": {
+        "202": 1
+      },
+      "journeys": [
+        "Cruise details"
+      ],
+      "medianMs": 184,
+      "maxMs": 184,
+      "ok": true
+    },
+    {
+      "endpoint": "POST www.princess.com/mobify/slas/private/shopper/auth/v1/organizations/f_ecom_blnk_prd/oauth2/token",
+      "vendor": "Princess",
+      "calls": 1,
+      "statuses": {
+        "200": 1
+      },
+      "journeys": [
+        "Juneau shore excursions"
+      ],
+      "medianMs": 407,
+      "maxMs": 407,
+      "ok": true
+    },
+    {
+      "endpoint": "POST www.princess.com/oyJJc--PR/A9V/0SP/0NwJBMGT-G8g/G3aG2fXVYaLrXVf97t/C2ABPgcD/TjxL/Sx88OmE",
+      "vendor": "Princess",
+      "calls": 36,
+      "statuses": {
+        "201": 36
+      },
+      "journeys": [
+        "Home page",
+        "Cruise search results",
+        "Cruise details",
+        "Deals page",
+        "Alaska destination",
+        "Juneau shore excursions",
+        "Ship: Sapphire Princess",
+        "Planning FAQ",
+        "Blog"
+      ],
+      "medianMs": 94,
+      "maxMs": 183,
+      "ok": true
+    }
+  ],
+  "vendors": [
+    {
+      "vendor": "Princess",
+      "hosts": [
+        "www.princess.com",
+        "assets.princess.com",
+        "refer.princess.com",
+        "book.princess.com"
+      ],
+      "requests": 1071,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 96,
+      "maxMs": 2401
+    },
+    {
+      "vendor": "Coveo search",
+      "hosts": [
+        "static.cloud.coveo.com",
+        "princesscruisesandtoursincproduction140nsebck.org.coveo.com",
+        "princesscruisesandtoursincproduction140nsebck.analytics.org.coveo.com"
+      ],
+      "requests": 389,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 11,
+      "maxMs": 364
+    },
+    {
+      "vendor": "Adobe Launch",
+      "hosts": [
+        "assets.adobedtm.com"
+      ],
+      "requests": 295,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 1,
+      "maxMs": 273
+    },
+    {
+      "vendor": "FullStory",
+      "hosts": [
+        "edge.fullstory.com",
+        "rs.fullstory.com"
+      ],
+      "requests": 98,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 53,
+      "maxMs": 399
+    },
+    {
+      "vendor": "Princess API gateway",
+      "hosts": [
+        "gw.api.princess.com"
+      ],
+      "requests": 89,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 217,
+      "maxMs": 1162
+    },
+    {
+      "vendor": "Google",
+      "hosts": [
+        "adservice.google.com",
+        "www.google.com",
+        "www.googleadservices.com",
+        "www.googletagmanager.com",
+        "fonts.googleapis.com"
+      ],
+      "requests": 88,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 35,
+      "maxMs": 336
+    },
+    {
+      "vendor": "Akamai mPulse",
+      "hosts": [
+        "s.go-mpulse.net",
+        "c.go-mpulse.net",
+        "aceae2f7.akstat.io"
+      ],
+      "requests": 80,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 78,
+      "maxMs": 571
+    },
+    {
+      "vendor": "Pinterest",
+      "hosts": [
+        "s.pinimg.com",
+        "ct.pinterest.com"
+      ],
+      "requests": 72,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 53,
+      "maxMs": 119
+    },
+    {
+      "vendor": "TikTok",
+      "hosts": [
+        "analytics.tiktok.com",
+        "analytics-ipv6.tiktokw.us"
+      ],
+      "requests": 69,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 93,
+      "maxMs": 378
+    },
+    {
+      "vendor": "Google Ads",
+      "hosts": [
+        "5879493.fls.doubleclick.net",
+        "ad.doubleclick.net",
+        "googleads.g.doubleclick.net",
+        "6203862.fls.doubleclick.net"
+      ],
+      "requests": 61,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 86,
+      "maxMs": 1244
+    },
+    {
+      "vendor": "Adobe Fonts",
+      "hosts": [
+        "use.typekit.net",
+        "p.typekit.net"
+      ],
+      "requests": 53,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 13,
+      "maxMs": 249
+    },
+    {
+      "vendor": "Flashtalking",
+      "hosts": [
+        "servedby.flashtalking.com",
+        "d9.flashtalking.com",
+        "fm.flashtalking.com",
+        "cdn.flashtalking.com"
+      ],
+      "requests": 52,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 68,
+      "maxMs": 294
+    },
+    {
+      "vendor": "Optimizely",
+      "hosts": [
+        "cdn.optimizely.com",
+        "a5366642083889152.cdn.optimizely.com",
+        "cdn3.optimizely.com",
+        "logx.optimizely.com"
+      ],
+      "requests": 50,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 42,
+      "maxMs": 155
+    },
+    {
+      "vendor": "Amazon Ads",
+      "hosts": [
+        "c.amazon-adsystem.com",
+        "s.amazon-adsystem.com"
+      ],
+      "requests": 46,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 2,
+      "maxMs": 618
+    },
+    {
+      "vendor": "Attentive",
+      "hosts": [
+        "cdn.attn.tv",
+        "events.attentivemobile.com",
+        "princesscruise-us.attn.tv"
+      ],
+      "requests": 46,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 67,
+      "maxMs": 311
+    },
+    {
+      "vendor": "LinkedIn",
+      "hosts": [
+        "snap.licdn.com",
+        "px.ads.linkedin.com",
+        "www.linkedin.com"
+      ],
+      "requests": 41,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 73,
+      "maxMs": 240
+    },
+    {
+      "vendor": "p11.techlab-cdn.com",
+      "hosts": [
+        "p11.techlab-cdn.com"
+      ],
+      "requests": 36,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 88,
+      "maxMs": 313
+    },
+    {
+      "vendor": "Dynatrace",
+      "hosts": [
+        "js-cdn.dynatrace.com",
+        "bf07159iyr.bf.dynatrace.com"
+      ],
+      "requests": 34,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 57,
+      "maxMs": 213
+    },
+    {
+      "vendor": "Adobe Analytics",
+      "hosts": [
+        "smetrics.princess.com"
+      ],
+      "requests": 30,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 55,
+      "maxMs": 135
+    },
+    {
+      "vendor": "LiveRamp ATS",
+      "hosts": [
+        "launchpad-wrapper.privacymanager.io",
+        "launchpad.privacymanager.io",
+        "geo.privacymanager.io",
+        "ats-wrapper.privacymanager.io"
+      ],
+      "requests": 30,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 14,
+      "maxMs": 203
+    },
+    {
+      "vendor": "Meta",
+      "hosts": [
+        "connect.facebook.net",
+        "www.facebook.com"
+      ],
+      "requests": 29,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 34,
+      "maxMs": 202
+    },
+    {
+      "vendor": "Swiftype search",
+      "hosts": [
+        "s.swiftypecdn.com",
+        "cc.swiftype.com"
+      ],
+      "requests": 28,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 7,
+      "maxMs": 287
+    },
+    {
+      "vendor": "Osano consent",
+      "hosts": [
+        "cmp.osano.com",
+        "consent.api.osano.com"
+      ],
+      "requests": 28,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 2,
+      "maxMs": 270
+    },
+    {
+      "vendor": "Microsoft Ads",
+      "hosts": [
+        "bat.bing.com"
+      ],
+      "requests": 27,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 3,
+      "maxMs": 1164
+    },
+    {
+      "vendor": "Reddit",
+      "hosts": [
+        "www.redditstatic.com",
+        "pixel-config.reddit.com",
+        "alb.reddit.com"
+      ],
+      "requests": 27,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 24,
+      "maxMs": 179
+    },
+    {
+      "vendor": "Yahoo Ads",
+      "hosts": [
+        "s.yimg.com",
+        "sp.analytics.yahoo.com"
+      ],
+      "requests": 27,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 3,
+      "maxMs": 122
+    },
+    {
+      "vendor": "LiveRamp",
+      "hosts": [
+        "di.rlcdn.com"
+      ],
+      "requests": 21,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 75,
+      "maxMs": 212
+    },
+    {
+      "vendor": "Ada chat",
+      "hosts": [
+        "static.ada.support",
+        "rollout.ada.support",
+        "princesscruises-gr.ada.support"
+      ],
+      "requests": 19,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 29,
+      "maxMs": 293
+    },
+    {
+      "vendor": "tannuium.micpn.com",
+      "hosts": [
+        "tannuium.micpn.com"
+      ],
+      "requests": 18,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 38,
+      "maxMs": 77
+    },
+    {
+      "vendor": "YouTube",
+      "hosts": [
+        "www.youtube.com"
+      ],
+      "requests": 16,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 36,
+      "maxMs": 126
+    },
+    {
+      "vendor": "2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws",
+      "hosts": [
+        "2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws"
+      ],
+      "requests": 11,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 47,
+      "maxMs": 132
+    },
+    {
+      "vendor": "Coherent Path",
+      "hosts": [
+        "track.coherentpath.com"
+      ],
+      "requests": 10,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 2,
+      "maxMs": 247
+    },
+    {
+      "vendor": "Rakuten",
+      "hosts": [
+        "intljs.rmtag.com"
+      ],
+      "requests": 9,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 1,
+      "maxMs": 138
+    },
+    {
+      "vendor": "Adobe Audience Manager",
+      "hosts": [
+        "dpm.demdex.net",
+        "adobedc.demdex.net"
+      ],
+      "requests": 4,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 124,
+      "maxMs": 143
+    },
+    {
+      "vendor": "pt.ispot.tv",
+      "hosts": [
+        "pt.ispot.tv"
+      ],
+      "requests": 2,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 70,
+      "maxMs": 70
+    },
+    {
+      "vendor": "cdn.tailwindcss.com",
+      "hosts": [
+        "cdn.tailwindcss.com"
+      ],
+      "requests": 2,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 456,
+      "maxMs": 456
+    },
+    {
+      "vendor": "fonts.gstatic.com",
+      "hosts": [
+        "fonts.gstatic.com"
+      ],
+      "requests": 2,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 118,
+      "maxMs": 118
+    },
+    {
+      "vendor": "arttrk.com",
+      "hosts": [
+        "arttrk.com"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 273,
+      "maxMs": 273
+    },
+    {
+      "vendor": "cdnjs",
+      "hosts": [
+        "cdnjs.cloudflare.com"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 165,
+      "maxMs": 165
+    },
+    {
+      "vendor": "Mastercard gateway",
+      "hosts": [
+        "na-gateway.mastercard.com"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 279,
+      "maxMs": 279
+    },
+    {
+      "vendor": "Uplift",
+      "hosts": [
+        "tag.uplift.com"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 142,
+      "maxMs": 142
+    },
+    {
+      "vendor": "trial-eum-clienttons-s.akamaihd.net",
+      "hosts": [
+        "trial-eum-clienttons-s.akamaihd.net"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 48,
+      "maxMs": 48
+    },
+    {
+      "vendor": "trial-eum-clientnsv4-s.akamaihd.net",
+      "hosts": [
+        "trial-eum-clientnsv4-s.akamaihd.net"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 72,
+      "maxMs": 72
+    },
+    {
+      "vendor": "69-131-121-167_s-23-215-223-76_ts-1793761653-clienttons-s.akamaihd.net",
+      "hosts": [
+        "69-131-121-167_s-23-215-223-76_ts-1793761653-clienttons-s.akamaihd.net"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 54,
+      "maxMs": 54
+    },
+    {
+      "vendor": "iwbxtjyx27pra2xkuf2q-p1hhzj-dfe1dcbea-clientnsv4-s.akamaihd.net",
+      "hosts": [
+        "iwbxtjyx27pra2xkuf2q-p1hhzj-dfe1dcbea-clientnsv4-s.akamaihd.net"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 69,
+      "maxMs": 69
+    },
+    {
+      "vendor": "api.bazaarvoice.com",
+      "hosts": [
+        "api.bazaarvoice.com"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 255,
+      "maxMs": 255
+    },
+    {
+      "vendor": "Mobi chat",
+      "hosts": [
+        "princess-alaska-ambassador.takemobi.io"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 507,
+      "maxMs": 507
+    },
+    {
+      "vendor": "Salesforce Einstein",
+      "hosts": [
+        "api.cquotient.com"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 169,
+      "maxMs": 169
+    },
+    {
+      "vendor": "Sentry",
+      "hosts": [
+        "o38990.ingest.us.sentry.io"
+      ],
+      "requests": 1,
+      "failed": 0,
+      "errors": [],
+      "medianMs": 121,
+      "maxMs": 121
+    }
+  ]
+}

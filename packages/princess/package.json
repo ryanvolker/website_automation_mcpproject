@@ -13,6 +13,10 @@
     "crawl:deals": "node crawl.mjs deals",
     "crawl:help": "node crawl.mjs help",
     "crawl:excursions": "node crawl-excursions.mjs",
-    "report": "node compare.mjs"
+    "report": "node compare.mjs",
+    "map:services": "node map-services.mjs",
+    "check:apis": "node check-apis.mjs && node build-api-report.mjs",
+    "check:links": "node check-links.mjs",
+    "audit:content": "node audit-content.mjs"
   }
 }
