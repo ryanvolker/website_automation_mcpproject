@@ -27,3 +27,5 @@ data/sites/princess.com/samples/
 data/sites/princess.com/history/
 data/sites/princess.com/link-check.json
 data/sites/princess.com/services.log
+# Account check output (structure only, but kept local to be safe)
+data/sites/princess.com/account-check.json
