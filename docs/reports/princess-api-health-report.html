@@ -37,17 +37,17 @@ footer{margin-top:48px;color:var(--muted);font-size:14px}
 </style></head><body><main>
 <p class="eyebrow">princess.com · Service map &amp; API health</p>
 <h1>Working, with warnings</h1>
-<p class="sub">Checked November 3, 2026 at 8:11 PM MST by loading 9 key pages in a real browser and calling the site's open content APIs directly.</p>
+<p class="sub">Checked November 3, 2026 at 9:01 PM MST by loading 9 key pages in a real browser and calling the site's open content APIs directly.</p>
 
 <div class="tiles">
 <div class="tile pass"><b>24</b><span>checks passed</span></div>
 <div class="tile warn"><b>4</b><span>warnings</span></div>
 <div class="tile fail"><b>0</b><span>failures</span></div>
-<div class="tile"><b>127</b><span>data endpoints measured</span></div>
+<div class="tile"><b>126</b><span>data endpoints measured</span></div>
 <div class="tile"><b>46</b><span>services the site loads</span></div>
 </div>
 
-<div class="card" style="padding:16px 20px"><b>The site's services are healthy.</b> Every Princess API call made by the 9 checked pages succeeded, including live cruise prices, deals, ships, ports and shore excursions. All open content APIs answered correctly and quickly, and most pages were usable within 1–3 seconds (the slowest, Alaska, finished loading at 8.6 seconds). The warnings are content and housekeeping problems, not outages: a leftover demo promotion in the navigation data, expired sales still in a lookup file, and a tracking script error on every page.</div>
+<div class="card" style="padding:16px 20px"><b>The site's services are healthy.</b> All 21 Princess API endpoints called by the 9 checked pages succeeded, including live cruise prices, deals, ships, ports and shore excursions; the slowest answered in about 1.1 seconds. The open content APIs answered correctly, pages were usable within 1–4 seconds, and every page finished loading within 6 seconds. The warnings are content and housekeeping problems, not outages: a leftover demo promotion in the navigation data, expired sales still in a lookup file, a tracking-script error on every page, and one dropped YouTube connection on the blog.</div>
 
 <h2>What needs attention</h2>
 <p class="sub">Every check that failed or warned, most serious first.</p>
@@ -55,9 +55,9 @@ footer{margin-top:48px;color:var(--muted);font-size:14px}
 <p class="why">The navigation data includes a demo promotion attached to the <b>Packages</b> menu item: title “Lorem Ipsum Dolor”, Latin placeholder text, and an image from a <code>cfm-assets-demo</code> folder. It was hidden in every menu we opened, but it is sent to every visitor on every page and would appear if that promotion slot were switched on. <b>Fix:</b> remove the promotion from the Packages menu item in the content system.</p>
 <ul class="checks"><li class="bad"><b>no placeholders or &quot;undefined&quot; in content</b>: Lorem Ipsum</li></ul></div><div class="issue"><h3><span class="badge warn">Warning</span> Content API · Sale names</h3>
 <p class="why">The sale-name lookup file still lists sales that ended on November 2 (Spooky Savings, Fly for Less, Free Onboard Spend). The site looks up names here, so this is low risk unless an old fare still carries one of these codes. <b>Fix:</b> confirm the file is cleaned up automatically after a sale ends.</p>
-<ul class="checks"><li class="bad"><b>no expired sales still listed</b>: 7 expired: Spooky Savings (BOO-PO, ended 2026-11-02); Fly for less with Princess (FL1-PO, ended 2026-11-02); Fly for less with Princess (FL2-PO, ended 2026-11-02); Free Onboard Spend (OB1-PO, ended 2026-11-02); Free Onboard Spend (OB2-PO, ended 2026-11-02); Free Onboard Spend (OB3-PO, ended 2026-11-02); Free Onboard Spend (OB4-PO, ended 2026-11-02)</li></ul></div><div class="issue"><h3><span class="badge warn">Warning</span> Page journey · Alaska destination</h3>
-<p class="why">The Alaska region page was usable after 2.1 seconds but took 8.6 seconds to finish loading, the slowest of the pages checked. It loads two full-screen hero videos and 400+ requests. <b>Fix:</b> lazy-load the hero videos or use lighter poster images on first view.</p>
-<ul class="checks"><li class="bad"><b>page loads in under 8s</b>: loaded in 8.6s, usable at 2.1s</li></ul></div><div class="issue"><h3><span class="badge warn">Warning</span> Page journey · JavaScript errors (all pages)</h3>
+<ul class="checks"><li class="bad"><b>no expired sales still listed</b>: 7 expired: Spooky Savings (BOO-PO, ended 2026-11-02); Fly for less with Princess (FL1-PO, ended 2026-11-02); Fly for less with Princess (FL2-PO, ended 2026-11-02); Free Onboard Spend (OB1-PO, ended 2026-11-02); Free Onboard Spend (OB2-PO, ended 2026-11-02); Free Onboard Spend (OB3-PO, ended 2026-11-02); Free Onboard Spend (OB4-PO, ended 2026-11-02)</li></ul></div><div class="issue"><h3><span class="badge warn">Warning</span> Page journey · Blog</h3>
+<p class="why">One request to YouTube (the blog's embedded video) was dropped by YouTube's servers during this run. It was not seen in earlier runs, so it is most likely a one-off; it only matters if it repeats.</p>
+<ul class="checks"><li class="bad"><b>third-party services respond</b>: YouTube (net::ERR_CONNECTION_CLOSED)</li></ul></div><div class="issue"><h3><span class="badge warn">Warning</span> Page journey · JavaScript errors (all pages)</h3>
 <p class="why">Every page throws <code>n.includes is not a function</code> inside Google Tag Manager's server-side service worker (<code>/gtmfp02/</code>). Visitors don't see it, but tracking that relies on that worker may be losing data. It was seen in automated Chrome and should be confirmed in a normal browser. <b>Fix:</b> ask the analytics team to check the GTM server-side container setup.</p>
 <ul class="checks"><li class="bad"><b>JavaScript error on 9 of 9 pages</b>: n.includes is not a function (in www.princess.com/gtmfp02/_/service_worker/6al0/sw_iframe.html)</li></ul></div></div>
 
@@ -75,69 +75,69 @@ footer{margin-top:48px;color:var(--muted);font-size:14px}
 <details class="card" ><summary>Site basics · 3 checks</summary>
 <div class="scroll"><table><tr><th>Check</th><th>Result</th><th class="num">HTTP</th><th class="num">Time</th><th>Details</th></tr>
 <tr><td><b>Home page</b><br><code>www.princess.com/</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">196 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">184 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ page has a title</li></ul></td></tr><tr><td><b>robots.txt</b><br><code>www.princess.com/robots.txt</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">25 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">23 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ lists a sitemap</li></ul></td></tr><tr><td><b>XML sitemap</b><br><code>www.princess.com/sitemap.xml</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">811 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">525 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ is an XML sitemap</li></ul></td></tr>
 </table></div></details><details class="card" ><summary>Content API · 13 checks</summary>
 <div class="scroll"><table><tr><th>Check</th><th>Result</th><th class="num">HTTP</th><th class="num">Time</th><th>Details</th></tr>
 <tr><td><b>Global header (navigation)</b><br><code>www.princess.com/graphql/execute.json/princess/globalheader;market=en-us</code></td>
 <td><span class="badge warn">Warning</span></td><td class="num">200</td><td class="num">25 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ has header content</li><li class="bad">! no placeholders or &quot;undefined&quot; in content: Lorem Ipsum</li></ul></td></tr><tr><td><b>Global footer</b><br><code>www.princess.com/graphql/execute.json/princess/globalfooter;market=en-us</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">29 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">24 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ has footer content</li><li class="">✓ no placeholders or &quot;undefined&quot; in content</li></ul></td></tr><tr><td><b>Master metadata</b><br><code>www.princess.com/graphql/execute.json/princess/jsonbyid;id=master-meta-data</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">31 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">27 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ has metadata</li></ul></td></tr><tr><td><b>Special packages</b><br><code>www.princess.com/graphql/execute.json/princess/masterdata-special-packages;market=en-us</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">26 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">32 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ lists packages</li></ul></td></tr><tr><td><b>Port data: JNU</b><br><code>www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=JNU</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">30 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">42 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ returns the port</li></ul></td></tr><tr><td><b>Port data: KTN</b><br><code>www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=KTN</code></td>
 <td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">34 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ returns the port</li></ul></td></tr><tr><td><b>Port data: SIT</b><br><code>www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=SIT</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">26 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">30 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ returns the port</li></ul></td></tr><tr><td><b>Port data: FLL</b><br><code>www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=FLL</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">332 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">28 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ returns the port</li></ul></td></tr><tr><td><b>Port data: BCN</b><br><code>www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=BCN</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">32 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">27 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ returns the port</li></ul></td></tr><tr><td><b>Sale names</b><br><code>www.princess.com/static/html/global/book/json/sale-names.json</code></td>
-<td><span class="badge warn">Warning</span></td><td class="num">200</td><td class="num">53 ms</td>
+<td><span class="badge warn">Warning</span></td><td class="num">200</td><td class="num">588 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ lists sales</li><li class="">✓ every sale has a code and name</li><li class="bad">! no expired sales still listed: 7 expired: Spooky Savings (BOO-PO, ended 2026-11-02); Fly for less with Princess (FL1-PO, ended 2026-11-02); Fly for less with Princess (FL2-PO, ended 2026-11-02); Free Onboard Spend (OB1-PO, ended 2026-11-02); Free Onboard Spend (OB2-PO, ended 2026-11-02); Free Onboard Spend (OB3-PO, ended 2026-11-</li><li class="">✓ start dates before end dates</li></ul></td></tr><tr><td><b>Sale banners</b><br><code>www.princess.com/static/html/global/book/json/sale-banners.json</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">74 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">58 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ lists banners</li><li class="">✓ every shown filter has a name</li></ul></td></tr><tr><td><b>Hero promotion</b><br><code>www.princess.com/bin/princess/hero-promotion.json?v=2026-11-04&amp;market=en-us</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">55 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">91 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ has the expected fields</li></ul></td></tr><tr><td><b>Free 3rd &amp; 4th guest voyages</b><br><code>www.princess.com/content/dam/princess/target/promo/free-3rd-4th-voyages.json?v=2026-11-04</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">63 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">92 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li><li class="">✓ lists voyages</li><li class="">✓ every voyage has numeric category values</li></ul></td></tr>
 </table></div></details><details class="card" ><summary>Third-party config · 2 checks</summary>
 <div class="scroll"><table><tr><th>Check</th><th>Result</th><th class="num">HTTP</th><th class="num">Time</th><th>Details</th></tr>
 <tr><td><b>Swiftype site search config</b><br><code>s.swiftypecdn.com/install/v2/config/YUBJbxt5D9bRzdbcLiFr.json</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">320 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">181 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li></ul></td></tr><tr><td><b>Ada chat config</b><br><code>rollout.ada.support/princesscruises-gr/client.json</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">105 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">111 ms</td>
 <td><ul class="checks"><li class="">✓ responds with 200</li><li class="">✓ responds in under 5s</li><li class="">✓ responds in under 1s</li><li class="">✓ returns valid JSON</li></ul></td></tr>
 </table></div></details><details class="card" open><summary>Page journey · 10 checks</summary>
 <div class="scroll"><table><tr><th>Check</th><th>Result</th><th class="num">HTTP</th><th class="num">Time</th><th>Details</th></tr>
 <tr><td><b>Home page</b><br><code>www.princess.com/</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">1.9 s</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">4.5 s</td>
 <td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ Visitor locale: responds OK</li><li class="">✓ Visitor locale: returns a country</li><li class="">✓ Deals: responds OK</li><li class="">✓ Deals: returns products</li><li class="">✓ Ports list: responds OK</li><li class="">✓ Ports list: lists 100+ ports</li><li class="">✓ Cruise products: responds OK</li><li class="">✓ Cruise products: lists 100+ cruises</li><li class="">✓ Destinations (trades): responds OK</li><li class="">✓ Destinations (trades): lists 5+ destinations</li><li class="">✓ Coveo search: responds OK</li><li class="">✓ Coveo search: search answers</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Cruise search results</b><br><code>www.princess.com/cruise-search/results/</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">945 ms</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">1.0 s</td>
 <td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ shows prices</li><li class="">✓ Cruise products: responds OK</li><li class="">✓ Cruise products: lists 100+ cruises</li><li class="">✓ Ships list: responds OK</li><li class="">✓ Ships list: lists 10+ ships</li><li class="">✓ Cabin types (metas): responds OK</li><li class="">✓ Cabin types (metas): lists cabin types</li><li class="">✓ Home cities: responds OK</li><li class="">✓ Home cities: lists cities</li><li class="">✓ Sub-destinations: responds OK</li><li class="">✓ Sub-destinations: lists sub-destinations</li><li class="">✓ Sales (promos): responds OK</li><li class="">✓ Sales (promos): lists sales</li><li class="">✓ Live pricing: responds OK</li><li class="">✓ Live pricing: returns cruises</li><li class="">✓ Live pricing: every fare has a price above $0</li><li class="">✓ Booking engine settings: responds OK</li><li class="">✓ Booking engine settings: returns settings</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Cruise details</b><br><code>www.princess.com/itinerary-details/?voyageCode=A716A</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">4.8 s</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">4.0 s</td>
 <td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ shows prices</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Deals page</b><br><code>www.princess.com/cruise-deals-promotions</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">1.8 s</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">1.6 s</td>
 <td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ Deals: responds OK</li><li class="">✓ Deals: returns products</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Alaska destination</b><br><code>www.princess.com/cruise-destinations/alaska-cruises</code></td>
-<td><span class="badge warn">Warning</span></td><td class="num">200</td><td class="num">8.6 s</td>
-<td><ul class="checks"><li class="">✓ page returns 200</li><li class="bad">! page loads in under 8s: loaded in 8.6s, usable at 2.1s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ Live pricing: responds OK</li><li class="">✓ Live pricing: returns cruises</li><li class="">✓ Live pricing: every fare has a price above $0</li><li class="">✓ Deals: responds OK</li><li class="">✓ Deals: returns products</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Juneau shore excursions</b><br><code>www.princess.com/shore-excursions/juneau-alaska</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">2.1 s</td>
-<td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ lists excursions</li><li class="">✓ Port data (content API): responds OK</li><li class="">✓ Port data (content API): returns the port</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Ship: Sapphire Princess</b><br><code>www.princess.com/ships-and-experience/ships/sa-sapphire-princess</code></td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">2.5 s</td>
+<td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ Live pricing: responds OK</li><li class="">✓ Live pricing: returns cruises</li><li class="">✓ Live pricing: every fare has a price above $0</li><li class="">✓ Deals: responds OK</li><li class="">✓ Deals: returns products</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Juneau shore excursions</b><br><code>www.princess.com/shore-excursions/juneau-alaska</code></td>
 <td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">1.9 s</td>
+<td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ lists excursions</li><li class="">✓ Port data (content API): responds OK</li><li class="">✓ Port data (content API): returns the port</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Ship: Sapphire Princess</b><br><code>www.princess.com/ships-and-experience/ships/sa-sapphire-princess</code></td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">2.4 s</td>
 <td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Planning FAQ</b><br><code>www.princess.com/faq</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">1.4 s</td>
+<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">5.6 s</td>
 <td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ Ada chat: responds OK</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>Blog</b><br><code>www.princess.com/blog</code></td>
-<td><span class="badge pass">Pass</span></td><td class="num">200</td><td class="num">5.7 s</td>
-<td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ Coveo search: responds OK</li><li class="">✓ Coveo search: returns articles</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="">✓ third-party services respond</li></ul></td></tr><tr><td><b>JavaScript errors (all pages)</b></td>
+<td><span class="badge warn">Warning</span></td><td class="num">200</td><td class="num">5.4 s</td>
+<td><ul class="checks"><li class="">✓ page returns 200</li><li class="">✓ page loads in under 8s</li><li class="">✓ no template placeholders on the page</li><li class="">✓ Coveo search: responds OK</li><li class="">✓ Coveo search: returns articles</li><li class="">✓ all API gateway calls succeed</li><li class="">✓ all Princess files and calls load</li><li class="bad">! third-party services respond: YouTube (net::ERR_CONNECTION_CLOSED)</li></ul></td></tr><tr><td><b>JavaScript errors (all pages)</b></td>
 <td><span class="badge warn">Warning</span></td><td class="num">–</td><td class="num">–</td>
 <td><ul class="checks"><li class="bad">! JavaScript error on 9 of 9 pages: n.includes is not a function (in www.princess.com/gtmfp02/_/service_worker/6al0/sw_iframe.html)</li></ul></td></tr>
 </table></div></details>
@@ -147,265 +147,263 @@ footer{margin-top:48px;color:var(--muted);font-size:14px}
 <div class="card scroll"><table><tr><th>Endpoint</th><th>Service</th><th class="num">Calls</th><th>Responses</th><th class="num">Median</th><th class="num">Slowest</th></tr>
 <tr><td><code>GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">1.2 s</td><td class="num">1.2 s</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports/BNE/excursions</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">898 ms</td><td class="num">898 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports/BNE/excursions</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">51 ms</td><td class="num">51 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports/SYD/excursions</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">53 ms</td><td class="num">53 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/db-excursion/p1.0/ports/SYD/excursions</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">47 ms</td><td class="num">47 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/guest/p1.0/locale</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">42 ms</td><td class="num">42 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/guest/p1.0/locale</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
 <td class="num">1.1 s</td><td class="num">1.1 s</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/air-discount</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">167 ms</td><td class="num">167 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/cities</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">164 ms</td><td class="num">164 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/cities</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">137 ms</td><td class="num">137 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/dbtoken</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">142 ms</td><td class="num">142 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/dbtoken</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">205 ms</td><td class="num">205 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/deals</code></td><td>Princess API gateway</td><td class="num">54</td>
+<td class="num">194 ms</td><td class="num">194 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/deals</code></td><td>Princess API gateway</td><td class="num">54</td>
 <td><span class="badge pass">200 ×54</span></td>
-<td class="num">350 ms</td><td class="num">1.0 s</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/itineraries</code></td><td>Princess API gateway</td><td class="num">2</td>
+<td class="num">162 ms</td><td class="num">399 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/itineraries</code></td><td>Princess API gateway</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">614 ms</td><td class="num">614 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/metas</code></td><td>Princess API gateway</td><td class="num">2</td>
+<td class="num">411 ms</td><td class="num">411 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/metas</code></td><td>Princess API gateway</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">152 ms</td><td class="num">152 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/ports</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">165 ms</td><td class="num">165 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/ports</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">159 ms</td><td class="num">159 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/products</code></td><td>Princess API gateway</td><td class="num">3</td>
+<td class="num">152 ms</td><td class="num">152 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/products</code></td><td>Princess API gateway</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">225 ms</td><td class="num">703 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/promos/sales</code></td><td>Princess API gateway</td><td class="num">2</td>
+<td class="num">149 ms</td><td class="num">663 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/promos/sales</code></td><td>Princess API gateway</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">859 ms</td><td class="num">859 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/ships</code></td><td>Princess API gateway</td><td class="num">2</td>
+<td class="num">582 ms</td><td class="num">582 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/ships</code></td><td>Princess API gateway</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">206 ms</td><td class="num">206 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/subtrades</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">165 ms</td><td class="num">165 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/subtrades</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">168 ms</td><td class="num">168 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/trades</code></td><td>Princess API gateway</td><td class="num">2</td>
+<td class="num">164 ms</td><td class="num">164 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resdb/p1.0/trades</code></td><td>Princess API gateway</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">222 ms</td><td class="num">222 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resmf/p1.0/agencies/DIRPB</code></td><td>Princess API gateway</td><td class="num">2</td>
+<td class="num">189 ms</td><td class="num">189 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/resmf/p1.0/agencies/DIRPB</code></td><td>Princess API gateway</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">216 ms</td><td class="num">216 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/ube/p1.0/ube</code></td><td>Princess API gateway</td><td class="num">3</td>
+<td class="num">238 ms</td><td class="num">238 ms</td></tr><tr><td><code>GET gw.api.princess.com/pcl-web/internal/ube/p1.0/ube</code></td><td>Princess API gateway</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">772 ms</td><td class="num">804 ms</td></tr><tr><td><code>POST gw.api.princess.com/pcl-web/internal/caps/pc/pricing/v1/cruises</code></td><td>Princess API gateway</td><td class="num">4</td>
+<td class="num">787 ms</td><td class="num">857 ms</td></tr><tr><td><code>POST gw.api.princess.com/pcl-web/internal/caps/pc/pricing/v1/cruises</code></td><td>Princess API gateway</td><td class="num">4</td>
 <td><span class="badge pass">200 ×4</span></td>
-<td class="num">184 ms</td><td class="num">965 ms</td></tr><tr><td><code>POST gw.api.princess.com/pcl-web/internal/caps/pc/pricing/v1/cruises/A716A</code></td><td>Princess API gateway</td><td class="num">1</td>
+<td class="num">175 ms</td><td class="num">191 ms</td></tr><tr><td><code>POST gw.api.princess.com/pcl-web/internal/caps/pc/pricing/v1/cruises/A716A</code></td><td>Princess API gateway</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">245 ms</td><td class="num">245 ms</td></tr><tr><td><code>POST gw.api.princess.com/pcl-web/internal/resdb/p1.0/ui-logs</code></td><td>Princess API gateway</td><td class="num">3</td>
+<td class="num">238 ms</td><td class="num">238 ms</td></tr><tr><td><code>POST gw.api.princess.com/pcl-web/internal/resdb/p1.0/ui-logs</code></td><td>Princess API gateway</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">217 ms</td><td class="num">228 ms</td></tr><tr><td><code>GET 69-131-121-167_s-23-215-223-76_ts-1793761653-clienttons-s.akamaihd.net/eum/results.txt</code></td><td>69-131-121-167_s-23-215-223-76_ts-1793761653-clienttons-s.akamaihd.net</td><td class="num">1</td>
+<td class="num">199 ms</td><td class="num">202 ms</td></tr><tr><td><code>GET 69-131-121-167_s-23-215-223-47_ts-1793764637-clienttons-s.akamaihd.net/eum/results.txt</code></td><td>69-131-121-167_s-23-215-223-47_ts-1793764637-clienttons-s.akamaihd.net</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">54 ms</td><td class="num">54 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8swQ80DA6Y1BDvScWXv62pahKInqt1m-LuVN;dc_pre=CPCX</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">51 ms</td><td class="num">51 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CJqz4Ne27ZcDFeENhAgdJ5wAqA;src=5879493;type=princ00;cat=princ0;rcb=7;ord=1;num=31</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">239 ms</td><td class="num">239 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CIbQ8oer7ZcDFeoNhAgdWxo9og;src=5879493;type=princ0;cat=princ0;rcb=10;ord=1;num=31</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">100 ms</td><td class="num">100 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CKa086a27ZcDFT8QhAgdyz4L6g;src=5879493;type=princ0;cat=princ0;rcb=9;ord=1;num=867</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">205 ms</td><td class="num">205 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CIqD666r7ZcDFZENhAgdOe875g;src=5879493;type=princ00;cat=princ0;rcb=15;ord=1;num=9</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">118 ms</td><td class="num">118 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CKzMm8u27ZcDFf4NhAgdmGQoZg;src=5879493;type=princ00;cat=princ0;rcb=10;ord=1;num=6</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">117 ms</td><td class="num">117 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CJ-IopOr7ZcDFd8QhAgdTPciSQ;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=7</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">81 ms</td><td class="num">81 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CLbFvfK27ZcDFYMNhAgdj1UYSw;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=2</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">205 ms</td><td class="num">205 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CL7OyLur7ZcDFSUNhAgdJrIVow;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=4</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">74 ms</td><td class="num">74 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CLLtno-27ZcDFWkOhAgdSZc44w;src=5879493;type=princ00;cat=princ0;rcb=2;ord=1;num=14</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">109 ms</td><td class="num">109 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CMHN8oer7ZcDFRQMhAgdvNMHzA;src=5879493;type=princ00;cat=princ0;rcb=10;ord=1;num=2</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">165 ms</td><td class="num">165 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CM74wLK27ZcDFV0JNAgdE3g9hw;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=85</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">197 ms</td><td class="num">197 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CNLCzKCr7ZcDFThXhwMdbl0ufQ;src=5879493;type=princ00;cat=princ0;rcb=18;ord=1;num=1</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">153 ms</td><td class="num">153 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CM7kpb-27ZcDFeYNhAgdXSEuUA;src=5879493;type=landi0;cat=alask001;rcb=3;ord=6534415</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">248 ms</td><td class="num">248 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CNnxwfCq7ZcDFVVX4QYdM40oNg;src=5879493;type=princ00;cat=princ0;rcb=0;ord=1;num=53</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">112 ms</td><td class="num">112 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CNKior-27ZcDFYAPhAgdZ6AZqQ;src=5879493;type=princ00;cat=princ0;rcb=3;ord=1;num=64</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">162 ms</td><td class="num">162 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=COGP9NOr7ZcDFRkMhAgdar4pTA;src=5879493;type=princ00;cat=princ0;rcb=2;ord=1;num=30</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">189 ms</td><td class="num">189 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CP-nzuS27ZcDFQgNhAgdBtww9w;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=3</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">105 ms</td><td class="num">105 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CPWmx8er7ZcDFV0OhAgdud4Bzg;src=5879493;type=princ00;cat=princ0;rcb=16;ord=1;num=4</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">92 ms</td><td class="num">92 ms</td></tr><tr><td><code>GET ad.doubleclick.net/activity;dc_pre=CPeV8qa27ZcDFdQNhAgdkPAKag;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=34</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">123 ms</td><td class="num">123 ms</td></tr><tr><td><code>GET api.bazaarvoice.com/data/statistics.json</code></td><td>api.bazaarvoice.com</td><td class="num">1</td>
+<td class="num">118 ms</td><td class="num">118 ms</td></tr><tr><td><code>GET api.bazaarvoice.com/data/statistics.json</code></td><td>api.bazaarvoice.com</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">255 ms</td><td class="num">255 ms</td></tr><tr><td><code>GET c.amazon-adsystem.com/aat/allowlist/allowlist.json</code></td><td>Amazon Ads</td><td class="num">9</td>
+<td class="num">177 ms</td><td class="num">177 ms</td></tr><tr><td><code>GET c.amazon-adsystem.com/aat/allowlist/allowlist.json</code></td><td>Amazon Ads</td><td class="num">9</td>
 <td><span class="badge pass">200 ×9</span></td>
-<td class="num">2 ms</td><td class="num">36 ms</td></tr><tr><td><code>GET c.amazon-adsystem.com/aat/amzn.js</code></td><td>Amazon Ads</td><td class="num">18</td>
+<td class="num">1 ms</td><td class="num">55 ms</td></tr><tr><td><code>GET c.amazon-adsystem.com/aat/amzn.js</code></td><td>Amazon Ads</td><td class="num">18</td>
 <td><span class="badge pass">200 ×18</span></td>
-<td class="num">2 ms</td><td class="num">14 ms</td></tr><tr><td><code>GET c.go-mpulse.net/api/config.json</code></td><td>Akamai mPulse</td><td class="num">17</td>
+<td class="num">2 ms</td><td class="num">4 ms</td></tr><tr><td><code>GET c.go-mpulse.net/api/config.json</code></td><td>Akamai mPulse</td><td class="num">17</td>
 <td><span class="badge pass">200 ×17</span></td>
-<td class="num">1 ms</td><td class="num">106 ms</td></tr><tr><td><code>GET cdn.optimizely.com/datafiles/NLn8w9S9s9mZSZiq9xXFV.json</code></td><td>Optimizely</td><td class="num">1</td>
+<td class="num">2 ms</td><td class="num">308 ms</td></tr><tr><td><code>GET cdn.optimizely.com/datafiles/NLn8w9S9s9mZSZiq9xXFV.json</code></td><td>Optimizely</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">42 ms</td><td class="num">42 ms</td></tr><tr><td><code>GET cmp.osano.com/RH1XVtCfqp/b8a1a4b6-2855-427e-8a24-741460abd02e/en.json</code></td><td>Osano consent</td><td class="num">9</td>
+<td class="num">49 ms</td><td class="num">49 ms</td></tr><tr><td><code>GET cmp.osano.com/RH1XVtCfqp/b8a1a4b6-2855-427e-8a24-741460abd02e/en.json</code></td><td>Osano consent</td><td class="num">9</td>
 <td><span class="badge pass">200 ×9</span></td>
-<td class="num">2 ms</td><td class="num">147 ms</td></tr><tr><td><code>GET ct.pinterest.com/user/</code></td><td>Pinterest</td><td class="num">22</td>
+<td class="num">2 ms</td><td class="num">76 ms</td></tr><tr><td><code>GET ct.pinterest.com/user/</code></td><td>Pinterest</td><td class="num">22</td>
 <td><span class="badge pass">200 ×22</span></td>
-<td class="num">55 ms</td><td class="num">66 ms</td></tr><tr><td><code>GET ct.pinterest.com/v3/</code></td><td>Pinterest</td><td class="num">22</td>
+<td class="num">93 ms</td><td class="num">224 ms</td></tr><tr><td><code>GET ct.pinterest.com/v3/</code></td><td>Pinterest</td><td class="num">22</td>
 <td><span class="badge pass">200 ×22</span></td>
-<td class="num">53 ms</td><td class="num">72 ms</td></tr><tr><td><code>GET dpm.demdex.net/id</code></td><td>Adobe Audience Manager</td><td class="num">2</td>
+<td class="num">77 ms</td><td class="num">179 ms</td></tr><tr><td><code>GET dpm.demdex.net/id</code></td><td>Adobe Audience Manager</td><td class="num">2</td>
 <td><span class="badge pass">200</span> <span class="badge pass">302</span></td>
-<td class="num">124 ms</td><td class="num">124 ms</td></tr><tr><td><code>GET dpm.demdex.net/id/rd</code></td><td>Adobe Audience Manager</td><td class="num">1</td>
+<td class="num">166 ms</td><td class="num">166 ms</td></tr><tr><td><code>GET dpm.demdex.net/id/rd</code></td><td>Adobe Audience Manager</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">40 ms</td><td class="num">40 ms</td></tr><tr><td><code>GET edge.fullstory.com/s/settings/o-20RRHV-na1/v1/web</code></td><td>FullStory</td><td class="num">9</td>
+<td class="num">48 ms</td><td class="num">48 ms</td></tr><tr><td><code>GET edge.fullstory.com/s/settings/o-20RRHV-na1/v1/web</code></td><td>FullStory</td><td class="num">9</td>
 <td><span class="badge pass">200 ×9</span></td>
-<td class="num">2 ms</td><td class="num">45 ms</td></tr><tr><td><code>GET geo.privacymanager.io/</code></td><td>LiveRamp ATS</td><td class="num">3</td>
+<td class="num">2 ms</td><td class="num">64 ms</td></tr><tr><td><code>GET geo.privacymanager.io/</code></td><td>LiveRamp ATS</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">14 ms</td><td class="num">58 ms</td></tr><tr><td><code>GET iwbxtjyx27pra2xkuf2q-p1hhzj-dfe1dcbea-clientnsv4-s.akamaihd.net/eum/results.txt</code></td><td>iwbxtjyx27pra2xkuf2q-p1hhzj-dfe1dcbea-clientnsv4-s.akamaihd.net</td><td class="num">1</td>
+<td class="num">11 ms</td><td class="num">51 ms</td></tr><tr><td><code>GET iwbxtjyxfv52o2xkvuoq-pgrh3h-636747d5d-clientnsv4-s.akamaihd.net/eum/results.txt</code></td><td>iwbxtjyxfv52o2xkvuoq-pgrh3h-636747d5d-clientnsv4-s.akamaihd.net</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">69 ms</td><td class="num">69 ms</td></tr><tr><td><code>GET pixel-config.reddit.com/pixels/a2_hrx4qxb2u4rd/config</code></td><td>Reddit</td><td class="num">9</td>
+<td class="num">46 ms</td><td class="num">46 ms</td></tr><tr><td><code>GET pixel-config.reddit.com/pixels/a2_hrx4qxb2u4rd/config</code></td><td>Reddit</td><td class="num">9</td>
 <td><span class="badge pass">200 ×9</span></td>
-<td class="num">1 ms</td><td class="num">50 ms</td></tr><tr><td><code>GET princesscruise-us.attn.tv/d</code></td><td>Attentive</td><td class="num">1</td>
+<td class="num">1 ms</td><td class="num">60 ms</td></tr><tr><td><code>GET princesscruise-us.attn.tv/d</code></td><td>Attentive</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">117 ms</td><td class="num">117 ms</td></tr><tr><td><code>GET rollout.ada.support/princesscruises-gr/client.json</code></td><td>Ada chat</td><td class="num">3</td>
+<td class="num">99 ms</td><td class="num">99 ms</td></tr><tr><td><code>GET rollout.ada.support/princesscruises-gr/client.json</code></td><td>Ada chat</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">22 ms</td><td class="num">80 ms</td></tr><tr><td><code>GET s.amazon-adsystem.com/iu3</code></td><td>Amazon Ads</td><td class="num">10</td>
+<td class="num">13 ms</td><td class="num">52 ms</td></tr><tr><td><code>GET s.amazon-adsystem.com/iu3</code></td><td>Amazon Ads</td><td class="num">10</td>
 <td><span class="badge pass">200 ×9</span> <span class="badge pass">302</span></td>
-<td class="num">61 ms</td><td class="num">618 ms</td></tr><tr><td><code>GET s.swiftypecdn.com/install/v2/config/YUBJbxt5D9bRzdbcLiFr.json</code></td><td>Swiftype search</td><td class="num">7</td>
+<td class="num">63 ms</td><td class="num">235 ms</td></tr><tr><td><code>GET s.swiftypecdn.com/install/v2/config/YUBJbxt5D9bRzdbcLiFr.json</code></td><td>Swiftype search</td><td class="num">7</td>
 <td><span class="badge pass">200 ×7</span></td>
-<td class="num">7 ms</td><td class="num">69 ms</td></tr><tr><td><code>GET s.yimg.com/wi/config/10204786.json</code></td><td>Yahoo Ads</td><td class="num">9</td>
+<td class="num">9 ms</td><td class="num">66 ms</td></tr><tr><td><code>GET s.yimg.com/wi/config/10204786.json</code></td><td>Yahoo Ads</td><td class="num">9</td>
 <td><span class="badge pass">200 ×9</span></td>
-<td class="num">2 ms</td><td class="num">34 ms</td></tr><tr><td><code>GET smetrics.princess.com/id</code></td><td>Adobe Analytics</td><td class="num">1</td>
+<td class="num">3 ms</td><td class="num">67 ms</td></tr><tr><td><code>GET smetrics.princess.com/id</code></td><td>Adobe Analytics</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">124 ms</td><td class="num">124 ms</td></tr><tr><td><code>GET static.ada.support/messaging/messaging-manifest.json</code></td><td>Ada chat</td><td class="num">1</td>
+<td class="num">118 ms</td><td class="num">118 ms</td></tr><tr><td><code>GET static.ada.support/messaging/messaging-manifest.json</code></td><td>Ada chat</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">279 ms</td><td class="num">279 ms</td></tr><tr><td><code>GET static.cloud.coveo.com/atomic/commits/:id/lang/en.json</code></td><td>Coveo search</td><td class="num">24</td>
+<td class="num">281 ms</td><td class="num">281 ms</td></tr><tr><td><code>GET static.cloud.coveo.com/atomic/commits/:id/lang/en.json</code></td><td>Coveo search</td><td class="num">24</td>
 <td><span class="badge pass">200 ×24</span></td>
-<td class="num">1 ms</td><td class="num">11 ms</td></tr><tr><td><code>GET static.cloud.coveo.com/atomic/v3.21.1/lang/en.json</code></td><td>Coveo search</td><td class="num">3</td>
+<td class="num">1 ms</td><td class="num">16 ms</td></tr><tr><td><code>GET static.cloud.coveo.com/atomic/v3.21.1/lang/en.json</code></td><td>Coveo search</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">305 ms</td><td class="num">309 ms</td></tr><tr><td><code>GET trial-eum-clientnsv4-s.akamaihd.net/eum/getdns.txt</code></td><td>trial-eum-clientnsv4-s.akamaihd.net</td><td class="num">1</td>
+<td class="num">36 ms</td><td class="num">36 ms</td></tr><tr><td><code>GET trial-eum-clientnsv4-s.akamaihd.net/eum/getdns.txt</code></td><td>trial-eum-clientnsv4-s.akamaihd.net</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">72 ms</td><td class="num">72 ms</td></tr><tr><td><code>GET trial-eum-clienttons-s.akamaihd.net/eum/getdns.txt</code></td><td>trial-eum-clienttons-s.akamaihd.net</td><td class="num">1</td>
+<td class="num">42 ms</td><td class="num">42 ms</td></tr><tr><td><code>GET trial-eum-clienttons-s.akamaihd.net/eum/getdns.txt</code></td><td>trial-eum-clienttons-s.akamaihd.net</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">48 ms</td><td class="num">48 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8gj9FMOvFpFWbgvFJDq24hXrucNs</code></td><td>Google</td><td class="num">1</td>
+<td class="num">111 ms</td><td class="num">111 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8gkpXjSAJDYE4tMzvtKMFK_MKgPR</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">281 ms</td><td class="num">281 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8kw8Pp9yxdZfFQKWuku0BKMOstHD</code></td><td>Google</td><td class="num">1</td>
+<td class="num">109 ms</td><td class="num">109 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8i2WpZpbi7Vd0VFVvQKT6jUcty0-</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">272 ms</td><td class="num">272 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8mnDoV9TdG9gExMy6gRvETOKU1N3</code></td><td>Google</td><td class="num">1</td>
+<td class="num">109 ms</td><td class="num">109 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8oybIqcF3jAeApxnJlW1jtv1ipAF</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">243 ms</td><td class="num">243 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8oRUWW8QceZMDFCQIuKq2U8x4PJx</code></td><td>Google</td><td class="num">1</td>
+<td class="num">70 ms</td><td class="num">70 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8qLhpbAiqVsHhAIUxE08fI30Tx8q</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">267 ms</td><td class="num">267 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8oVfqnZfAhNh4k6NCWAi7cuKwj15</code></td><td>Google</td><td class="num">1</td>
+<td class="num">69 ms</td><td class="num">69 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8trSFGg1raImQnk1rQ4bNUTL15aD</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">242 ms</td><td class="num">242 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8sj6a7GNHfg2oxyu87v8ylVmmSfq</code></td><td>Google</td><td class="num">1</td>
+<td class="num">72 ms</td><td class="num">72 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8uM8VPWqV7Ojlw27SGZw6ICk2GGR</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">336 ms</td><td class="num">336 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=3049913193632358478;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8i8oOyYvEOz_</code></td><td>Google</td><td class="num">1</td>
+<td class="num">71 ms</td><td class="num">71 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=:id;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEiUA1kaD8uXJ2uIGpA6l3QW8TtGhlU7qzLec</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">257 ms</td><td class="num">257 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=3355039837451806653;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8jmdWs2aGIC3</code></td><td>Google</td><td class="num">1</td>
+<td class="num">254 ms</td><td class="num">254 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=3855623404931571656;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8nzRjdUm75IN</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">272 ms</td><td class="num">272 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=6272818207572125145;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEiUA1kaD8lNtzmynSmZT</code></td><td>Google</td><td class="num">1</td>
+<td class="num">131 ms</td><td class="num">131 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=4466484197895133164;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8oetuWW2NMXG</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">238 ms</td><td class="num">238 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=749246767772055299;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEiUA1kaD8k2bL8oA2q5TR</code></td><td>Google</td><td class="num">1</td>
+<td class="num">88 ms</td><td class="num">88 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=5778701360945537659;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8rankPaBF9J5</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">219 ms</td><td class="num">219 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=9318938313287997128;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8gXmHyvMIs4b</code></td><td>Google</td><td class="num">1</td>
+<td class="num">107 ms</td><td class="num">107 ms</td></tr><tr><td><code>GET www.google.com/gmp/conversion/_dc_unique_id=8679151503803029858;_dc_ptd=ChAIgKmm1wYQxPmSu6qUyKQyEh8A1kaD8gQLV0WaNCff</code></td><td>Google</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">219 ms</td><td class="num">219 ms</td></tr><tr><td><code>GET www.google.com/pagead/1p-conversion/:id/</code></td><td>Google</td><td class="num">3</td>
+<td class="num">70 ms</td><td class="num">70 ms</td></tr><tr><td><code>GET www.google.com/pagead/1p-conversion/:id/</code></td><td>Google</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">126 ms</td><td class="num">159 ms</td></tr><tr><td><code>GET www.googleadservices.com/pagead/conversion/:id/</code></td><td>Google</td><td class="num">3</td>
+<td class="num">63 ms</td><td class="num">249 ms</td></tr><tr><td><code>GET www.googleadservices.com/pagead/conversion/:id/</code></td><td>Google</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">122 ms</td><td class="num">133 ms</td></tr><tr><td><code>GET www.princess.com/assetroot/images/global/web-components/pcl-browse-footer/icons.svg</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">67 ms</td><td class="num">137 ms</td></tr><tr><td><code>GET www.princess.com/assetroot/images/global/web-components/pcl-browse-footer/icons.svg</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">45 ms</td><td class="num">45 ms</td></tr><tr><td><code>GET www.princess.com/assetroot/images/global/web-components/pcl-browse-nav/icons.svg</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">72 ms</td><td class="num">72 ms</td></tr><tr><td><code>GET www.princess.com/assetroot/images/global/web-components/pcl-browse-nav/icons.svg</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">37 ms</td><td class="num">37 ms</td></tr><tr><td><code>GET www.princess.com/bin/princess/experiencefragment/ship.html</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">33 ms</td><td class="num">33 ms</td></tr><tr><td><code>GET www.princess.com/bin/princess/experiencefragment/ship.html</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">81 ms</td><td class="num">81 ms</td></tr><tr><td><code>GET www.princess.com/bin/princess/hero-promotion.json</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">149 ms</td><td class="num">149 ms</td></tr><tr><td><code>GET www.princess.com/bin/princess/hero-promotion.json</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">64 ms</td><td class="num">64 ms</td></tr><tr><td><code>GET www.princess.com/content/dam/princess/target/promo/5757-20261009-base-skinny-svg.json</code></td><td>Princess</td><td class="num">2</td>
+<td class="num">68 ms</td><td class="num">68 ms</td></tr><tr><td><code>GET www.princess.com/content/dam/princess/target/promo/5757-20261009-base-skinny-svg.json</code></td><td>Princess</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">84 ms</td><td class="num">84 ms</td></tr><tr><td><code>GET www.princess.com/content/dam/princess/target/promo/free-3rd-4th-voyages.json</code></td><td>Princess</td><td class="num">2</td>
+<td class="num">78 ms</td><td class="num">78 ms</td></tr><tr><td><code>GET www.princess.com/content/dam/princess/target/promo/free-3rd-4th-voyages.json</code></td><td>Princess</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">59 ms</td><td class="num">59 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/globalfooter;market=en-us</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">74 ms</td><td class="num">74 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/globalfooter;market=en-us</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">27 ms</td><td class="num">27 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/globalheader;market=en-us</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">28 ms</td><td class="num">28 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/globalheader;market=en-us</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">70 ms</td><td class="num">70 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/jsonbyid;id=master-meta-data</code></td><td>Princess</td><td class="num">2</td>
+<td class="num">55 ms</td><td class="num">55 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/jsonbyid;id=master-meta-data</code></td><td>Princess</td><td class="num">2</td>
 <td><span class="badge pass">200 ×2</span></td>
-<td class="num">30 ms</td><td class="num">30 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-at-sea;shipCode=AP;</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">31 ms</td><td class="num">31 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-at-sea;shipCode=AP;</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">125 ms</td><td class="num">125 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=BNE;</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">34 ms</td><td class="num">34 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=BNE;</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">67 ms</td><td class="num">67 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=JNU</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">31 ms</td><td class="num">31 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=JNU</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">42 ms</td><td class="num">42 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=SYD;</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">45 ms</td><td class="num">45 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/master-data-itinerary-ports;portCode=SYD;</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">62 ms</td><td class="num">62 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/masterdata-special-packages;market=en-us</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">44 ms</td><td class="num">44 ms</td></tr><tr><td><code>GET www.princess.com/graphql/execute.json/princess/masterdata-special-packages;market=en-us</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
 <td class="num">33 ms</td><td class="num">33 ms</td></tr><tr><td><code>GET www.princess.com/images/global/svg-library.svg</code></td><td>Princess</td><td class="num">8</td>
 <td><span class="badge pass">200 ×8</span></td>
-<td class="num">8 ms</td><td class="num">63 ms</td></tr><tr><td><code>GET www.princess.com/mobify/proxy/api/customer/shopper-customers/v1/organizations/f_ecom_blnk_prd/customers/abwuoWmugWlK</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">10 ms</td><td class="num">60 ms</td></tr><tr><td><code>GET www.princess.com/mobify/proxy/api/customer/shopper-customers/v1/organizations/f_ecom_blnk_prd/customers/abkbc1mekZkr</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">145 ms</td><td class="num">145 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/book/json/sale-banners.json</code></td><td>Princess</td><td class="num">3</td>
+<td class="num">215 ms</td><td class="num">215 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/book/json/sale-banners.json</code></td><td>Princess</td><td class="num">3</td>
 <td><span class="badge pass">200 ×3</span></td>
-<td class="num">3 ms</td><td class="num">73 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/book/json/sale-names.json</code></td><td>Princess</td><td class="num">4</td>
+<td class="num">3 ms</td><td class="num">91 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/book/json/sale-names.json</code></td><td>Princess</td><td class="num">4</td>
 <td><span class="badge pass">200 ×4</span></td>
-<td class="num">2 ms</td><td class="num">55 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/promotions/PC_PC/FSC/offer_details_20261103.html</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">2 ms</td><td class="num">70 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/promotions/PC_PC/FSC/offer_details_20261103.html</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">100 ms</td><td class="num">100 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/promotions/PC_PC/FSC/offer_terms_20261103.html</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">35 ms</td><td class="num">35 ms</td></tr><tr><td><code>GET www.princess.com/static/html/global/promotions/PC_PC/FSC/offer_terms_20261103.html</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">96 ms</td><td class="num">96 ms</td></tr><tr><td><code>GET www.princess.com/util/getOutage.do</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">64 ms</td><td class="num">64 ms</td></tr><tr><td><code>GET www.princess.com/util/getOutage.do</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">453 ms</td><td class="num">453 ms</td></tr><tr><td><code>POST 2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws/events</code></td><td>2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws</td><td class="num">11</td>
+<td class="num">477 ms</td><td class="num">477 ms</td></tr><tr><td><code>POST 2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws/events</code></td><td>2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws</td><td class="num">11</td>
 <td><span class="badge pass">200 ×11</span></td>
-<td class="num">47 ms</td><td class="num">132 ms</td></tr><tr><td><code>POST aceae2f7.akstat.io/</code></td><td>Akamai mPulse</td><td class="num">1</td>
-<td><span class="badge pass">204</span></td>
-<td class="num">571 ms</td><td class="num">571 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=landi0;cat=alask001;rcb=18;ord=3551657481683;npa=0;auiddc=263452694.17</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">43 ms</td><td class="num">931 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=landi0;cat=alask001;rcb=3;ord=6534415152327;npa=0;auiddc=908882416.179</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">499 ms</td><td class="num">499 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ0;cat=princ0;rcb=10;ord=1;num=3140244737401;npa=0;auiddc=26345269</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">593 ms</td><td class="num">593 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ0;cat=princ0;rcb=9;ord=1;num=8675189323958;npa=0;auiddc=908882416</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">684 ms</td><td class="num">684 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=0;ord=1;num=5329059306369;npa=0;auiddc=26345269</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">474 ms</td><td class="num">474 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=10;ord=1;num=6778862705633;npa=0;auiddc=9088824</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">493 ms</td><td class="num">493 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=10;ord=1;num=247273811201;npa=0;auiddc=26345269</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">355 ms</td><td class="num">355 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=2344973146751;npa=0;auiddc=9088824</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">695 ms</td><td class="num">695 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=4932732801257;npa=0;auiddc=2634526</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">401 ms</td><td class="num">401 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=3022458944392;npa=0;auiddc=9088824</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">460 ms</td><td class="num">460 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=12;ord=1;num=7934116463377;npa=0;auiddc=2634526</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">456 ms</td><td class="num">456 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=2;ord=1;num=1405561874401;npa=0;auiddc=90888241</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">426 ms</td><td class="num">426 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=15;ord=1;num=9010412593682;npa=0;auiddc=2634526</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">408 ms</td><td class="num">408 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=3;ord=1;num=649641047432;npa=0;auiddc=908882416</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">424 ms</td><td class="num">424 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=16;ord=1;num=4511007280283;npa=0;auiddc=2634526</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">507 ms</td><td class="num">507 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=3;ord=1;num=6526702762443;npa=0;auiddc=90888241</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">519 ms</td><td class="num">519 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=18;ord=1;num=1906438235432;npa=0;auiddc=2634526</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">421 ms</td><td class="num">421 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=7;ord=1;num=311470690109;npa=0;auiddc=908882416</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">794 ms</td><td class="num">794 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=2;ord=1;num=3016317266267;npa=0;auiddc=26345269</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">1.1 s</td><td class="num">1.1 s</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=3436869566663;npa=0;auiddc=90888241</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">520 ms</td><td class="num">520 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=8304407810031;npa=0;auiddc=26345269</code></td><td>Google Ads</td><td class="num">1</td>
+<td class="num">487 ms</td><td class="num">487 ms</td></tr><tr><td><code>POST ad.doubleclick.net/activity;src=5879493;type=princ00;cat=princ0;rcb=9;ord=1;num=851898924064;npa=0;auiddc=908882416</code></td><td>Google Ads</td><td class="num">1</td>
 <td><span class="badge pass">302</span></td>
-<td class="num">1.2 s</td><td class="num">1.2 s</td></tr><tr><td><code>POST adobedc.demdex.net/ee/v1/interact</code></td><td>Adobe Audience Manager</td><td class="num">1</td>
+<td class="num">522 ms</td><td class="num">522 ms</td></tr><tr><td><code>POST adobedc.demdex.net/ee/v1/interact</code></td><td>Adobe Audience Manager</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">143 ms</td><td class="num">143 ms</td></tr><tr><td><code>POST alb.reddit.com/rp</code></td><td>Reddit</td><td class="num">9</td>
+<td class="num">149 ms</td><td class="num">149 ms</td></tr><tr><td><code>POST alb.reddit.com/rp</code></td><td>Reddit</td><td class="num">9</td>
 <td><span class="badge pass">200 ×9</span></td>
-<td class="num">58 ms</td><td class="num">91 ms</td></tr><tr><td><code>POST api.cquotient.com/v3/activities/blnk-PCL-BROWSE/viewCategory</code></td><td>Salesforce Einstein</td><td class="num">1</td>
+<td class="num">69 ms</td><td class="num">223 ms</td></tr><tr><td><code>POST api-ingest-console.liveramp.com/ingest/9bc4c9bc-b065-4f0c-bd83-666a89a9a466</code></td><td>api-ingest-console.liveramp.com</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">169 ms</td><td class="num">169 ms</td></tr><tr><td><code>POST bf07159iyr.bf.dynatrace.com/bf</code></td><td>Dynatrace</td><td class="num">25</td>
-<td><span class="badge pass">200 ×25</span></td>
-<td class="num">58 ms</td><td class="num">213 ms</td></tr><tr><td><code>POST consent.api.osano.com/record</code></td><td>Osano consent</td><td class="num">1</td>
+<td class="num">269 ms</td><td class="num">269 ms</td></tr><tr><td><code>POST api.cquotient.com/v3/activities/blnk-PCL-BROWSE/viewCategory</code></td><td>Salesforce Einstein</td><td class="num">1</td>
+<td><span class="badge pass">200</span></td>
+<td class="num">207 ms</td><td class="num">207 ms</td></tr><tr><td><code>POST bf07159iyr.bf.dynatrace.com/bf</code></td><td>Dynatrace</td><td class="num">26</td>
+<td><span class="badge pass">200 ×26</span></td>
+<td class="num">56 ms</td><td class="num">170 ms</td></tr><tr><td><code>POST consent.api.osano.com/record</code></td><td>Osano consent</td><td class="num">1</td>
 <td><span class="badge pass">204</span></td>
-<td class="num">270 ms</td><td class="num">270 ms</td></tr><tr><td><code>POST ct.pinterest.com/stats/</code></td><td>Pinterest</td><td class="num">1</td>
+<td class="num">254 ms</td><td class="num">254 ms</td></tr><tr><td><code>POST d9.flashtalking.com/api</code></td><td>Flashtalking</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">119 ms</td><td class="num">119 ms</td></tr><tr><td><code>POST d9.flashtalking.com/api</code></td><td>Flashtalking</td><td class="num">1</td>
-<td><span class="badge pass">200</span></td>
-<td class="num">197 ms</td><td class="num">197 ms</td></tr><tr><td><code>POST d9.flashtalking.com/lgc</code></td><td>Flashtalking</td><td class="num">5</td>
+<td class="num">134 ms</td><td class="num">134 ms</td></tr><tr><td><code>POST d9.flashtalking.com/lgc</code></td><td>Flashtalking</td><td class="num">5</td>
 <td><span class="badge pass">200 ×5</span></td>
-<td class="num">53 ms</td><td class="num">76 ms</td></tr><tr><td><code>POST di.rlcdn.com/api/segment</code></td><td>LiveRamp</td><td class="num">21</td>
+<td class="num">53 ms</td><td class="num">78 ms</td></tr><tr><td><code>POST di.rlcdn.com/api/segment</code></td><td>LiveRamp</td><td class="num">21</td>
 <td><span class="badge pass">200 ×21</span></td>
-<td class="num">75 ms</td><td class="num">212 ms</td></tr><tr><td><code>POST googleads.g.doubleclick.net/pagead/viewthroughconversion/:id/</code></td><td>Google Ads</td><td class="num">3</td>
+<td class="num">71 ms</td><td class="num">382 ms</td></tr><tr><td><code>POST googleads.g.doubleclick.net/pagead/viewthroughconversion/:id/</code></td><td>Google Ads</td><td class="num">3</td>
 <td><span class="badge pass">302 ×3</span></td>
-<td class="num">292 ms</td><td class="num">378 ms</td></tr><tr><td><code>POST logx.optimizely.com/v1/events</code></td><td>Optimizely</td><td class="num">12</td>
+<td class="num">264 ms</td><td class="num">881 ms</td></tr><tr><td><code>POST logx.optimizely.com/v1/events</code></td><td>Optimizely</td><td class="num">12</td>
 <td><span class="badge pass">204 ×12</span></td>
-<td class="num">88 ms</td><td class="num">152 ms</td></tr><tr><td><code>POST o38990.ingest.us.sentry.io/api/:id/envelope/</code></td><td>Sentry</td><td class="num">1</td>
+<td class="num">87 ms</td><td class="num">175 ms</td></tr><tr><td><code>POST o38990.ingest.us.sentry.io/api/:id/envelope/</code></td><td>Sentry</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">121 ms</td><td class="num">121 ms</td></tr><tr><td><code>POST princesscruise-us.attn.tv/unrenderedCreative</code></td><td>Attentive</td><td class="num">9</td>
+<td class="num">119 ms</td><td class="num">119 ms</td></tr><tr><td><code>POST princesscruise-us.attn.tv/unrenderedCreative</code></td><td>Attentive</td><td class="num">9</td>
 <td><span class="badge pass">204 ×9</span></td>
-<td class="num">77 ms</td><td class="num">311 ms</td></tr><tr><td><code>POST princesscruisesandtoursincproduction140nsebck.analytics.org.coveo.com/rest/v15/analytics/search</code></td><td>Coveo search</td><td class="num">1</td>
+<td class="num">75 ms</td><td class="num">127 ms</td></tr><tr><td><code>POST princesscruisesandtoursincproduction140nsebck.analytics.org.coveo.com/rest/v15/analytics/search</code></td><td>Coveo search</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">304 ms</td><td class="num">304 ms</td></tr><tr><td><code>POST princesscruisesandtoursincproduction140nsebck.org.coveo.com/rest/search/v2</code></td><td>Coveo search</td><td class="num">15</td>
+<td class="num">299 ms</td><td class="num">299 ms</td></tr><tr><td><code>POST princesscruisesandtoursincproduction140nsebck.org.coveo.com/rest/search/v2</code></td><td>Coveo search</td><td class="num">15</td>
 <td><span class="badge pass">200 ×15</span></td>
-<td class="num">76 ms</td><td class="num">241 ms</td></tr><tr><td><code>POST px.ads.linkedin.com/wa/</code></td><td>LinkedIn</td><td class="num">9</td>
+<td class="num">80 ms</td><td class="num">199 ms</td></tr><tr><td><code>POST px.ads.linkedin.com/wa/</code></td><td>LinkedIn</td><td class="num">9</td>
 <td><span class="badge pass">204 ×9</span></td>
-<td class="num">76 ms</td><td class="num">86 ms</td></tr><tr><td><code>POST refer.princess.com/zones/global_footer</code></td><td>Princess</td><td class="num">6</td>
+<td class="num">88 ms</td><td class="num">328 ms</td></tr><tr><td><code>POST refer.princess.com/zones/global_footer</code></td><td>Princess</td><td class="num">6</td>
 <td><span class="badge pass">200 ×6</span></td>
-<td class="num">86 ms</td><td class="num">98 ms</td></tr><tr><td><code>POST rs.fullstory.com/rec/bundle/v2</code></td><td>FullStory</td><td class="num">44</td>
-<td><span class="badge pass">200 ×44</span></td>
-<td class="num">66 ms</td><td class="num">399 ms</td></tr><tr><td><code>POST rs.fullstory.com/rec/page</code></td><td>FullStory</td><td class="num">9</td>
+<td class="num">87 ms</td><td class="num">97 ms</td></tr><tr><td><code>POST rs.fullstory.com/rec/bundle/v2</code></td><td>FullStory</td><td class="num">47</td>
+<td><span class="badge pass">200 ×47</span></td>
+<td class="num">63 ms</td><td class="num">263 ms</td></tr><tr><td><code>POST rs.fullstory.com/rec/page</code></td><td>FullStory</td><td class="num">9</td>
 <td><span class="badge pass">200 ×9</span></td>
-<td class="num">48 ms</td><td class="num">153 ms</td></tr><tr><td><code>POST smetrics.princess.com/ee/or2/v1/interact</code></td><td>Adobe Analytics</td><td class="num">11</td>
+<td class="num">50 ms</td><td class="num">116 ms</td></tr><tr><td><code>POST smetrics.princess.com/ee/or2/v1/interact</code></td><td>Adobe Analytics</td><td class="num">11</td>
 <td><span class="badge pass">200 ×11</span></td>
-<td class="num">70 ms</td><td class="num">135 ms</td></tr><tr><td><code>POST track.coherentpath.com/v1/batches</code></td><td>Coherent Path</td><td class="num">1</td>
+<td class="num">66 ms</td><td class="num">135 ms</td></tr><tr><td><code>POST track.coherentpath.com/v1/batches</code></td><td>Coherent Path</td><td class="num">1</td>
 <td><span class="badge pass">202</span></td>
-<td class="num">184 ms</td><td class="num">184 ms</td></tr><tr><td><code>POST www.princess.com/mobify/slas/private/shopper/auth/v1/organizations/f_ecom_blnk_prd/oauth2/token</code></td><td>Princess</td><td class="num">1</td>
+<td class="num">172 ms</td><td class="num">172 ms</td></tr><tr><td><code>POST www.princess.com/mobify/slas/private/shopper/auth/v1/organizations/f_ecom_blnk_prd/oauth2/token</code></td><td>Princess</td><td class="num">1</td>
 <td><span class="badge pass">200</span></td>
-<td class="num">407 ms</td><td class="num">407 ms</td></tr><tr><td><code>POST www.princess.com/oyJJc--PR/A9V/0SP/0NwJBMGT-G8g/G3aG2fXVYaLrXVf97t/C2ABPgcD/TjxL/Sx88OmE</code></td><td>Princess</td><td class="num">36</td>
+<td class="num">333 ms</td><td class="num">333 ms</td></tr><tr><td><code>POST www.princess.com/oyJJc--PR/A9V/0SP/0NwJBMGT-G8g/G3aG2fXVYaLrXVf97t/C2ABPgcD/TjxL/Sx88OmE</code></td><td>Princess</td><td class="num">36</td>
 <td><span class="badge pass">201 ×36</span></td>
-<td class="num">94 ms</td><td class="num">183 ms</td></tr>
+<td class="num">89 ms</td><td class="num">280 ms</td></tr>
 </table></div>
 
 <h2>Third-party services</h2>
 <p class="sub">Requests seen during the page checks, grouped by company. Failures here rarely affect visitors, but each service adds weight and risk to every page.</p>
 <div class="card scroll"><table><tr><th>Service</th><th class="num">Requests</th><th class="num">Failed</th><th class="num">Median</th><th>Errors</th></tr>
-<tr><td>Princess</td><td class="num">1071</td><td class="num">0</td><td class="num">96 ms</td><td></td></tr><tr><td>Coveo search</td><td class="num">389</td><td class="num">0</td><td class="num">11 ms</td><td></td></tr><tr><td>Adobe Launch</td><td class="num">295</td><td class="num">0</td><td class="num">1 ms</td><td></td></tr><tr><td>FullStory</td><td class="num">98</td><td class="num">0</td><td class="num">53 ms</td><td></td></tr><tr><td>Princess API gateway</td><td class="num">89</td><td class="num">0</td><td class="num">217 ms</td><td></td></tr><tr><td>Google</td><td class="num">88</td><td class="num">0</td><td class="num">35 ms</td><td></td></tr><tr><td>Akamai mPulse</td><td class="num">80</td><td class="num">0</td><td class="num">78 ms</td><td></td></tr><tr><td>Pinterest</td><td class="num">72</td><td class="num">0</td><td class="num">53 ms</td><td></td></tr><tr><td>TikTok</td><td class="num">69</td><td class="num">0</td><td class="num">93 ms</td><td></td></tr><tr><td>Google Ads</td><td class="num">61</td><td class="num">0</td><td class="num">86 ms</td><td></td></tr><tr><td>Adobe Fonts</td><td class="num">53</td><td class="num">0</td><td class="num">13 ms</td><td></td></tr><tr><td>Flashtalking</td><td class="num">52</td><td class="num">0</td><td class="num">68 ms</td><td></td></tr><tr><td>Optimizely</td><td class="num">50</td><td class="num">0</td><td class="num">42 ms</td><td></td></tr><tr><td>Amazon Ads</td><td class="num">46</td><td class="num">0</td><td class="num">2 ms</td><td></td></tr><tr><td>Attentive</td><td class="num">46</td><td class="num">0</td><td class="num">67 ms</td><td></td></tr><tr><td>LinkedIn</td><td class="num">41</td><td class="num">0</td><td class="num">73 ms</td><td></td></tr><tr><td>p11.techlab-cdn.com</td><td class="num">36</td><td class="num">0</td><td class="num">88 ms</td><td></td></tr><tr><td>Dynatrace</td><td class="num">34</td><td class="num">0</td><td class="num">57 ms</td><td></td></tr><tr><td>Adobe Analytics</td><td class="num">30</td><td class="num">0</td><td class="num">55 ms</td><td></td></tr><tr><td>LiveRamp ATS</td><td class="num">30</td><td class="num">0</td><td class="num">14 ms</td><td></td></tr><tr><td>Meta</td><td class="num">29</td><td class="num">0</td><td class="num">34 ms</td><td></td></tr><tr><td>Swiftype search</td><td class="num">28</td><td class="num">0</td><td class="num">7 ms</td><td></td></tr><tr><td>Osano consent</td><td class="num">28</td><td class="num">0</td><td class="num">2 ms</td><td></td></tr><tr><td>Microsoft Ads</td><td class="num">27</td><td class="num">0</td><td class="num">3 ms</td><td></td></tr><tr><td>Reddit</td><td class="num">27</td><td class="num">0</td><td class="num">24 ms</td><td></td></tr><tr><td>Yahoo Ads</td><td class="num">27</td><td class="num">0</td><td class="num">3 ms</td><td></td></tr><tr><td>LiveRamp</td><td class="num">21</td><td class="num">0</td><td class="num">75 ms</td><td></td></tr><tr><td>Ada chat</td><td class="num">19</td><td class="num">0</td><td class="num">29 ms</td><td></td></tr><tr><td>tannuium.micpn.com</td><td class="num">18</td><td class="num">0</td><td class="num">38 ms</td><td></td></tr><tr><td>YouTube</td><td class="num">16</td><td class="num">0</td><td class="num">36 ms</td><td></td></tr><tr><td>2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws</td><td class="num">11</td><td class="num">0</td><td class="num">47 ms</td><td></td></tr><tr><td>Coherent Path</td><td class="num">10</td><td class="num">0</td><td class="num">2 ms</td><td></td></tr><tr><td>Rakuten</td><td class="num">9</td><td class="num">0</td><td class="num">1 ms</td><td></td></tr><tr><td>Adobe Audience Manager</td><td class="num">4</td><td class="num">0</td><td class="num">124 ms</td><td></td></tr><tr><td>pt.ispot.tv</td><td class="num">2</td><td class="num">0</td><td class="num">70 ms</td><td></td></tr><tr><td>cdn.tailwindcss.com</td><td class="num">2</td><td class="num">0</td><td class="num">456 ms</td><td></td></tr><tr><td>fonts.gstatic.com</td><td class="num">2</td><td class="num">0</td><td class="num">118 ms</td><td></td></tr><tr><td>arttrk.com</td><td class="num">1</td><td class="num">0</td><td class="num">273 ms</td><td></td></tr><tr><td>cdnjs</td><td class="num">1</td><td class="num">0</td><td class="num">165 ms</td><td></td></tr><tr><td>Mastercard gateway</td><td class="num">1</td><td class="num">0</td><td class="num">279 ms</td><td></td></tr><tr><td>Uplift</td><td class="num">1</td><td class="num">0</td><td class="num">142 ms</td><td></td></tr><tr><td>trial-eum-clienttons-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">48 ms</td><td></td></tr><tr><td>trial-eum-clientnsv4-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">72 ms</td><td></td></tr><tr><td>69-131-121-167_s-23-215-223-76_ts-1793761653-clienttons-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">54 ms</td><td></td></tr><tr><td>iwbxtjyx27pra2xkuf2q-p1hhzj-dfe1dcbea-clientnsv4-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">69 ms</td><td></td></tr><tr><td>api.bazaarvoice.com</td><td class="num">1</td><td class="num">0</td><td class="num">255 ms</td><td></td></tr><tr><td>Mobi chat</td><td class="num">1</td><td class="num">0</td><td class="num">507 ms</td><td></td></tr><tr><td>Salesforce Einstein</td><td class="num">1</td><td class="num">0</td><td class="num">169 ms</td><td></td></tr><tr><td>Sentry</td><td class="num">1</td><td class="num">0</td><td class="num">121 ms</td><td></td></tr>
+<tr><td>YouTube</td><td class="num">15</td><td class="num"><b style="color:var(--fail)">1</b></td><td class="num">52 ms</td><td>net::ERR_CONNECTION_CLOSED script</td></tr><tr><td>Princess</td><td class="num">1069</td><td class="num">0</td><td class="num">91 ms</td><td></td></tr><tr><td>Coveo search</td><td class="num">389</td><td class="num">0</td><td class="num">15 ms</td><td></td></tr><tr><td>Adobe Launch</td><td class="num">295</td><td class="num">0</td><td class="num">1 ms</td><td></td></tr><tr><td>FullStory</td><td class="num">101</td><td class="num">0</td><td class="num">57 ms</td><td></td></tr><tr><td>Princess API gateway</td><td class="num">89</td><td class="num">0</td><td class="num">165 ms</td><td></td></tr><tr><td>Google</td><td class="num">88</td><td class="num">0</td><td class="num">38 ms</td><td></td></tr><tr><td>Akamai mPulse</td><td class="num">78</td><td class="num">0</td><td class="num">75 ms</td><td></td></tr><tr><td>Pinterest</td><td class="num">71</td><td class="num">0</td><td class="num">62 ms</td><td></td></tr><tr><td>TikTok</td><td class="num">70</td><td class="num">0</td><td class="num">84 ms</td><td></td></tr><tr><td>Google Ads</td><td class="num">61</td><td class="num">0</td><td class="num">67 ms</td><td></td></tr><tr><td>Adobe Fonts</td><td class="num">53</td><td class="num">0</td><td class="num">14 ms</td><td></td></tr><tr><td>Flashtalking</td><td class="num">52</td><td class="num">0</td><td class="num">74 ms</td><td></td></tr><tr><td>Optimizely</td><td class="num">50</td><td class="num">0</td><td class="num">51 ms</td><td></td></tr><tr><td>Amazon Ads</td><td class="num">46</td><td class="num">0</td><td class="num">2 ms</td><td></td></tr><tr><td>Attentive</td><td class="num">46</td><td class="num">0</td><td class="num">66 ms</td><td></td></tr><tr><td>LinkedIn</td><td class="num">39</td><td class="num">0</td><td class="num">78 ms</td><td></td></tr><tr><td>p11.techlab-cdn.com</td><td class="num">36</td><td class="num">0</td><td class="num">54 ms</td><td></td></tr><tr><td>Dynatrace</td><td class="num">35</td><td class="num">0</td><td class="num">55 ms</td><td></td></tr><tr><td>Adobe Analytics</td><td class="num">30</td><td class="num">0</td><td class="num">64 ms</td><td></td></tr><tr><td>LiveRamp ATS</td><td class="num">30</td><td class="num">0</td><td class="num">11 ms</td><td></td></tr><tr><td>Meta</td><td class="num">29</td><td class="num">0</td><td class="num">29 ms</td><td></td></tr><tr><td>Swiftype search</td><td class="num">28</td><td class="num">0</td><td class="num">15 ms</td><td></td></tr><tr><td>Osano consent</td><td class="num">28</td><td class="num">0</td><td class="num">2 ms</td><td></td></tr><tr><td>Microsoft Ads</td><td class="num">27</td><td class="num">0</td><td class="num">2 ms</td><td></td></tr><tr><td>Reddit</td><td class="num">27</td><td class="num">0</td><td class="num">22 ms</td><td></td></tr><tr><td>Yahoo Ads</td><td class="num">27</td><td class="num">0</td><td class="num">25 ms</td><td></td></tr><tr><td>LiveRamp</td><td class="num">21</td><td class="num">0</td><td class="num">71 ms</td><td></td></tr><tr><td>Ada chat</td><td class="num">19</td><td class="num">0</td><td class="num">26 ms</td><td></td></tr><tr><td>tannuium.micpn.com</td><td class="num">18</td><td class="num">0</td><td class="num">36 ms</td><td></td></tr><tr><td>2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws</td><td class="num">11</td><td class="num">0</td><td class="num">43 ms</td><td></td></tr><tr><td>Coherent Path</td><td class="num">10</td><td class="num">0</td><td class="num">2 ms</td><td></td></tr><tr><td>Rakuten</td><td class="num">9</td><td class="num">0</td><td class="num">1 ms</td><td></td></tr><tr><td>Adobe Audience Manager</td><td class="num">4</td><td class="num">0</td><td class="num">149 ms</td><td></td></tr><tr><td>pt.ispot.tv</td><td class="num">2</td><td class="num">0</td><td class="num">55 ms</td><td></td></tr><tr><td>cdn.tailwindcss.com</td><td class="num">2</td><td class="num">0</td><td class="num">468 ms</td><td></td></tr><tr><td>fonts.gstatic.com</td><td class="num">2</td><td class="num">0</td><td class="num">243 ms</td><td></td></tr><tr><td>trial-eum-clientnsv4-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">42 ms</td><td></td></tr><tr><td>trial-eum-clienttons-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">111 ms</td><td></td></tr><tr><td>iwbxtjyxfv52o2xkvuoq-pgrh3h-636747d5d-clientnsv4-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">46 ms</td><td></td></tr><tr><td>69-131-121-167_s-23-215-223-47_ts-1793764637-clienttons-s.akamaihd.net</td><td class="num">1</td><td class="num">0</td><td class="num">51 ms</td><td></td></tr><tr><td>arttrk.com</td><td class="num">1</td><td class="num">0</td><td class="num">287 ms</td><td></td></tr><tr><td>api-ingest-console.liveramp.com</td><td class="num">1</td><td class="num">0</td><td class="num">269 ms</td><td></td></tr><tr><td>cdnjs</td><td class="num">1</td><td class="num">0</td><td class="num">204 ms</td><td></td></tr><tr><td>Mastercard gateway</td><td class="num">1</td><td class="num">0</td><td class="num">353 ms</td><td></td></tr><tr><td>Uplift</td><td class="num">1</td><td class="num">0</td><td class="num">105 ms</td><td></td></tr><tr><td>api.bazaarvoice.com</td><td class="num">1</td><td class="num">0</td><td class="num">177 ms</td><td></td></tr><tr><td>Mobi chat</td><td class="num">1</td><td class="num">0</td><td class="num">103 ms</td><td></td></tr><tr><td>Salesforce Einstein</td><td class="num">1</td><td class="num">0</td><td class="num">207 ms</td><td></td></tr><tr><td>Sentry</td><td class="num">1</td><td class="num">0</td><td class="num">119 ms</td><td></td></tr>
 </table></div>
 
 <h2>Service map</h2>
