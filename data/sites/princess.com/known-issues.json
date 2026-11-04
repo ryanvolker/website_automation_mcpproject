@@ -1,0 +1,61 @@
+{
+  "about": "Issues found in the 2026-11-03 site health audit. recheck-issues.mjs revisits each one and reports whether it is still there. Add new issues here as they are confirmed.",
+  "issues": [
+    { "id": "blank-payment-plans", "severity": "high", "title": "Payment Plans page is blank", "check": "blank", "urls": ["/cruise-deals-promotions/payment-plans"] },
+    { "id": "blank-additional-faq", "severity": "high", "title": "Additional FAQ page is blank", "check": "blank", "urls": ["/faq/additional-faq"] },
+    { "id": "fare-placeholder", "severity": "high", "title": "\"From {{fare}}\" instead of a price on Japan port pages", "check": "text", "find": "{{fare}}", "urls": [
+      "/cruise-destinations/japan-cruises/cruises-to-aomori", "/cruise-destinations/japan-cruises/cruises-to-beppu",
+      "/cruise-destinations/japan-cruises/cruises-to-hiroshima", "/cruise-destinations/japan-cruises/cruises-to-hitachinaka",
+      "/cruise-destinations/japan-cruises/cruises-to-kanazawa", "/cruise-destinations/japan-cruises/cruises-to-tokushima",
+      "/cruise-destinations/japan-cruises/cruises-to-tsuruga", "/cruise-destinations/japan-cruises/cruises-to-wakayama"] },
+    { "id": "test-quote", "severity": "high", "title": "\"Test by line of staff member quote\" on the Balcony stateroom page", "check": "text", "find": "Test by line", "urls": ["/staterooms/balcony"] },
+    { "id": "lorem-blog", "severity": "high", "title": "Hidden Lorem ipsum text on the blog page", "check": "html", "find": "dolorem ipsum", "urls": ["/blog"] },
+    { "id": "test-site-links", "severity": "high", "title": "Live pages link into the QA test site and demo pages", "check": "links", "find": "/(qa-test-area|demo-pages-reference|language-masters)/", "urls": [
+      "/cruise-destinations/australia-cruises/cruises-to-airlie-beach", "/cruise-destinations/australia-cruises/cruises-to-albany-australia",
+      "/cruise-destinations/australia-cruises/cruises-to-broome", "/cruise-destinations/australia-cruises/cruises-to-burnie",
+      "/cruise-destinations/australia-cruises/cruises-to-eden", "/cruise-destinations/australia-cruises/cruises-to-napier-new-zealand",
+      "/cruise-destinations/australia-cruises/cruises-to-perth-fremantle", "/cruise-destinations/australia-cruises/cruises-to-port-douglas",
+      "/cruise-destinations/australia-cruises/cruises-to-willis-island", "/cruise-destinations/australia-cruises/cruises-to-yorkeys-knob-australia",
+      "/cruise-destinations/australia-cruises/cruises-to-darwin", "/cruise-destinations/canada-cruises/cruises-to-charlottetown",
+      "/cruise-destinations/departure-ports/cruises-from-auckland-new-zealand", "/cruise-destinations/departure-ports/cruises-from-perth-fremantle-australia",
+      "/cruise-destinations/departure-ports/cruises-from-singapore", "/cruise-destinations/departure-ports/cruises-from-san-francisco",
+      "/cruise-destinations/departure-ports/cruises-from-vancouver", "/cruise-destinations/european-cruises/cruises-to-alicante",
+      "/cruise-destinations/european-cruises/cruises-to-catania-sicily", "/cruise-destinations/european-cruises/cruises-to-katakolon-olympia-greece",
+      "/cruise-destinations/european-cruises/cruises-to-limassol", "/cruise-destinations/european-cruises/cruises-to-molde",
+      "/cruise-destinations/european-cruises/cruises-to-palermo-italy", "/cruise-destinations/european-cruises/cruises-to-santa-margherita-italy",
+      "/cruise-destinations/south-america-cruises/cruises-to-fortaleza-brazil", "/cruise-destinations/south-america-cruises/cruises-to-manta-ecuador",
+      "/cruise-destinations/south-america-cruises/cruises-to-montevideo-uruguay", "/cruise-destinations/south-america-cruises/cruises-to-pisco-peru",
+      "/cruise-destinations/world-cruises/cruises-to-pitcairn-island", "/cruise-destinations/caribbean-cruises/cruise-to-grand-cayman",
+      "/cruise-destinations/japan-cruises/cruises-to-aomori", "/cruise-destinations/new-england-cruises",
+      "/cruise-destinations/alaska-cruises/cruise-to-prince-rupert",
+      "/cruise-destinations/asia-cruises/asia-cruise-tips/learn-about-asia/immerse-yourself-in-culture-as-you-cruise-to-japan",
+      "/ships-and-experience/onboard-experience/activities/casino/prestige", "/why-princess/new-to-cruising"] },
+    { "id": "norway-iceland-404", "severity": "high", "title": "Norway & Iceland region page is missing (404)", "check": "status404", "urls": ["/cruise-destinations/europe-cruises/norway-and-iceland"] },
+    { "id": "norway-iceland-links", "severity": "high", "title": "Norway & Iceland port pages still link to the missing region page", "check": "links", "find": "/cruise-destinations/europe-cruises/norway-and-iceland", "urls": [
+      "/cruise-destinations/european-cruises/cruises-to-akureyri", "/cruise-destinations/european-cruises/cruises-to-alesund-norway",
+      "/cruise-destinations/european-cruises/cruises-to-bergen-norway"] },
+    { "id": "port-guides-redirect", "severity": "medium", "title": "Port guides redirect to the general destinations page", "check": "redirect", "find": "/cruise-destinations", "urls": [
+      "/cruise-destinations/alaska-cruises/cruise-to-seward", "/cruise-destinations/alaska-cruises/cruises-to-valdez",
+      "/cruise-destinations/alaska-cruises/cruises-to-wrangell", "/cruise-destinations/caribbean-cruises/cruises-to-st-vincent",
+      "/cruise-destinations/departure-ports/cruises-from-galveston", "/cruise-destinations/japan-cruises/cruises-to-kumano",
+      "/cruise-destinations/epic-voyages"] },
+    { "id": "typos", "severity": "medium", "title": "Misspellings", "check": "typos", "typos": [
+      ["/accessibility-at-sea", "accomodations"], ["/cruise-dining/omalleys", "friend shrimp"],
+      ["/ships-and-experience/ships/sa-sapphire-princess", "dinning"], ["/why-princess/new-to-cruising", "cruiste"],
+      ["/faq/pre-cruise/flight-guideline-ports", "depature"], ["/ships-and-experience/onboard-experience/activities", "dancng"],
+      ["/ships-and-experience/onboard-experience/activities/casino/slotseries", "saliing"],
+      ["/ships-and-experience/celebrations/celebrations-cruise-tips/learn-more/6-ways-to-celebrate-on-a-cruise", "inspiried"],
+      ["/cruise-destinations/canada-cruises/cruises-to-sydney", "ydney delivers"], ["/cruise-destinations/caribbean-cruises/cruises-to-roatan", "rrive"],
+      ["/cruise-destinations/caribbean-cruises/cruises-to-puerto-rico", "cuise"], ["/cruise-destinations/european-cruises/cruises-to-aarhus-denmark", "excusrion"],
+      ["/cruise-destinations/bahamas-cruises/cruises-to-celebration-key", "signiture"], ["/cruise-destinations/departure-ports/cruises-from-florida", "signatire"],
+      ["/cruise-destinations/alaska-cruises/cruise-to-juneau", "souring"], ["/cruise-destinations/south-america-cruises/cruises-to-stanley-falkland-islands", "helisphere"],
+      ["/cruise-destinations/tahiti-south-pacific-cruises/cruises-to-port-vila", "teaming with"], ["/cruise-destinations/caribbean-cruises/cruise-to-trinidad", "busting"],
+      ["/cruise-destinations/japan-cruises/cruises-to-kobe", "pmaybe"], ["/cruise-destinations/japan-cruises/cruises-to-tokushima", "capper"],
+      ["/cruise-destinations/european-cruises/cruises-to-valletta-malta", "tactually"],
+      ["/cruise-destinations/australia-cruises/australia-new-zealand-cruise-tips/cruise-preparation-and-tips/5-things-to-bring-back-from-your-australia-cruise", "carpel"]] },
+    { "id": "grammar", "severity": "low", "title": "Grammar and tone", "check": "typos", "typos": [
+      ["/cruise-destinations/alaska-cruises", "will chock full"], ["/ships-and-experience/celebrations", "birthday to anniversary"],
+      ["/cruise-destinations/european-cruises/cruises-to-belfast-northern-ireland", "pissed-off"],
+      ["/cruise-destinations/hawaii-cruises/hawaii-cruise-tips", "volcanos"]] }
+  ]
+}

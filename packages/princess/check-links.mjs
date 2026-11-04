@@ -92,6 +92,14 @@ async function worker() {
 }
 await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
+// Server errors are often momentary, so retry each one once after a pause and record the result.
+for (const r of results.filter((x) => (typeof x.status === 'number' && x.status >= 500) || x.status === 'error')) {
+  await sleep(5000);
+  const again = await check(r.url);
+  r.retry = { status: again.status, at: new Date().toISOString() };
+  console.log(`retry ${r.status} → ${again.status} ${r.url}`);
+}
+
 const byStatus = {};
 for (const r of results) byStatus[r.status] = (byStatus[r.status] || 0) + 1;
 const out = {

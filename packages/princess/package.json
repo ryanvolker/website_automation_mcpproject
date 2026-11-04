@@ -17,6 +17,9 @@
     "map:services": "node map-services.mjs",
     "check:apis": "node check-apis.mjs && node build-api-report.mjs",
     "check:links": "node check-links.mjs",
-    "audit:content": "node audit-content.mjs"
+    "audit:content": "node audit-content.mjs",
+    "recheck:issues": "node recheck-issues.mjs",
+    "daily": "node fetch-sitemap.mjs && node check-links.mjs && node check-apis.mjs && node recheck-issues.mjs && node build-daily-report.mjs",
+    "report:daily": "node build-daily-report.mjs"
   }
 }

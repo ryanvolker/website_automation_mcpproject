@@ -1,0 +1,577 @@
+{
+  "checkedAt": "2026-11-04T16:22:53.837Z",
+  "results": [
+    {
+      "id": "blank-payment-plans",
+      "severity": "high",
+      "title": "Payment Plans page is blank",
+      "state": "still there",
+      "still": 1,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/cruise-deals-promotions/payment-plans",
+          "state": "still",
+          "note": "HTTP 200, 0 characters of page content"
+        }
+      ]
+    },
+    {
+      "id": "blank-additional-faq",
+      "severity": "high",
+      "title": "Additional FAQ page is blank",
+      "state": "still there",
+      "still": 1,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/faq/additional-faq",
+          "state": "still",
+          "note": "HTTP 200, 0 characters of page content"
+        }
+      ]
+    },
+    {
+      "id": "fare-placeholder",
+      "severity": "high",
+      "title": "\"From {{fare}}\" instead of a price on Japan port pages",
+      "state": "still there",
+      "still": 8,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-aomori",
+          "state": "still",
+          "note": "3 found"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-beppu",
+          "state": "still",
+          "note": "3 found"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-hiroshima",
+          "state": "still",
+          "note": "2 found"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-hitachinaka",
+          "state": "still",
+          "note": "3 found"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-kanazawa",
+          "state": "still",
+          "note": "3 found"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-tokushima",
+          "state": "still",
+          "note": "3 found"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-tsuruga",
+          "state": "still",
+          "note": "3 found"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-wakayama",
+          "state": "still",
+          "note": "3 found"
+        }
+      ]
+    },
+    {
+      "id": "test-quote",
+      "severity": "high",
+      "title": "\"Test by line of staff member quote\" on the Balcony stateroom page",
+      "state": "still there",
+      "still": 1,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/staterooms/balcony",
+          "state": "still",
+          "note": "1 found"
+        }
+      ]
+    },
+    {
+      "id": "lorem-blog",
+      "severity": "high",
+      "title": "Hidden Lorem ipsum text on the blog page",
+      "state": "still there",
+      "still": 1,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/blog",
+          "state": "still",
+          "note": "3 found"
+        }
+      ]
+    },
+    {
+      "id": "test-site-links",
+      "severity": "high",
+      "title": "Live pages link into the QA test site and demo pages",
+      "state": "still there",
+      "still": 36,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-airlie-beach",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-albany-australia",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-broome",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-burnie",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-eden",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-napier-new-zealand",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-perth-fremantle",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-port-douglas",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-willis-island",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-yorkeys-knob-australia",
+          "state": "still",
+          "note": "3 links"
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/cruises-to-darwin",
+          "state": "still",
+          "note": "3 links"
+        },
+        {
+          "url": "/cruise-destinations/canada-cruises/cruises-to-charlottetown",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/departure-ports/cruises-from-auckland-new-zealand",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/departure-ports/cruises-from-perth-fremantle-australia",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/departure-ports/cruises-from-singapore",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/departure-ports/cruises-from-san-francisco",
+          "state": "still",
+          "note": "6 links"
+        },
+        {
+          "url": "/cruise-destinations/departure-ports/cruises-from-vancouver",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-alicante",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-catania-sicily",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-katakolon-olympia-greece",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-limassol",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-molde",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-palermo-italy",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-santa-margherita-italy",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/south-america-cruises/cruises-to-fortaleza-brazil",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/south-america-cruises/cruises-to-manta-ecuador",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/south-america-cruises/cruises-to-montevideo-uruguay",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/south-america-cruises/cruises-to-pisco-peru",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/world-cruises/cruises-to-pitcairn-island",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/caribbean-cruises/cruise-to-grand-cayman",
+          "state": "still",
+          "note": "2 links"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-aomori",
+          "state": "still",
+          "note": "3 links"
+        },
+        {
+          "url": "/cruise-destinations/new-england-cruises",
+          "state": "still",
+          "note": "9 links"
+        },
+        {
+          "url": "/cruise-destinations/alaska-cruises/cruise-to-prince-rupert",
+          "state": "still",
+          "note": "4 links"
+        },
+        {
+          "url": "/cruise-destinations/asia-cruises/asia-cruise-tips/learn-about-asia/immerse-yourself-in-culture-as-you-cruise-to-japan",
+          "state": "still",
+          "note": "7 links"
+        },
+        {
+          "url": "/ships-and-experience/onboard-experience/activities/casino/prestige",
+          "state": "still",
+          "note": "2 links"
+        },
+        {
+          "url": "/why-princess/new-to-cruising",
+          "state": "still",
+          "note": "1 link"
+        }
+      ]
+    },
+    {
+      "id": "norway-iceland-404",
+      "severity": "high",
+      "title": "Norway & Iceland region page is missing (404)",
+      "state": "still there",
+      "still": 1,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/cruise-destinations/europe-cruises/norway-and-iceland",
+          "state": "still",
+          "note": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": "norway-iceland-links",
+      "severity": "high",
+      "title": "Norway & Iceland port pages still link to the missing region page",
+      "state": "still there",
+      "still": 3,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-akureyri",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-alesund-norway",
+          "state": "still",
+          "note": "1 link"
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-bergen-norway",
+          "state": "still",
+          "note": "1 link"
+        }
+      ]
+    },
+    {
+      "id": "port-guides-redirect",
+      "severity": "medium",
+      "title": "Port guides redirect to the general destinations page",
+      "state": "still there",
+      "still": 7,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/cruise-destinations/alaska-cruises/cruise-to-seward",
+          "state": "still",
+          "note": "ends at /cruise-destinations (HTTP 200)"
+        },
+        {
+          "url": "/cruise-destinations/alaska-cruises/cruises-to-valdez",
+          "state": "still",
+          "note": "ends at /cruise-destinations (HTTP 200)"
+        },
+        {
+          "url": "/cruise-destinations/alaska-cruises/cruises-to-wrangell",
+          "state": "still",
+          "note": "ends at /cruise-destinations (HTTP 200)"
+        },
+        {
+          "url": "/cruise-destinations/caribbean-cruises/cruises-to-st-vincent",
+          "state": "still",
+          "note": "ends at /cruise-destinations (HTTP 200)"
+        },
+        {
+          "url": "/cruise-destinations/departure-ports/cruises-from-galveston",
+          "state": "still",
+          "note": "ends at /cruise-destinations (HTTP 200)"
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-kumano",
+          "state": "still",
+          "note": "ends at /cruise-destinations (HTTP 200)"
+        },
+        {
+          "url": "/cruise-destinations/epic-voyages",
+          "state": "still",
+          "note": "ends at /cruise-destinations (HTTP 200)"
+        }
+      ]
+    },
+    {
+      "id": "typos",
+      "severity": "medium",
+      "title": "Misspellings",
+      "state": "still there",
+      "still": 22,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/accessibility-at-sea",
+          "word": "accomodations",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-dining/omalleys",
+          "word": "friend shrimp",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/ships-and-experience/ships/sa-sapphire-princess",
+          "word": "dinning",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/why-princess/new-to-cruising",
+          "word": "cruiste",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/faq/pre-cruise/flight-guideline-ports",
+          "word": "depature",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/ships-and-experience/onboard-experience/activities",
+          "word": "dancng",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/ships-and-experience/onboard-experience/activities/casino/slotseries",
+          "word": "saliing",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/ships-and-experience/celebrations/celebrations-cruise-tips/learn-more/6-ways-to-celebrate-on-a-cruise",
+          "word": "inspiried",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/canada-cruises/cruises-to-sydney",
+          "word": "ydney delivers",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/caribbean-cruises/cruises-to-roatan",
+          "word": "rrive",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/caribbean-cruises/cruises-to-puerto-rico",
+          "word": "cuise",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-aarhus-denmark",
+          "word": "excusrion",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/bahamas-cruises/cruises-to-celebration-key",
+          "word": "signiture",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/departure-ports/cruises-from-florida",
+          "word": "signatire",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/alaska-cruises/cruise-to-juneau",
+          "word": "souring",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/south-america-cruises/cruises-to-stanley-falkland-islands",
+          "word": "helisphere",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/tahiti-south-pacific-cruises/cruises-to-port-vila",
+          "word": "teaming with",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/caribbean-cruises/cruise-to-trinidad",
+          "word": "busting",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-kobe",
+          "word": "pmaybe",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/japan-cruises/cruises-to-tokushima",
+          "word": "capper",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-valletta-malta",
+          "word": "tactually",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/australia-cruises/australia-new-zealand-cruise-tips/cruise-preparation-and-tips/5-things-to-bring-back-from-your-australia-cruise",
+          "word": "carpel",
+          "state": "still",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "severity": "low",
+      "title": "Grammar and tone",
+      "state": "still there",
+      "still": 4,
+      "fixed": 0,
+      "unknown": 0,
+      "items": [
+        {
+          "url": "/cruise-destinations/alaska-cruises",
+          "word": "will chock full",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/ships-and-experience/celebrations",
+          "word": "birthday to anniversary",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/european-cruises/cruises-to-belfast-northern-ireland",
+          "word": "pissed-off",
+          "state": "still",
+          "note": ""
+        },
+        {
+          "url": "/cruise-destinations/hawaii-cruises/hawaii-cruise-tips",
+          "word": "volcanos",
+          "state": "still",
+          "note": ""
+        }
+      ]
+    }
+  ]
+}
