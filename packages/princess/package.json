@@ -21,6 +21,8 @@
     "recheck:issues": "node recheck-issues.mjs",
     "daily": "node fetch-sitemap.mjs && node check-links.mjs && node check-apis.mjs && node recheck-issues.mjs && node build-daily-report.mjs",
     "report:daily": "node build-daily-report.mjs",
-    "check:account": "node check-account.mjs"
+    "check:account": "node check-account.mjs",
+    "crawl:deckplans": "node crawl-deckplans.mjs",
+    "build:fleet": "node build-fleet-map.mjs && node build-fleet-report.mjs"
   }
 }

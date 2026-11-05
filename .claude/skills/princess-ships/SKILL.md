@@ -33,3 +33,10 @@ description: Look up Princess Cruises ships - facts (guests, crew, decks, year),
 - Venues and features differ by ship; always check that ship's page.
 - Crawled content is a snapshot (`crawledAt`); use live search for prices.
 - Read-only.
+
+## Deck plans, staterooms and venues by ship (fleet map)
+
+- `data/sites/princess.com/deck-plans.json`: every ship's decks, public rooms on each deck, and every cabin as `[number, category, zone, sqft, balconySqft, berths, wheelchair, connecting, notes]` (field names in `cabinFields`). Ships with an upcoming refit have several `layouts`, each labelled with the sailing dates it applies to.
+- `data/sites/princess.com/fleet-map.json`: for each ship, its facts, cabin counts and size range by type (Interior, Oceanview, Balcony, Mini-Suite, Suite), venues with the decks they're on, and layout changes. `venueIndex` lists which ships have each venue; use it for "which ships have X?".
+- Refresh: `npm run crawl:deckplans -w @wa/princess` (about 12 minutes), then `npm run build:fleet -w @wa/princess`, which also writes `docs/reports/princess-fleet-map-<date>.html`.
+- For "which cabins are accessible / biggest balcony / connecting rooms on ship X", filter that ship's cabins in `deck-plans.json`.

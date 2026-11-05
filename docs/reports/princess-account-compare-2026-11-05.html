@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Princess Account Comparison</title>
+<style>
+:root { --bg:#f6f5f2; --card:#fff; --text:#1c1c1e; --muted:#6a6a70; --line:#e4e2dc; --accent:#0b5f8a; --ok:#1f7a3f; --okbg:#e6f4ea; --warn:#8a5a00; --warnbg:#fdf1dc; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#131416; --card:#1c1d20; --text:#ececee; --muted:#a2a2aa; --line:#33343a; --accent:#7cc3ea; --ok:#6fd08f; --okbg:#173322; --warn:#f0c064; --warnbg:#3a2e14; } }
+:root[data-theme="dark"] { --bg:#131416; --card:#1c1d20; --text:#ececee; --muted:#a2a2aa; --line:#33343a; --accent:#7cc3ea; --ok:#6fd08f; --okbg:#173322; --warn:#f0c064; --warnbg:#3a2e14; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:900px; margin:0 auto; padding:28px 16px 48px; overflow-x:clip; }
+h1 { font-size:25px; margin:0 0 4px; } h2 { font-size:17px; margin:28px 0 10px; }
+.sub { color:var(--muted); margin:0 0 18px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:14px; }
+.scroll { max-width:100%; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { text-align:left; padding:7px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { color:var(--muted); font-weight:600; font-size:12.5px; white-space:nowrap; }
+td.n, th.n { text-align:right; white-space:nowrap; }
+.tag { display:inline-block; padding:0 8px; border-radius:99px; font-size:12.5px; font-weight:600; }
+.ok { background:var(--okbg); color:var(--ok); } .warn { background:var(--warnbg); color:var(--warn); }
+ul { margin:6px 0 0; padding-left:20px; } li { margin:4px 0; }
+.muted { color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body><main>
+<h1>Account section: new user vs. existing user</h1>
+<p class="sub">Signed-in check of the My Princess account pages, November 5, 2026. Test user: a brand-new account with no cruises. Main user: an existing account with cruise history. No personal values are shown.</p>
+
+<div class="card">
+  <b>Short answer:</b> both accounts work. Every page loads (HTTP 200) in about 1–3 seconds for both. The new account sees one page fewer (no cruise history yet) and no personalized deals. The same two background errors show up for both accounts, so they are site issues, not account issues.
+</div>
+
+<h2>Page by page</h2>
+<div class="card scroll"><table>
+<thead><tr><th>Page</th><th class="n">Test user</th><th class="n">Main user</th><th>Difference</th></tr></thead>
+<tbody>
+<tr><td>Account home</td><td class="n">1.8 s</td><td class="n">1.8 s</td><td>Same. The main user has 10 links and the test user has 9.</td></tr>
+<tr><td>Account / Contact Info</td><td class="n">1.2 s</td><td class="n">1.3 s</td><td>Test user: wedding date, travel consultant and destinations of interest are empty. Main user: only destinations of interest is empty.</td></tr>
+<tr><td>Circle Savings / Cruise Credits</td><td class="n">1.2 s</td><td class="n">1.0 s</td><td>Same</td></tr>
+<tr><td>Captain's Circle Benefits</td><td class="n">0.9 s</td><td class="n">1.0 s</td><td>Same (anyone can open this page)</td></tr>
+<tr><td>Membership FAQ</td><td class="n">1.4 s</td><td class="n">1.1 s</td><td>Same (anyone can open this page)</td></tr>
+<tr><td>Terms &amp; Conditions</td><td class="n">1.0 s</td><td class="n">0.8 s</td><td>Same (anyone can open this page)</td></tr>
+<tr><td>Saved Cruises</td><td class="n">1.1 s</td><td class="n">1.0 s</td><td>Same. Both are empty.</td></tr>
+<tr><td>Deals</td><td class="n">2.2 s</td><td class="n">2.8 s</td><td>The main user also sees <b>Personalized offers</b> with a countdown timer and an Alaska offer. The test user sees only the general deals and the newsletter sign-up.</td></tr>
+<tr><td>Captain's Circle level</td><td class="n">0.8 s</td><td class="n">0.8 s</td><td>Same (anyone can open this page)</td></tr>
+<tr><td>Total Princess Cruise Days</td><td class="n">–</td><td class="n">1.4 s</td><td>Main user only: a table of past cruises (date, ship, destination, status, credits, days) with onboard statements. A new account has no link to this page.</td></tr>
+</tbody></table>
+<p class="muted">Times are how long until the page can be used. Both accounts saw the same page headings, except on Deals.</p></div>
+
+<h2>Issues seen on both accounts</h2>
+<div class="card"><ul>
+  <li><span class="tag warn">Warning</span> <b>"Recommended for You" doesn't load.</b> The browser blocks the personalization service's reply (p13n.princess.com, ERR_BLOCKED_BY_ORB) on most account pages.</li>
+  <li><span class="tag warn">Warning</span> <b>Google Tag Manager file missing.</b> <code>sw_iframe.html</code> returns 404 on nearly every page.</li>
+  <li><span class="tag warn">Warning</span> <b>JavaScript error "n.includes is not a function"</b>. This appeared for the main user only, so it may depend on account data such as past cruises.</li>
+</ul></div>
+
+<h2>About the test account</h2>
+<div class="card"><ul>
+  <li>Created today with a dedicated test email. Its login is kept in <code>.env</code>, which is not committed to git.</li>
+  <li>The sign-up answered "Yes, I've cruised with Princess before" because that question is required. You can change it in the profile if a true first-timer profile matters for tests.</li>
+  <li>Re-run with <code>node packages/princess/check-account.mjs --account test --all</code> (or <code>--account main</code>).</li>
+</ul></div>
+</main></body></html>

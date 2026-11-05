@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Princess Account Check</title>
+<style>
+:root { --bg:#f7f7f5; --card:#fff; --text:#1d1d1f; --muted:#6b6b70; --line:#e3e3e0; --ok:#1f7a3f; --okbg:#e6f4ea; --warn:#8a5a00; --warnbg:#fdf3dc; --bad:#b3261e; --badbg:#fce8e6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#141416; --card:#1d1d20; --text:#ececee; --muted:#a0a0a8; --line:#33333a; --ok:#6fd08f; --okbg:#173322; --warn:#f0c060; --warnbg:#3a2e12; --bad:#ff8a80; --badbg:#3d1a18; } }
+:root[data-theme="dark"] { --bg:#141416; --card:#1d1d20; --text:#ececee; --muted:#a0a0a8; --line:#33333a; --ok:#6fd08f; --okbg:#173322; --warn:#f0c060; --warnbg:#3a2e12; --bad:#ff8a80; --badbg:#3d1a18; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width:880px; margin:0 auto; padding:28px 16px 48px; overflow-x:clip; }
+h1 { font-size:24px; margin:0 0 4px; } h2 { font-size:17px; margin:28px 0 10px; }
+.sub { color:var(--muted); margin:0 0 20px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:14px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; }
+.pill { display:inline-block; padding:1px 9px; border-radius:99px; font-size:13px; font-weight:600; white-space:nowrap; }
+.ok { color:var(--ok); background:var(--okbg); } .warn { color:var(--warn); background:var(--warnbg); } .bad { color:var(--bad); background:var(--badbg); }
+ul { margin:6px 0 0; padding-left:20px; } li { margin:3px 0; }
+.scroll { max-width:100%; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { text-align:left; padding:8px 9px; border-bottom:1px solid var(--line); vertical-align:top; }
+th { color:var(--muted); font-weight:600; font-size:13px; }
+code { font-size:13px; background:var(--bg); padding:1px 5px; border-radius:4px; overflow-wrap:anywhere; }
+.muted { color:var(--muted); font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Princess account check</h1>
+<p class="sub">November 4, 2026 · two accounts · look-only (no settings changed)</p>
+
+<div class="grid">
+  <div class="card">
+    <h2 style="margin-top:0">Your account <span class="pill ok">Works</span></h2>
+    <ul>
+      <li>Logged in first try, no bot challenge.</li>
+      <li>All 10 account pages load (HTTP 200), usable in 0.8–2.3 s.</li>
+      <li>Profile data shows correctly: name, birth date, wedding date, email and password all filled.</li>
+      <li>Cruise history and credits pages show your data.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0">New test account <span class="pill bad">Sign-up failed</span></h2>
+    <ul>
+      <li>Form filled in completely, no marketing boxes ticked.</li>
+      <li>On submit, the sign-up service replied <code>{"status":"error","desc":""}</code>, with no reason given.</li>
+      <li>The page showed <b>no error message</b>: it just stays on the form. A real visitor would not know it failed.</li>
+      <li>Tried 3 times, then stopped. Logging in with it confirms the account does not exist.</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Your account: page by page</h2>
+<div class="card scroll">
+<table>
+<thead><tr><th>Page</th><th>Status</th><th>Usable in</th><th>Logged out</th></tr></thead>
+<tbody>
+<tr><td>Account home</td><td><span class="pill warn">Warning</span></td><td>2.0 s</td><td>Needs login</td></tr>
+<tr><td>Account / Contact Info</td><td><span class="pill warn">Warning</span></td><td>1.2 s</td><td>Needs login</td></tr>
+<tr><td>Circle Savings / Cruise Credits</td><td><span class="pill warn">Warning</span></td><td>0.9 s</td><td>Needs login</td></tr>
+<tr><td>Cruise History</td><td><span class="pill warn">Warning</span></td><td>1.1 s</td><td>Needs login</td></tr>
+<tr><td>Saved Cruises</td><td><span class="pill ok">OK</span></td><td>1.0 s</td><td>Needs login</td></tr>
+<tr><td>Deals</td><td><span class="pill ok">OK</span></td><td>2.3 s</td><td>Needs login</td></tr>
+<tr><td>Captain's Circle Benefits</td><td><span class="pill warn">Warning</span></td><td>0.9 s</td><td>Open to anyone</td></tr>
+<tr><td>Captain's Circle level</td><td><span class="pill warn">Warning</span></td><td>0.8 s</td><td>Open to anyone</td></tr>
+<tr><td>Membership FAQ</td><td><span class="pill warn">Warning</span></td><td>1.0 s</td><td>Open to anyone</td></tr>
+<tr><td>Terms &amp; Conditions</td><td><span class="pill warn">Warning</span></td><td>0.9 s</td><td>Open to anyone</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>What the warnings are</h2>
+<div class="card">
+  <ul>
+    <li><b>"Recommended for You" box is broken on 8 of 10 pages.</b> The personalization service (<code>p13n.princess.com</code>) sends a reply the browser refuses to load (<code>ERR_BLOCKED_BY_ORB</code>), so the box is likely empty for every signed-in customer.</li>
+    <li><b>Google Tag Manager file missing (404)</b> on Terms and Cruise History. Tracking only; visitors don't see it. Same issue as on the public site.</li>
+    <li><b>One script error</b> on the account pages: <code>n.includes is not a function</code>.</li>
+  </ul>
+</div>
+
+<h2>Next steps</h2>
+<div class="card">
+  <ul>
+    <li>Try creating the test account by hand in a normal browser. If it also fails silently, the sign-up bug affects real visitors. If it works, Princess is blocking automated sign-ups. Either way, give me the login and the comparison run takes about 4 minutes.</li>
+    <li>Report the silent sign-up failure and the broken "Recommended for You" box to Princess.</li>
+  </ul>
+  <p class="muted">No personal values are stored in this report or in the saved results; only page names, field labels and whether each field is filled in.</p>
+</div>
+</main>
+</body>
+</html>

@@ -1,5 +1,6 @@
 // Logs in with the test account and checks every tab of the account settings section.
-// Usage: node check-account.mjs [--headed] [--fresh]
+// Usage: node check-account.mjs [--account main|test] [--all] [--headed] [--fresh]
+//   --account which login from .env to use (default main)
 //   --headed  show the browser (use if the site asks for a code or challenge)
 //   --fresh   ignore the saved sign-in and log in again
 // Writes data/sites/princess.com/account-check.json.
@@ -13,12 +14,13 @@ import { signedInContext, saveSignIn, repoRoot, HOME_URL } from './princess-logi
 const argv = process.argv.slice(2);
 const headed = argv.includes('--headed');
 const fresh = argv.includes('--fresh');
-const outFile = path.join(repoRoot, 'data/sites/princess.com/account-check.json');
+const account = argv.includes('--account') ? argv[argv.indexOf('--account') + 1] : 'main';
+const outFile = path.join(repoRoot, `data/sites/princess.com/account-check-${account}.json`);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const started = Date.now();
 
-const { browser, context, page, reused } = await signedInContext({ headed, fresh });
-console.log(reused ? 'Reused saved sign-in.' : 'Logged in.');
+const { browser, context, page, reused, creds } = await signedInContext({ account, headed, fresh });
+console.log(`${reused ? 'Reused saved sign-in' : 'Logged in'} (account: ${account}).`);
 
 // Block anything that would change account data. The login itself has already happened.
 const blocked = [];
@@ -33,7 +35,7 @@ await context.route('**/*', (route) => {
 });
 
 // Values we must never save: collected in memory from the pages, used only to redact.
-const secrets = new Set([process.env.PRINCESS_LOGIN_ID, process.env.PRINCESS_PASSWORD].filter(Boolean));
+const secrets = new Set([creds.loginId, creds.password, creds.loginId.split('@')[0]].filter(Boolean));
 const redact = (s) => {
   let out = String(s ?? '');
   for (const v of [...secrets].sort((a, b) => b.length - a.length)) if (v.length >= 3) out = out.split(v).join('•••');
@@ -154,7 +156,7 @@ for (let i = 0; i < targets.length && pages.length < LIMIT; i++) {
   }
   await sleep(1200);
 }
-await saveSignIn(context);
+await saveSignIn(context, account);
 await browser.close();
 
 // 2b. Open each page again while logged out, to see which ones really need a login.
@@ -199,6 +201,7 @@ const summarise = (rec) => {
 const all = [summarise(homeRecord), ...pages.map(summarise)];
 const out = {
   site: 'princess.com',
+  account,
   checkedAt: new Date().toISOString(),
   reusedSignIn: reused,
   summary: { pages: all.length, ok: all.filter((p) => p.state === 'ok').length, warning: all.filter((p) => p.state === 'warning').length, problem: all.filter((p) => p.state === 'problem').length },

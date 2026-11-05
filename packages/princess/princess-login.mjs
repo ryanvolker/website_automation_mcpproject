@@ -7,18 +7,22 @@ import { chromium } from 'playwright';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const repoRoot = path.resolve(here, '../..');
-const stateFile = path.join(repoRoot, '.auth', 'princess.json');
+// Each account has its own saved sign-in: .auth/princess-<account>.json
+const stateFileFor = (account) => path.join(repoRoot, '.auth', `princess-${account}.json`);
 export const BASE = 'https://www.princess.com';
 const LOGIN_URL = `${BASE}/my-princess/account-login/`;
 export const HOME_URL = 'https://book.princess.com/captaincircle/myPrincess.page';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
 
-export function loadCredentials() {
+// Account "main" uses PRINCESS_LOGIN_ID / PRINCESS_PASSWORD.
+// Any other account, e.g. "test", uses PRINCESS_TEST_LOGIN_ID / PRINCESS_TEST_PASSWORD.
+export function loadCredentials(account = 'main') {
   try { process.loadEnvFile(path.join(repoRoot, '.env')); } catch { /* no .env file */ }
-  const loginId = process.env.PRINCESS_LOGIN_ID;
-  const password = process.env.PRINCESS_PASSWORD;
+  const prefix = account === 'main' ? 'PRINCESS' : `PRINCESS_${account.toUpperCase()}`;
+  const loginId = process.env[`${prefix}_LOGIN_ID`];
+  const password = process.env[`${prefix}_PASSWORD`];
   if (!loginId || !password) {
-    throw new Error('Missing PRINCESS_LOGIN_ID or PRINCESS_PASSWORD. Copy .env.example to .env at the repo root and fill them in.');
+    throw new Error(`Missing ${prefix}_LOGIN_ID or ${prefix}_PASSWORD in .env at the repo root.`);
   }
   return { loginId, password };
 }
@@ -51,24 +55,26 @@ async function logIn(page, { loginId, password }, { headed }) {
 }
 
 // Returns { browser, context, page, reused } with a signed-in session.
-export async function signedInContext({ headed = false, fresh = false } = {}) {
-  const creds = loadCredentials();
+export async function signedInContext({ account = 'main', headed = false, fresh = false } = {}) {
+  const creds = loadCredentials(account);
+  const stateFile = stateFileFor(account);
   const browser = await chromium.launch({ headless: !headed });
   const opts = { userAgent: UA, viewport: { width: 1440, height: 900 }, locale: 'en-US' };
   const saved = !fresh && (await fs.access(stateFile).then(() => true, () => false));
   let context = await browser.newContext(saved ? { ...opts, storageState: stateFile } : opts);
   let page = await context.newPage();
-  if (saved && (await isSignedIn(page))) return { browser, context, page, reused: true };
+  if (saved && (await isSignedIn(page))) return { browser, context, page, reused: true, creds };
   if (saved) { await context.close(); context = await browser.newContext(opts); page = await context.newPage(); }
   await logIn(page, creds, { headed });
   // Let the landing page finish setting its cookies before saving the sign-in.
   await page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
-  await saveSignIn(context);
-  return { browser, context, page, reused: false };
+  await saveSignIn(context, account);
+  return { browser, context, page, reused: false, creds };
 }
 
 // Save the current sign-in so the next run can reuse it. Call again at the end of a run to keep it fresh.
-export async function saveSignIn(context) {
+export async function saveSignIn(context, account = 'main') {
+  const stateFile = stateFileFor(account);
   await fs.mkdir(path.dirname(stateFile), { recursive: true });
   await context.storageState({ path: stateFile });
 }
