@@ -6,13 +6,36 @@ How templates were grouped: by URL pattern, then checked against the destination
 
 **Phase 3 order:** priority 1 is the booking path, 2 is browsing that leads into it, 3 is supporting content.
 
+## Section files (Phase 3, done 2026-11-05)
+| Types | Section file |
+|---|---|
+| 1 | `sections/home.md` |
+| 2 | `sections/search-results.md` |
+| 3 | `sections/cruise-detail.md` |
+| 4 | `sections/deck-plan.md` |
+| 5 | `sections/destinations-hub.md` |
+| 6–9 | `sections/destination-pages.md` |
+| 10, 21, 22 | `sections/article.md` |
+| 11 | `sections/land-tour.md` |
+| 12–13 | `sections/ship-pages.md` |
+| 14 | `sections/stateroom-type.md` |
+| 15 | `sections/onboard-topic.md` |
+| 16 | `sections/dining.md` |
+| 17–18 | `sections/deals.md` |
+| 19–20 | `sections/excursions.md` |
+| 23–24 | `sections/help-pages.md` |
+| 25 | `sections/legal.md` |
+| 26 | `sections/info-page.md` |
+| 27 | `sections/site-search.md` |
+| 28 | `sections/account.md` |
+
 ## Booking path
 | # | Type | URL pattern | URLs | Samples | Priority | Status |
 |---|---|---|---|---|---|---|
-| 1 | Home | `/` | 1 | `/` | 1 | crawl data only |
-| 2 | Search results | `/cruise-search/results/?{filters}` | 1 template (321 pre-filtered links in sitemap) | `/cruise-search/results/` · `/cruise-search/results/?trade=E,C,A,M,T,N&duration=1,2,3&mrch=1` · `/cruise-search/results/?itinPort=PPG` | 1 | **in progress** |
-| 3 | Cruise detail (itinerary) | `/cruise-search/details/?voyageCode={code}` → `/itinerary-details/?voyageCode={code}` | 85 in sitemap, ~1,010 sailings live | `?voyageCode=U648` (7-day, deal) · `?voyageCode=N726` (11-day Europe) · a world cruise from the 1,010 | 1 | live tool only |
-| 4 | Deck plan | `/deckPlans.do?shipCode={XX}` | 18 | `SA` (one layout) · `GP` (two layouts, date chooser) · `SU` (newest ship) | 1 | crawl data only |
+| 1 | Home | `/` | 1 | `/` | 1 | done |
+| 2 | Search results | `/cruise-search/results/?{filters}` | 1 template (321 pre-filtered links in sitemap) | `/cruise-search/results/` · `/cruise-search/results/?trade=E,C,A,M,T,N&duration=1,2,3&mrch=1` · `/cruise-search/results/?itinPort=PPG` | 1 | done |
+| 3 | Cruise detail (itinerary) | `/cruise-search/details/?voyageCode={code}` → `/itinerary-details/?voyageCode={code}` | 85 in sitemap, ~1,010 sailings live | `?voyageCode=U648` (7-day, deal) · `?voyageCode=N726` (11-day Europe) · a world cruise from the 1,010 | 1 | done |
+| 4 | Deck plan | `/deckPlans.do?shipCode={XX}` | 18 | `SA` (one layout) · `GP` (two layouts, date chooser) · `SU` (newest ship) | 1 | done |
 | — | Booking / checkout | `book.` subdomain | — | — | skip | Out of scope: read-only rule, no booking |
 
 ## Destinations
@@ -67,4 +90,4 @@ Account pages are covered by the account check (the login exception in `CLAUDE.m
 - **Fewer templates than URLs:** about 28 templates cover 8,000+ URLs. The four destination types (6–9) look like one page builder with optional modules: featured cruises, FAQ, port list, excursions, search link. Confirm in Phase 3, because one flexible template would be simpler for our build.
 - **Booking core:** 4 templates (search, cruise detail, deck plan, checkout). Everything else is content that funnels into search.
 - **Legal and terms pages** are spread across sections but look like one plain document template.
-- **Open:** whether blog articles and destination tip articles (10) use the same template. Their URLs differ, but both are articles.
+- **Answered in Phase 3:** blog articles and destination tip articles use the same article template (`sections/article.md`), and destination types 6–9 are one page builder (`sections/destination-pages.md`).

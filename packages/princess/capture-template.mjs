@@ -1,6 +1,6 @@
 // Phase 3 capture for one page template: accessibility-tree snapshots (desktop 1440 and mobile 390),
 // screenshots, hidden states (menus/filters opened then closed with Escape), and the data calls the page makes.
-// Usage: node capture-template.mjs <name> <url> [--open "Button A,Button B"] [--wait "<css>"]
+// Usage: node capture-template.mjs <name> <url> [--open "Button A,Button B"] [--wait "<css>"] [--expanders N] [--light]
 // Writes to data/sites/princess.com/captures/<name>/ (not in git). Read-only: never clicks apply, submit or book.
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -12,6 +12,10 @@ const [name, url] = process.argv.slice(2);
 const opt = (k) => { const i = process.argv.indexOf(`--${k}`); return i > 0 ? process.argv[i + 1] : null; };
 const toOpen = (opt('open') || '').split(',').map((s) => s.trim()).filter(Boolean);
 const waitFor = opt('wait');
+// --light: desktop structure + one screenshot only (to confirm extra samples share the template).
+// --expanders N: also open the first N collapsed accordions in main.
+const light = process.argv.includes('--light');
+const expanders = Number(opt('expanders') || 0);
 const dir = path.resolve(here, '../../data/sites/princess.com/captures', name);
 await fs.mkdir(dir, { recursive: true });
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -48,7 +52,7 @@ async function capture(view, viewport, ua, mobile) {
   await page.waitForTimeout(800);
   await fs.writeFile(path.join(dir, `${view}.aria.yml`), await page.locator('body').ariaSnapshot().catch((e) => `error: ${e.message}`));
   await page.screenshot({ path: path.join(dir, `${view}.png`) });
-  await page.screenshot({ path: path.join(dir, `${view}-full.png`), fullPage: true }).catch(() => {});
+  if (!light) await page.screenshot({ path: path.join(dir, `${view}-full.png`), fullPage: true }).catch(() => {});
   const states = [];
   for (const label of toOpen) {
     if (unsafe.test(label)) { states.push({ label, skipped: 'unsafe label' }); continue; }
@@ -76,6 +80,24 @@ async function capture(view, viewport, ua, mobile) {
     if (await btn.getAttribute('aria-expanded') === 'true') await btn.click({ timeout: 3000 }).catch(() => {});
     await page.waitForTimeout(500);
   }
+  // Open the first N collapsed accordions/expanders inside main (FAQ, "read more"), one at a time.
+  if (expanders && !light) {
+    const exp = page.locator('main [aria-expanded="false"]:visible');
+    const n = Math.min(expanders, await exp.count().catch(() => 0));
+    for (let i = 0; i < n; i++) {
+      const el = exp.nth(0);
+      const label = ((await el.innerText().catch(() => '')) || (await el.getAttribute('aria-label')) || `expander ${i + 1}`).replace(/\s+/g, ' ').trim().slice(0, 60);
+      if (unsafe.test(label)) break;
+      const before = await page.locator('main').ariaSnapshot().catch(() => '');
+      await el.click({ timeout: 4000 }).catch(() => {});
+      await page.waitForTimeout(900);
+      const after = await page.locator('main').ariaSnapshot().catch(() => '');
+      const seen = new Set(before.split('\n'));
+      const added = after.split('\n').filter((l) => !seen.has(l)).join('\n');
+      await fs.writeFile(path.join(dir, `${view}.expand-${i + 1}.aria.yml`), added);
+      states.push({ label, expander: true, addedLines: added.split('\n').length });
+    }
+  }
   const buttons = await page.$$eval('button', (bs) => [...new Set(bs.filter((b) => b.offsetParent).map((b) => (b.innerText || b.getAttribute('aria-label') || '').replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 120));
   await fs.writeFile(path.join(dir, `${view}.calls.json`), JSON.stringify(calls, null, 1));
   summary.views[view] = { status: resp?.status(), readyMs, cookieBanner: cookie, states, buttons, calls: calls.length };
@@ -83,7 +105,7 @@ async function capture(view, viewport, ua, mobile) {
 }
 
 await capture('desktop', { width: 1440, height: 900 }, UA, false);
-await capture('mobile', { width: 390, height: 844 }, MOBILE_UA, true);
+if (!light) await capture('mobile', { width: 390, height: 844 }, MOBILE_UA, true);
 await browser.close();
 await fs.writeFile(path.join(dir, 'summary.json'), JSON.stringify(summary, null, 1));
 console.log(JSON.stringify(summary, null, 1));
