@@ -29,3 +29,4 @@ data/sites/princess.com/link-check.json
 data/sites/princess.com/services.log
 # Account check output (structure only, but kept local to be safe)
 data/sites/princess.com/account-check*.json
+data/sites/princess.com/search-scan*.json
