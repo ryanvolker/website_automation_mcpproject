@@ -1,6 +1,6 @@
 {
  "site": "princess.com",
- "fetchedAt": "2026-11-04T15:44:58.838Z",
+ "fetchedAt": "2026-11-06T15:13:42.127Z",
  "sitemaps": [
   "https://www.princess.com/sitemap.xml",
   "https://www.princess.com/en-au/sitemap.xml",
@@ -45,7 +45,7 @@
   "/shore-excursions*?",
   "/booking/addon*"
  ],
- "total": 8018,
+ "total": 8021,
  "sections": {
   "shore-excursions": {
    "count": 5546,
@@ -526,9 +526,9 @@
    }
   },
   "blog": {
-   "count": 655,
+   "count": 658,
    "blocked": 0,
-   "newest": "2026-11-03T03:16:58.64Z",
+   "newest": "2026-11-06T15:01:44.961Z",
    "subsections": {
     "how-to-see-stockholm-from-a-unique-perspective": 1,
     "cruise-destinations": 1,
@@ -1081,7 +1081,10 @@
     "best-time-to-visit-iceland": 1,
     "things-to-do-in-kagoshima-japan": 1,
     "things-to-do-in-christchurch": 1,
-    "best-time-to-visit-berlin": 1
+    "best-time-to-visit-berlin": 1,
+    "berlin-historical-sites": 1,
+    "things-to-do-in-nevis": 1,
+    "berlin-museums": 1
    }
   },
   "cruise-search": {
@@ -1097,7 +1100,7 @@
   "cruise-destinations": {
    "count": 538,
    "blocked": 0,
-   "newest": "2026-11-04T05:54:08.151Z",
+   "newest": "2026-11-05T19:58:02.486Z",
    "subsections": {
     "epic-voyages": 1,
     "caribbean-cruises": 51,
@@ -1156,7 +1159,7 @@
   "ships-and-experience": {
    "count": 88,
    "blocked": 0,
-   "newest": "2026-11-04T14:06:16.732Z",
+   "newest": "2026-11-05T15:01:01.812Z",
    "subsections": {
     "onboard-experience": 43,
     "special-events": 3,
@@ -1168,7 +1171,7 @@
   "cruise-deals-promotions": {
    "count": 68,
    "blocked": 31,
-   "newest": "2026-11-02T21:25:48.902Z",
+   "newest": "2026-11-05T20:44:24.42Z",
    "subsections": {
     "2026-world-cruise": 1,
     "europe-sailing": 1,
@@ -1314,7 +1317,7 @@
   "plan": {
    "count": 15,
    "blocked": 0,
-   "newest": "2026-10-27T17:56:52.641Z",
+   "newest": "2026-11-04T21:45:38.573Z",
    "subsections": {
     "impacted-and-cancelled-cruises": 1,
     "cruise-with-confidence": 1,
@@ -1346,7 +1349,7 @@
   "faq": {
    "count": 9,
    "blocked": 0,
-   "newest": "2026-10-22T04:05:13.246Z",
+   "newest": "2026-11-06T14:38:15.554Z",
    "subsections": {
     "additional-faq": 2,
     "pre-cruise": 3,
@@ -1358,7 +1361,7 @@
   "staterooms": {
    "count": 8,
    "blocked": 0,
-   "newest": "2026-11-03T14:38:45.962Z",
+   "newest": "2026-11-05T14:41:58.512Z",
    "subsections": {
     "suites": 1,
     "mini-suites": 1,
@@ -1393,7 +1396,7 @@
   "private-sale": {
    "count": 3,
    "blocked": 0,
-   "newest": "2026-10-19T18:31:41.609Z",
+   "newest": "2026-11-05T21:51:19.149Z",
    "subsections": {
     "black-friday": 1,
     "insider-deals": 1
@@ -1419,7 +1422,7 @@
   "(home)": {
    "count": 1,
    "blocked": 0,
-   "newest": "2026-11-03T18:04:25.378Z",
+   "newest": "2026-11-05T23:41:57.597Z",
    "subsections": {}
   },
   "find-travel-agents": {
@@ -1515,7 +1518,7 @@
    "path": "/",
    "section": "(home)",
    "subsection": null,
-   "lastmod": "2026-11-03T18:04:25.378Z"
+   "lastmod": "2026-11-05T23:41:57.597Z"
   },
   {
    "url": "https://www.princess.com/find-travel-agents",
@@ -44887,7 +44890,7 @@
    "path": "/private-sale/insider-deals",
    "section": "private-sale",
    "subsection": "insider-deals",
-   "lastmod": "2026-10-19T18:31:41.609Z"
+   "lastmod": "2026-11-05T21:51:19.149Z"
   },
   {
    "url": "https://www.princess.com/ships-and-experience/onboard-experience",
@@ -45237,7 +45240,7 @@
    "path": "/ships-and-experience/ships/gp-regal-princess",
    "section": "ships-and-experience",
    "subsection": "ships",
-   "lastmod": "2026-11-04T14:06:16.732Z"
+   "lastmod": "2026-11-05T13:41:51.94Z"
   },
   {
    "url": "https://www.princess.com/ships-and-experience/ships/ip-island-princess",
@@ -45307,7 +45310,7 @@
    "path": "/ships-and-experience/ships/su-sun-princess",
    "section": "ships-and-experience",
    "subsection": "ships",
-   "lastmod": "2026-10-30T15:44:49.965Z"
+   "lastmod": "2026-11-05T15:01:01.812Z"
   },
   {
    "url": "https://www.princess.com/ships-and-experience/ships/st-star-princess",
@@ -50035,6 +50038,27 @@
    "lastmod": "2026-11-03T03:16:58.64Z"
   },
   {
+   "url": "https://www.princess.com/blog/berlin-historical-sites",
+   "path": "/blog/berlin-historical-sites",
+   "section": "blog",
+   "subsection": "berlin-historical-sites",
+   "lastmod": "2026-11-04T18:37:15.253Z"
+  },
+  {
+   "url": "https://www.princess.com/blog/things-to-do-in-nevis",
+   "path": "/blog/things-to-do-in-nevis",
+   "section": "blog",
+   "subsection": "things-to-do-in-nevis",
+   "lastmod": "2026-11-05T13:25:02.899Z"
+  },
+  {
+   "url": "https://www.princess.com/blog/berlin-museums",
+   "path": "/blog/berlin-museums",
+   "section": "blog",
+   "subsection": "berlin-museums",
+   "lastmod": "2026-11-06T15:01:44.961Z"
+  },
+  {
    "url": "https://www.princess.com/cruise-destinations",
    "path": "/cruise-destinations",
    "section": "cruise-destinations",
@@ -51124,7 +51148,7 @@
    "path": "/cruise-destinations/caribbean-cruises/shore-excursions",
    "section": "cruise-destinations",
    "subsection": "caribbean-cruises",
-   "lastmod": "2026-10-29T20:17:36.01Z"
+   "lastmod": "2026-11-05T19:58:02.486Z"
   },
   {
    "url": "https://www.princess.com/cruise-destinations/european-cruises",
@@ -51166,7 +51190,7 @@
    "path": "/cruise-destinations/european-cruises/shore-excursions",
    "section": "cruise-destinations",
    "subsection": "european-cruises",
-   "lastmod": "2026-10-29T15:24:19.12Z"
+   "lastmod": "2026-11-04T16:44:49.39Z"
   },
   {
    "url": "https://www.princess.com/cruise-destinations/european-cruises/cruises-to-lisbon-portugal",
@@ -53210,7 +53234,7 @@
    "path": "/cruise-destinations/new-cruise-itineraries",
    "section": "cruise-destinations",
    "subsection": "new-cruise-itineraries",
-   "lastmod": "2026-11-04T05:54:08.151Z"
+   "lastmod": "2026-11-04T18:25:31.361Z"
   },
   {
    "url": "https://www.princess.com/cruise-destinations/new-england-cruises",
@@ -53525,7 +53549,7 @@
    "path": "/faq/pre-cruise",
    "section": "faq",
    "subsection": "pre-cruise",
-   "lastmod": "2026-10-13T13:40:09.801Z"
+   "lastmod": "2026-11-06T14:38:15.554Z"
   },
   {
    "url": "https://www.princess.com/faq/pre-cruise/flight-guideline-ports",
@@ -56577,7 +56601,7 @@
    "path": "/plan/princess-vacation-protection",
    "section": "plan",
    "subsection": "princess-vacation-protection",
-   "lastmod": "2026-10-27T17:56:52.641Z"
+   "lastmod": "2026-11-04T21:45:38.573Z"
   },
   {
    "url": "https://www.princess.com/plan/best-price-guarantee",
@@ -56598,14 +56622,14 @@
    "path": "/cruise-deals-promotions",
    "section": "cruise-deals-promotions",
    "subsection": null,
-   "lastmod": "2026-11-02T21:25:48.902Z"
+   "lastmod": "2026-11-05T18:52:03.44Z"
   },
   {
    "url": "https://www.princess.com/cruise-deals-promotions/europe-sailing",
    "path": "/cruise-deals-promotions/europe-sailing",
    "section": "cruise-deals-promotions",
    "subsection": "europe-sailing",
-   "lastmod": "2026-10-09T16:22:08.991Z"
+   "lastmod": "2026-11-05T18:46:51.726Z"
   },
   {
    "url": "https://www.princess.com/cruise-deals-promotions/payment-plans",
@@ -56654,7 +56678,7 @@
    "path": "/cruise-deals-promotions/alaska-sailing",
    "section": "cruise-deals-promotions",
    "subsection": "alaska-sailing",
-   "lastmod": "2026-10-19T15:20:35.643Z"
+   "lastmod": "2026-11-05T20:44:24.42Z"
   },
   {
    "url": "https://www.princess.com/cruise-deals-promotions/terms-and-conditions",
@@ -56682,7 +56706,7 @@
    "path": "/cruise-deals-promotions/caribbean-sailing",
    "section": "cruise-deals-promotions",
    "subsection": "caribbean-sailing",
-   "lastmod": "2026-10-09T16:11:15.262Z"
+   "lastmod": "2026-11-05T18:48:40.063Z"
   },
   {
    "url": "https://www.princess.com/cruise-deals-promotions/featured-sale",
@@ -56717,7 +56741,7 @@
    "path": "/cruise-deals-promotions/limited-time-offer",
    "section": "cruise-deals-promotions",
    "subsection": "limited-time-offer",
-   "lastmod": "2026-10-08T19:46:52.682Z"
+   "lastmod": "2026-11-05T19:49:56.882Z"
   },
   {
    "url": "https://www.princess.com/cruise-deals-promotions/sanctuary-collection-sale",
@@ -56858,7 +56882,7 @@
    "path": "/cruise-deals-promotions/disclaimers/terms05",
    "section": "cruise-deals-promotions",
    "subsection": "disclaimers",
-   "lastmod": "2026-10-09T19:16:38.273Z",
+   "lastmod": "2026-11-01T01:09:38.44Z",
    "blockedBy": "/cruise-deals-promotions/disclaimers/"
   },
   {
@@ -57049,7 +57073,7 @@
    "path": "/cruise-deals-promotions/last-minute-cruise-deals",
    "section": "cruise-deals-promotions",
    "subsection": "last-minute-cruise-deals",
-   "lastmod": "2026-10-22T15:24:38.047Z"
+   "lastmod": "2026-11-04T19:18:49.553Z"
   },
   {
    "url": "https://www.princess.com/cruise-deals-promotions/march-offer-onboard-credit",
@@ -57574,14 +57598,14 @@
    "path": "/staterooms",
    "section": "staterooms",
    "subsection": null,
-   "lastmod": "2026-10-21T19:23:56.061Z"
+   "lastmod": "2026-11-05T14:31:36.921Z"
   },
   {
    "url": "https://www.princess.com/staterooms/suites",
    "path": "/staterooms/suites",
    "section": "staterooms",
    "subsection": "suites",
-   "lastmod": "2026-06-15T20:53:22.675Z"
+   "lastmod": "2026-11-05T14:41:58.512Z"
   },
   {
    "url": "https://www.princess.com/staterooms/mini-suites",
